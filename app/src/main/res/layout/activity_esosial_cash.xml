@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/segment_layout"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="-30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="20dp"
+            android:layout_below="@+id/imgProfilePicture"
+            android:background="@drawable/border_rounded_white_fifteen">
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Masukan nominal donasi"
+                android:layout_gravity="center"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="33sp"
+                    android:hint="Rp"
+                    android:background="@null"
+                    android:textColor="@color/black"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/greyBlack"/>
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Pilih alat pembayaran"
+                android:layout_gravity="center"/>
+
+        <LinearLayout
+                android:id="@+id/containerTransfer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_rounded_colorprimary_ten"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/white"
+                      android:textStyle="bold"
+                      android:layout_marginRight="5dp"
+                      android:text="TRANSFER"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/containerGopay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_rounded_colordarkprimary_ten"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/white"
+                      android:textStyle="bold"
+                      android:layout_marginRight="5dp"
+                      android:text="GOPAY"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/containerCreditCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/border_rounded_colorprimary_ten"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/white"
+                      android:textStyle="bold"
+                      android:layout_marginRight="5dp"
+                      android:text="CREDIT CARD"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

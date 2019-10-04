@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/segment_layout"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+    <LinearLayout
+            android:id="@+id/containerHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rounded_colordarkprimary_fifty_bottom"
+            android:gravity="center"
+            android:padding="15dp"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/imgLogo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_logo"/>
+
+            <TextView
+                    android:id="@+id/txtEchsan"
+                    android:layout_toRightOf="@+id/imgLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ECHSAN"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="27sp"/>
+
+            <TextView
+                    android:layout_toRightOf="@+id/imgLogo"
+                    android:layout_below="@id/txtEchsan"
+                    android:layout_marginTop="-10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/greenLight"
+                    android:text="The Spirit of ichsan"/>
+        </RelativeLayout>
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="-25dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/bg_homepage"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_below="@+id/containerHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:background="@drawable/border_rounded_white_three">
+
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/ic_qrcode_dark"/>
+        </LinearLayout>
+
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/greyDark"/>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/ic_koin_dark"/>
+
+            <TextView
+                    android:id="@+id/txtPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/greyDark"
+                    android:textSize="12sp"
+                    android:text="0 Point"/>
+        </LinearLayout>
+
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/greyDark"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@mipmap/ic_kupon_dark"/>
+
+            <TextView
+                    android:id="@+id/txtVoucher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/greyDark"
+                    android:textSize="12sp"
+                    android:text="0 Voucher"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_below="@id/containerHeader"
+            android:layout_above="@+id/containerFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="35dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:id="@+id/containerHajiUmroh"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_haji_umroh"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="11sp"
+                        android:text="E-Haji dan Umroh"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerESosial"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_e_sosial"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="11sp"
+                        android:text="E-Social"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerETravel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_e_travel"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="11sp"
+                        android:text="E-Travel Solution"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="35dp"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:id="@+id/containerECommerce"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_e_commerce"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="11sp"
+                        android:text="E-Commerce"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerEMember"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_e_member"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="11sp"
+                        android:text="E-Member"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerEBenefit"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_e_benefit"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="11sp"
+                        android:text="E-Benefit"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="35dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:id="@+id/containerDoaPanduan"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_panduan"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:gravity="center"
+                        android:textSize="11sp"
+                        android:text="Doa dan Panduan"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerMediaSosial"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_media_sosial"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="11sp"
+                        android:text="Media Sosial"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerTentangKami"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@mipmap/ic_homepage_tentang_kami"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="11sp"
+                        android:text="Tentang Kami"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/containerFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:id="@+id/containerHome"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/ic_home"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Home"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerTransaksi"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/ic_transaksi"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transaksi"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerNotification"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/ic_notification"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Echsan Point"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/containerProfile"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/ic_profile"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

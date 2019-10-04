@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/segment_layout"
+        android:gravity="center"
+        android:background="@color/colorPrimary">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/border_rounded_white_fifteen">
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/bg_logo"/>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-20dp"
+                    android:orientation="vertical">
+
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ECHSAN"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="The Spirit of Ichsan"
+                        android:layout_marginTop="-10dp"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="11sp"
+                android:text="ECHSAN merupakan platform sosial yang dapat menjadi solusi mudah menuju ke tanah suci."/>
+
+
+        <TextView
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Hotel Bintang Wisata Mandiri"
+                android:layout_gravity="center"
+                android:textSize="11sp"/>
+        <TextView
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Jl. Raden Saleh No.16 Jakarta Pusat"
+                android:layout_gravity="center"
+                android:textSize="11sp"/>
+        <TextView
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Jakarta - Indonesia"
+                android:layout_gravity="center"
+                android:textSize="11sp"/>
+
+
+        <TextView
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Telepon : 021 392 25666 Ext. 125 / "
+                android:layout_gravity="center"
+                android:textSize="11sp"/>
+        <TextView
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="+6221 310 4112"
+                android:layout_gravity="center"
+                android:textSize="11sp"/>
+        <TextView
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Email : echsan.info@gmail.com"
+                android:layout_gravity="center"
+                android:textSize="11sp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

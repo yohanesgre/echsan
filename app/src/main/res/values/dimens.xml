@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <item name="visible_icon" type="dimen" format="float">1.0</item>
+    <item name="slightly_visible_icon" type="dimen" format="float">0.4</item>
+    <dimen name="ios_bg_corner_radius">8dp</dimen>
+    <!-- Margin around the dialog, excluding the button bar -->
+    <dimen name="dialog_frame_margin">24dp</dimen>
+    <!-- Total title margin bottom is 16, but we split this between content and title -->
+    <dimen name="title_frame_margin_bottom">12dp</dimen>
+    <dimen name="title_icon_margin">16dp</dimen>
+    <dimen name="camomile_spinner_margin">16dp</dimen>
+</resources>
