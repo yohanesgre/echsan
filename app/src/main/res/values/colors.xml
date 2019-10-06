@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Warna Lama
     <color name="colorPrimary">#1B8B9E</color>
     <color name="colorPrimaryDark">#98D744</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorPrimaryDarker">#136C7A</color>
     <color name="colorPrimaryLight">#C6EBEF</color>
+    -->
+    <color name="colorPrimary">#00CB9A</color>
+    <color name="colorPrimaryDark">#00B97D</color>
+    <color name="colorAccent">#FF6E00</color>
+    <color name="colorPrimaryDarker">#008157</color>
+    <color name="colorPrimaryLight">#BCE0FD</color>
     <color name="colorPrimaryBrown">#88898A</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>

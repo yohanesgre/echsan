@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/acarisans_font_family</item>
     </style>
 
     <style name="AppTheme.NoAction" parent="Theme.AppCompat.Light.NoActionBar">
@@ -16,6 +17,7 @@
         <item name="colorControlActivated">@color/greyDarker</item>
         <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
+        <item name="android:fontFamily">@font/acarisans_font_family</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="CamomileDialog" parent="@android:style/Theme.Dialog">
