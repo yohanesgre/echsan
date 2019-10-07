@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.vira.echsan">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_logo"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme.NoAction">
+        <activity android:name="com.vira.echsan.ui.activity.auth.SplashActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".ui.activity.auth.SyaratKetentuanActivity"/>
+        <activity android:name=".ui.activity.auth.SignUpActivity"/>
+        <activity android:name=".ui.activity.auth.WelcomeActivity"/>
+        <activity android:name=".ui.activity.auth.LoginActivity"/>
+        <activity android:name=".ui.activity.HomepageFirstActivity"/>
+        <activity android:name=".ui.activity.HomepageSecondActivity"/>
+
+        <activity android:name=".ui.activity.PanduanDoaActivity"/>
+        <activity android:name=".ui.activity.TentangKamiActivity"/>
+        <activity android:name=".ui.activity.MediaSosialActivity"/>
+        <activity android:name=".ui.activity.TravelActivity"/>
+        <!--Profile-->
+        <activity android:name=".ui.activity.profile.ProfileActivity"/>
+        <activity android:name=".ui.activity.profile.DataDiriActivity"/>
+        <activity android:name=".ui.activity.profile.RedeemPoinActivity"/>
+        <activity android:name=".ui.activity.profile.DownlineActivity"/>
+        <!--E-Member-->
+        <activity android:name=".ui.activity.emember.EMemberActivity"/>
+        <activity android:name=".ui.activity.emember.PrivilegeMemberActivity"/>
+        <activity android:name=".ui.activity.emember.VipMemberActivity"/>
+        <!--E-Benefit-->
+        <activity android:name=".ui.activity.ebenefit.EBenefitActivity"/>
+        <activity android:name=".ui.activity.ebenefit.EPointActivity"/>
+        <activity android:name=".ui.activity.ebenefit.EGiftActivity"/>
+        <!--E-Sosial-->
+        <activity android:name=".ui.activity.esosial.ESosialActivity"/>
+        <activity android:name=".ui.activity.esosial.CashActivity"/>
+        <activity android:name=".ui.activity.esosial.OpsiPembayaranActivity"/>
+        <activity android:name=".ui.activity.esosial.KonfirmasiDonasiActivity"/>
+        <activity android:name=".ui.activity.esosial.DonasiActivity"/>
+        <activity android:name=".ui.activity.esosial.SertifikatActivity"/>
+        <activity android:name=".ui.activity.esosial.DonasiRedeemPoinActivity"/>
+        <!--Paket-->
+        <activity android:name=".ui.activity.hajiumroh.PaketActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketHajiActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketHajiDetailActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketHajiPaymentActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketHajiUploadActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketUmrohActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketUmrohDetailActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketUmrohPaymentActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketUmrohUploadActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketLintasGroupActivity"/>
+        <activity android:name=".ui.activity.hajiumroh.PaketPengalamanBerbedaActivity"/>
+
+    </application>
+
+</manifest>

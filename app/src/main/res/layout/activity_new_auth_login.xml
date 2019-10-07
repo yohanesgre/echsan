@@ -76,6 +76,13 @@
                 android:src="@drawable/ic_facebook"
                 android:paddingHorizontal="10dp"/>
     </TableRow>
+    <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an acoount?"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/btn_signup_login">
+    </android.support.v7.widget.AppCompatTextView>
     <android.support.design.button.MaterialButton
             android:id="@+id/btn_signup_login"
             android:layout_width="match_parent"

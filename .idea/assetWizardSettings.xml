@@ -148,8 +148,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_twitter" />
-                            <entry key="sourceFile" value="D:\Project\Android\OnWork\@Resource\Echsan\Vector\twitter.svg" />
+                            <entry key="outputName" value="ic_nav_profile" />
+                            <entry key="sourceFile" value="D:\PENS\Echsan\resource-echsan\vector\Profile.svg" />
                           </map>
                         </option>
                       </PersistentState>

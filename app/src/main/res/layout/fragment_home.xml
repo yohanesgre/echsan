@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:minWidth="200dp"
+            android:minHeight="50dp"
+            android:layout_marginLeft="45dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@mipmap/ic_plane"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/new_home_profile_image"
+                android:layout_marginRight="5dp"/>
+
+        <TextView
+                android:id="@+id/new_home_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/new_home_profile_image"
+                android:text="@string/tv_home_name"/>
+
+        <TextView
+                android:id="@+id/new_home_member"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/new_home_name"
+                android:layout_toRightOf="@id/new_home_profile_image"
+                android:text="@string/tv_home_member"/>
+    </RelativeLayout>
+
+    <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rounded_colorprimary_ten"
+            android:layout_marginTop="30dp"
+            android:paddingHorizontal="10dp"
+            android:layout_gravity="center">
+        <!--
+        <android.support.design.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:minWidth="150dp"
+                android:drawableLeft="@drawable/ic_home_coin" />
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/grey"/>
+        <android.support.design.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:minWidth="150dp"
+                android:drawableLeft="@drawable/ic_home_coupon"
+                android:paddingLeft="10dp" />-->
+    </TableRow>
+    <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:minWidth="320dp">
+        <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp">
+            <ImageView
+                    android:id="@+id/btn_home_umroh_haji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_home_umroh_haji"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_home_umroh_haji"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp">
+            <ImageView
+                    android:id="@+id/btn_home_umroh_sosial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_home_sosial"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_home_sosial"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp">
+            <ImageView
+                    android:id="@+id/btn_home_travel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_home_travel"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_home_travel"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp">
+            <ImageView
+                    android:id="@+id/btn_home_ecommerce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_home_ecommerce"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_home_ecommerce"/>
+        </LinearLayout>
+    </TableRow>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="30dp">
+        <TextView
+                android:text="Promo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_home_promo"/>
+
+    </LinearLayout>
+
+</LinearLayout>

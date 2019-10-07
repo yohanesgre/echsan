@@ -3,4 +3,17 @@
     
     <string name="btn_login">Login</string>
     <string name="btn_signup">Sign Up</string>
+    <string name="btn_signin">Sign In</string>
+
+    <string name="tv_home_name">Nama Pengguna</string>
+    <string name="tv_home_member">Member</string>
+    <string name="tv_home_umroh_haji">Umroh Haji</string>
+    <string name="tv_home_sosial">Sosial</string>
+    <string name="tv_home_travel">Travel</string>
+    <string name="tv_home_ecommerce">E-Commerce</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_bookings">Bookings</string>
+    <string name="nav_points">Points</string>
+    <string name="nav_profile">Profile</string>
 </resources>
