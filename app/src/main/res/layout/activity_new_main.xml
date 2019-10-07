@@ -7,6 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ui.activity.MainActivity">
+
         <FrameLayout
                 android:id="@+id/container_fragment"
                 android:layout_width="match_parent"
@@ -19,4 +20,5 @@
                 app:itemIconTint="@color/colorPrimaryDark"
                 app:menu="@menu/navbar_bottom_menu"
                 android:background="@color/white"/>
+
 </LinearLayout>

@@ -12,6 +12,14 @@
     <string name="tv_home_travel">Travel</string>
     <string name="tv_home_ecommerce">E-Commerce</string>
 
+    <string name="tv_detil_umroh_paket">Paket Umroh Spesial</string>
+    <string name="tv_detil_umroh_paket_desc">Makkah Madinah</string>
+    <string name="tv_detil_umroh_hari">13 Hari</string>
+    <string name="tv_detil_umroh_perjalanan">Perjalanan</string>
+    <string name="tv_detil_umroh_menjelaskan">Menjelaskan perjalanan haji dan umroh dari hari</string>
+    <string name="tv_detil_umroh_pertama">pertama sampai dengan hari yang terakhir. dan </string>
+    <string name="tv_detil_umroh_terdapat">terdapat penjelasan kegitan di hari hari yamg ada.</string>
+    
     <string name="nav_home">Home</string>
     <string name="nav_bookings">Bookings</string>
     <string name="nav_points">Points</string>
