@@ -30,4 +30,8 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="BottomNavBarTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/grey</item>
+    </style>
 </resources>

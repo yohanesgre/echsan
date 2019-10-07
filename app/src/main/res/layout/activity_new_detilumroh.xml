@@ -33,8 +33,7 @@
                     android:id="@+id/tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="">
-
+                    android:text="@string/tv_detil_umroh_paket_desc">
             </TextView>
         </LinearLayout>
 

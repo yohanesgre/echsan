@@ -10,10 +10,32 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d2c6ea2-e0b4-43b3-93f5-bff8b0d03a9e" name="Default Changelist" comment="Update Echsan : Version Eight&#10;&#10;- Update Update New mockup">
+    <list default="true" id="3d2c6ea2-e0b4-43b3-93f5-bff8b0d03a9e" name="Default Changelist" comment="Update Echsan : Main Activity dan Home Fragment&#10;&#10;- Update Bottom Navbar&#10;- Update UI Home Fragment">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_booking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_booking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_points.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_points.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_detilumroh.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_detilumroh.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +46,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_29_x86" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.100.6:5555" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -38,22 +60,36 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_signup.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="44" />
+            <state relative-caret-position="221">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+              <folding>
+                <element signature="e#2807#2837#0" expanded="true" />
+                <element signature="e#3797#3827#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_detilumroh.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+            <state relative-caret-position="391">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
@@ -62,40 +98,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="93" selection-start-line="20" selection-start-column="93" selection-end-line="20" selection-end-column="93" />
+            <state relative-caret-position="166">
+              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_login.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_splash.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_home_travel.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -103,11 +114,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile_vertical" />
-        <option value="resourceFile" />
-        <option value="Class" />
         <option value="Kotlin File" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -117,13 +126,13 @@
       <find>-10dp</find>
       <find>100dp</find>
       <find>vou</find>
-      <find>dashboard</find>
+      <find>style</find>
     </findStrings>
     <replaceStrings>
       <replace>13sp</replace>
       <replace>-5dp</replace>
       <replace>75dp</replace>
-      <replace>home</replace>
+      <replace>string</replace>
     </replaceStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -137,6 +146,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/model/RiwayatRedeemResp.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_paket_payment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_homepage_first.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/model/ProfileResp.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/network/ApiRequest.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/profile/ProfileActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_paket_umroh.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_paket_haji.xml" />
@@ -151,6 +166,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/hajiumroh/PaketHajiUploadActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/hajiumroh/PaketUmrohUploadActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/auth/SignUpActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auth_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auth_sign_up.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/adapter/ImageAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/hajiumroh/PaketLintasGroupActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/hajiumroh/PaketPengalamanBerbedaActivity.kt" />
@@ -164,36 +181,30 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_splash.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/font/font.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/font/acari_sans.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/font/acarisans_font_family.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/rounded_shape.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auth_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auth_sign_up.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_signup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/border_rounded_colorprimary_ten.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/circle.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/circle_image.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/circle_primary.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_dashboard_umroh_haji.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/cardview_dashboard_promo.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/navbar_bottom_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_homepage.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/fragment/HomeFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/font/acarisans_font_family.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_detilumroh.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/navbar_bottom_menu_selector.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/navbar_bottom_menu_selector.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_points.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_booking.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_detilumroh.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1369" />
-    <option name="height" value="770" />
+    <option name="x" value="14" />
+    <option name="y" value="111" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -203,6 +214,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
@@ -215,7 +227,39 @@
             <path>
               <item name="echsan-android" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="echsan-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="echsan" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="echsan-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="echsan" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="echsan-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="echsan" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="echsan-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="echsan-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="echsan-android" type="1abcf292:AndroidViewProjectNode" />
@@ -229,15 +273,10 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
-            <path>
-              <item name="echsan-android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,14 +288,15 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="device.picker.selection" value="3300a7b2a5ef936f" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1566112130886" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PENS\Echsan\echsan-android\app\src\main\java\com\vira\echsan\ui\activity" />
+      <recent name="D:\Project\Android\OnWork\echsan-android\app\src\main\res\drawable" />
+      <recent name="D:\Project\Android\OnWork\echsan-android\app\src\main\res\values" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.vira.echsan.adapter" />
@@ -273,11 +313,11 @@
       <recent name="com.vira.echsan.esosial" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PENS\Echsan\echsan-android\app\src\main\res\drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi" />
       <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -425,11 +465,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50136983" side_tool="true" weight="0.20516963" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49863014" visible="true" weight="0.20469798" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49863014" visible="true" weight="0.15128593" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -437,25 +476,26 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Run" order="0" weight="0.3286119" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.4983845" weight="0.3611898" />
+      <window_info anchor="bottom" id="Messages" sideWeight="0.49924356" visible="true" weight="0.32943144" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49924356" weight="0.32943144" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.4983845" weight="0.36120403" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32857144" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5016155" side_tool="true" weight="0.36164382" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.10367893" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="5" sideWeight="0.50075644" side_tool="true" visible="true" weight="0.32943144" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32838038" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4983845" visible="true" weight="0.13456091" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="9" weight="0.32876712" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4977307" weight="0.33444816" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info active="true" anchor="bottom" id="Find" order="9" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Flutter Performance" order="10" side_tool="true" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info active="true" anchor="right" id="Preview" order="4" visible="true" weight="0.29395974" />
+      <window_info anchor="right" id="Preview" order="4" visible="true" weight="0.3290469" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Assistant" order="6" weight="0.32956383" />
-      <window_info anchor="right" id="Android WiFi ADB" order="7" />
+      <window_info anchor="right" id="Android WiFi ADB" order="7" weight="0.32980332" />
       <window_info anchor="right" id="Flutter Inspector" order="8" />
       <window_info anchor="right" id="Flutter Outline" order="9" />
     </layout>
@@ -509,13 +549,115 @@
     <MESSAGE value="Update Echsan : Version Six&#10;&#10;- Update API Login" />
     <MESSAGE value="Update Echsan : Version Seven&#10;&#10;- Update Update New mockup" />
     <MESSAGE value="Update Echsan : Version Eight&#10;&#10;- Update Update New mockup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Echsan : Version Eight&#10;&#10;- Update Update New mockup" />
+    <MESSAGE value="Update Echsan : Main Activity dan Home Fragment&#10;&#10;- Update Bottom Navbar&#10;- Update UI Home Fragment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Echsan : Main Activity dan Home Fragment&#10;&#10;- Update Bottom Navbar&#10;- Update UI Home Fragment" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/adapter/ImageAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="73" selection-start-line="29" selection-start-column="73" selection-end-line="29" selection-end-column="73" />
+          <folding>
+            <element signature="e#33#360#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/segment_image.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/segment_dialog_kupon.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/util/Constant.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/segment_kupon.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/HomepageFirstActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/hajiumroh/PaketHajiPaymentActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_ebenefit.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auth_welcome.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_login.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_paket.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_splash.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_auth_mail.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-ldpi/ic_auth_mail.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_auth_mail.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_auth_mail.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-ldpi/ic_auth_user.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_auth_user.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_auth_user.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_auth_user.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_new_auth_mail.svg" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_new_auth_pass.svg" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_new_auth_user.svg" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/font/AcariSans-Bold.ttf" />
-    <entry file="file://$USER_HOME$/.gradle/gradle.properties" />
+    <entry file="file://$USER_HOME$/.gradle/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -532,244 +674,133 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/rounded_shape.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_facebook.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auth_splash.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auth_login.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_login.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="154">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auth_sign_up.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="113" column="46" selection-end-line="171" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/bg_new_splash.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bg_new_splash.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/bg_new_splash.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_media_sosial.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border_rounded_colorprimary_ten.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_home_coin.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/circle.xml" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
+        <state relative-caret-position="629">
           <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/circle_image.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/circle_primarydark.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" lean-forward="true" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/circle_primary.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_emember.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/profile/DataDiriActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/profile/ProfileActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_dashboard_umroh_haji.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_home_travel.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_home_sosial.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/cardview_dashboard_promo.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/MainActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navbar_bottom_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/HomepageSecondActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/HomepageFirstActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/font/acarisans_font_family.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navbar_bottom_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/fragment/HomeFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#37#215#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1067">
-          <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/activity/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="44">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding>
-            <element signature="e#37#319#0" expanded="true" />
+            <element signature="e#1077#1105#0" expanded="true" />
+            <element signature="e#1353#1385#0" expanded="true" />
+            <element signature="e#1525#1555#0" expanded="true" />
+            <element signature="e#1696#1727#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_homepage_second.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_homepage_first.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="452" column="12" selection-start-line="452" selection-start-column="12" selection-end-line="452" selection-end-column="12" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        <state relative-caret-position="318">
+          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_signup.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/navbar_bottom_menu_selector.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="44" />
+        <state relative-caret-position="68">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_login.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_points.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_booking.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_nav_home.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_home_travel.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="221">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_auth_splash.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vira/echsan/ui/fragment/HomeFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="153">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="93" selection-start-line="20" selection-start-column="93" selection-end-line="20" selection-end-column="93" />
+        <state relative-caret-position="166">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_detilumroh.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        <state relative-caret-position="391">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="e#2807#2837#0" expanded="true" />
+            <element signature="e#3797#3827#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />

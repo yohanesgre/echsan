@@ -11,6 +11,8 @@
     <string name="tv_home_sosial">Sosial</string>
     <string name="tv_home_travel">Travel</string>
     <string name="tv_home_ecommerce">E-Commerce</string>
+    <string name="tv_home_coin_value">99999</string>
+    <string name="tv_home_coupon_value">999</string>
 
     <string name="tv_detil_umroh_paket">Paket Umroh Spesial</string>
     <string name="tv_detil_umroh_paket_desc">Makkah Madinah</string>

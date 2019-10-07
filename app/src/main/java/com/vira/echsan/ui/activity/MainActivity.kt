@@ -1,6 +1,7 @@
 package com.vira.echsan.ui.activity
 
 import android.annotation.SuppressLint
+import android.content.res.Resources
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -11,36 +12,34 @@ import com.vira.echsan.ui.fragment.HomeFragment
 
 class MainActivity : AppCompatActivity(){
     lateinit var  toolbar: ActionBar
+    lateinit var bottomNavigation: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_main)
         toolbar = supportActionBar!!
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.navbar_bottom)
+        bottomNavigation = findViewById(R.id.navbar_bottom)
         bottomNavigation.setOnNavigationItemSelectedListener(navbarItemSelectedListener)
-        val homeFragment = HomeFragment.newInstance()
-        openFragment(homeFragment)
     }
 
-    @SuppressLint("ResourceType")
     private val navbarItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId){
             R.id.nav_home -> {
-                toolbar.title = getString(R.id.nav_home)
+                toolbar.title = getString(R.string.nav_home)
                 val homeFragment = HomeFragment.newInstance()
                 openFragment(homeFragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_bookings -> {
-                toolbar.title = getString(R.id.nav_bookings)
+                toolbar.title = getString(R.string.nav_bookings)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_points ->{
-                toolbar.title = getString(R.id.nav_points)
+                toolbar.title = getString(R.string.nav_points)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_profile ->{
-                toolbar.title = getString(R.id.nav_profile)
+                toolbar.title = getString(R.string.nav_profile)
                 return@OnNavigationItemSelectedListener true
             }
         }
