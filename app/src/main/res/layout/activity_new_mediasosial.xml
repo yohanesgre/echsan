@@ -48,7 +48,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/tv_medsos_echsan"/>
                     <TextView
-                            android:layout_below="@id/tv_medsos_phone"
+                            android:layout_below="@id/tv_medsos_echsan"
                             android:id="@+id/tv_medsos_pt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/tv_medsos_ig"/>
                     <TextView
-                            android:layout_below="@id/tv_medsos_phone"
+                            android:layout_below="@id/tv_medsos_ig"
                             android:id="@+id/ig"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
