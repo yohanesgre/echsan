@@ -22,6 +22,17 @@
     <string name="tv_detil_umroh_pertama">pertama sampai dengan hari yang terakhir. dan </string>
     <string name="tv_detil_umroh_terdapat">terdapat penjelasan kegitan di hari hari yamg ada.</string>
     
+    <string name="tv_medsos_echsan">Echsan</string>
+    <string name="tv_medsos_pt">Pt. Multimedia Investama</string>
+    <string name="tv_medsos_hp">+123 456 789 234</string>
+    <string name="tv_medsos_mobile">Mobile</string>
+    <string name="tv_medsos_email">echsan.info@mail.com</string>
+    <string name="tv_medsos_email2">Email</string>
+    <string name="tv_medsos_ig">echsan</string>
+    <string name="tv_medsos_ig2">Instagram</string>
+    <string name="tv_medsos_facebook">echsan</string>
+    <string name="tv_medsos_facebook2">Facebook</string>
+    
     <string name="nav_home">Home</string>
     <string name="nav_bookings">Bookings</string>
     <string name="nav_points">Points</string>
