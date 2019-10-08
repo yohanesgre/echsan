@@ -37,4 +37,12 @@
     <string name="nav_bookings">Bookings</string>
     <string name="nav_points">Points</string>
     <string name="nav_profile">Profile</string>
+    
+    <string name="string_tab_bookings_commpleted">Completed</string>
+    <string name="string_tab_bookings_process">Process</string>
+    <string name="string_tab_bookings_canceled">Canceled</string>
+    <string name="tv_bookings_content_header_title">Transaction Title</string>
+    <string name="tv_bookings_content_header_date">Transaction Date</string>
+    <string name="tv_bookings_content_body_travel">Transaction Travel</string>
+    <string name="tv_bookings_content_body_duration">Transaction Duration</string>
 </resources>
