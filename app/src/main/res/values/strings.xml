@@ -38,6 +38,8 @@
     <string name="nav_points">Points</string>
     <string name="nav_profile">Profile</string>
     
+    <string name="tv_hajiumroh_umrohhaji">Umroh Haji</string>
+    
     <string name="string_tab_bookings_commpleted">Completed</string>
     <string name="string_tab_bookings_process">Process</string>
     <string name="string_tab_bookings_canceled">Canceled</string>
