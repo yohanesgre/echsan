@@ -47,4 +47,5 @@
     <string name="tv_bookings_content_header_date">Transaction Date</string>
     <string name="tv_bookings_content_body_travel">Transaction Travel</string>
     <string name="tv_bookings_content_body_duration">Transaction Duration</string>
+    <string name="tv_bookings_content_footer_qmark">Need Help?</string>
 </resources>

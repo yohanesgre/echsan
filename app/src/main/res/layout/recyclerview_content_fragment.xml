@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
     <RelativeLayout
             android:id="@+id/booking_content_header"
             android:layout_width="match_parent"
@@ -63,5 +64,29 @@
                 android:layout_height="1dp"
                 android:background="@color/grey"
                 android:layout_below="@id/booking_content_body_container"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_below="@id/booking_content_body"
+            android:id="@+id/bookings_content_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+        <LinearLayout
+                android:id="@+id/bookings_content_footer_qmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:gravity="center">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bookings_qmarks" />
+            <TextView
+                    android:layout_toRightOf="@id/bookings_content_footer_qmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_bookings_content_footer_qmark"/>
+        </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

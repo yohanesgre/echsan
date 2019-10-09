@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import com.vira.echsan.R
+import com.vira.echsan.ui.fragment.BookingsFragment
 import com.vira.echsan.ui.fragment.HomeFragment
 
 class MainActivity : AppCompatActivity(){
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity(){
         toolbar = supportActionBar!!
         bottomNavigation = findViewById(R.id.navbar_bottom)
         bottomNavigation.setOnNavigationItemSelectedListener(navbarItemSelectedListener)
+        toolbar.title = getString(R.string.nav_home)
+        val homeFragment = HomeFragment.newInstance()
+        openFragment(homeFragment)
+
     }
 
     private val navbarItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -32,6 +37,8 @@ class MainActivity : AppCompatActivity(){
             }
             R.id.nav_bookings -> {
                 toolbar.title = getString(R.string.nav_bookings)
+                val bookingsFragment = BookingsFragment.newInstance()
+                openFragment(bookingsFragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_points ->{
