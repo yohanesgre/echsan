@@ -54,4 +54,15 @@
     <string name="tv_bookings_content_body_travel">Transaction Travel</string>
     <string name="tv_bookings_content_body_duration">Transaction Duration</string>
     <string name="tv_bookings_content_footer_qmark">Need Help?</string>
+    <string name="tv_umroh_paket_lokasi">Lokasi</string>
+    <string name="tv_umroh_paket_tgl_berangkat">Tanggal Keberangkatan</string>
+    <string name="tv_umroh_paket_jamaah">Jamaah</string>
+    <string name="tv_umroh_paket_cv_paket">Paket Umroh</string>
+    <string name="tv_umroh_paket_cv_keberangkatan">Bulan Berangkat</string>
+    <string name="tv_umroh_paket_cv_durasi">Durasi Umroh</string>
+    <string name="tv_umroh_paket_cv_hotel">Hotel</string>
+    <string name="tv_umroh_paket_cv_penerbangan">Penerbangan</string>
+    <string name="tv_umroh_paket_cv_travel">Travel</string>
+    <string name="tv_umroh_paket_cv_harga1">Mulai dari</string>
+    <string name="tv_umroh_paket_cv_harga2">Harga Terendah Paket</string>
 </resources>

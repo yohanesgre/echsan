@@ -1,6 +1,6 @@
 package com.vira.echsan.ui.viewholder
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
@@ -8,7 +8,7 @@ import com.vira.echsan.R
 import com.vira.echsan.model.recyclerview.BookingsModel
 
 class BookingsViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.cardview_bookings, parent, false)){
+    androidx.recyclerview.widget.RecyclerView.ViewHolder(inflater.inflate(R.layout.cardview_bookings, parent, false)){
     private var catTravel: TextView? = null
     private var date: TextView? = null
     private var travel: TextView? = null

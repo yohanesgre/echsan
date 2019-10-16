@@ -1,12 +1,10 @@
 package com.vira.echsan.ui.activity
 
-import android.annotation.SuppressLint
-import android.content.res.Resources
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import com.vira.echsan.R
 import com.vira.echsan.ui.fragment.BookingsFragment
 import com.vira.echsan.ui.fragment.HomeFragment
@@ -17,7 +15,7 @@ class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_main)
+        setContentView(R.layout.activity_main)
         toolbar = supportActionBar!!
         bottomNavigation = findViewById(R.id.navbar_bottom)
         bottomNavigation.setOnNavigationItemSelectedListener(navbarItemSelectedListener)
@@ -53,7 +51,7 @@ class MainActivity : AppCompatActivity(){
         false
     }
 
-    private fun openFragment(fragment: Fragment){
+    private fun openFragment(fragment: androidx.fragment.app.Fragment){
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.container_fragment, fragment)

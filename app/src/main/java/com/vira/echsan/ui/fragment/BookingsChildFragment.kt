@@ -1,8 +1,8 @@
 package com.vira.echsan.ui.fragment
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ import com.vira.echsan.model.recyclerview.BookingsModel
 import kotlinx.android.synthetic.main.fragment_bookings_child.view.*
 
 
-class BookingsChildFragment : Fragment(), View.OnClickListener {
+class BookingsChildFragment : androidx.fragment.app.Fragment(), View.OnClickListener {
 
     private val dummyList = listOf(
         BookingsModel(1, "9 Oktober 2019", "Echsan", "10 Oktober 2019 - 20 Oktober 2019") ,
@@ -46,7 +46,7 @@ class BookingsChildFragment : Fragment(), View.OnClickListener {
         }*/
 
         root.rv_content_bookings.apply {
-            layoutManager = LinearLayoutManager(activity)
+            layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity)
             when(position){
                 TAB_COMPLETED->adapter = ListAdapter(dummyList)
                 TAB_PROCESS->adapter = ListAdapter(dummyList2)

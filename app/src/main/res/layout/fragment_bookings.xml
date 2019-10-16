@@ -4,7 +4,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <android.support.v4.app.FragmentTabHost
+    <androidx.fragment.app.FragmentTabHost
             android:id="@+id/fragmentTabHosts_bookings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -20,5 +20,5 @@
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-    </android.support.v4.app.FragmentTabHost>
+    </androidx.fragment.app.FragmentTabHost>
 </LinearLayout>

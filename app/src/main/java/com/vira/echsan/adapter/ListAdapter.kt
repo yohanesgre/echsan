@@ -1,13 +1,13 @@
 package com.vira.echsan.adapter
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.vira.echsan.model.recyclerview.BookingsModel
 import com.vira.echsan.ui.viewholder.BookingsViewHolder
 
 class ListAdapter(private val list: List<BookingsModel>)
-    : RecyclerView.Adapter<BookingsViewHolder>() {
+    : androidx.recyclerview.widget.RecyclerView.Adapter<BookingsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookingsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
