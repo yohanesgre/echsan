@@ -11,4 +11,5 @@
     <dimen name="title_frame_margin_bottom">12dp</dimen>
     <dimen name="title_icon_margin">16dp</dimen>
     <dimen name="camomile_spinner_margin">16dp</dimen>
+    <dimen name="home_nav_btn_horizontal_margin">12dp</dimen>
 </resources>

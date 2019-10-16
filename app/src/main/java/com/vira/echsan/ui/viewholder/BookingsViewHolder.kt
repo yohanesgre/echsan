@@ -8,7 +8,7 @@ import com.vira.echsan.R
 import com.vira.echsan.model.recyclerview.BookingsModel
 
 class BookingsViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.recyclerview_content_fragment, parent, false)){
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.cardview_bookings, parent, false)){
     private var catTravel: TextView? = null
     private var date: TextView? = null
     private var travel: TextView? = null

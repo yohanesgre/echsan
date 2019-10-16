@@ -17,9 +17,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress|textNoSuggestions"
+                android:inputType="textAutoComplete"
                 android:minWidth="350dp"
-                android:drawableLeft="@drawable/ic_new_auth_user"
+                android:drawableLeft="@drawable/ic_username"
                 app:backgroundTint= "@color/colorPrimary" />
     </android.support.design.widget.TextInputLayout>
 
@@ -36,9 +36,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress|textNoSuggestions"
+                android:inputType="textEmailAddress|textAutoComplete"
                 android:minWidth="350dp"
-                android:drawableLeft="@drawable/ic_new_auth_mail"
+                android:drawableLeft="@drawable/ic_mail"
                 app:backgroundTint= "@color/colorPrimary" />
     </android.support.design.widget.TextInputLayout>
 
@@ -54,9 +54,9 @@
                 android:id="@+id/input_et_login_pass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_new_auth_pass"
+                android:drawableLeft="@drawable/ic_pass"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress|textNoSuggestions"
+                android:inputType="textEmailAddress|textNoSuggestions|textVisiblePassword"
                 android:minWidth="350dp"
                 app:backgroundTint="@color/colorPrimary" />
     </android.support.design.widget.TextInputLayout>
@@ -86,13 +86,11 @@
                 android:id="@+id/btn_login_google"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_google"
                 android:paddingHorizontal="10dp"/>
         <ImageView
                 android:id="@+id/btn_login_facebook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_facebook"
                 android:paddingHorizontal="10dp"/>
     </TableRow>
     <android.support.v7.widget.AppCompatTextView
