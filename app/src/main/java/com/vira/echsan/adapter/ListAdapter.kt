@@ -1,10 +1,9 @@
 package com.vira.echsan.adapter
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.vira.echsan.model.recyclerview.BookingsModel
-import com.vira.echsan.ui.viewholder.BookingsViewHolder
+import com.vira.echsan.viewholder.BookingsViewHolder
 
 class ListAdapter(private val list: List<BookingsModel>)
     : androidx.recyclerview.widget.RecyclerView.Adapter<BookingsViewHolder>() {

@@ -1,6 +1,5 @@
-package com.vira.echsan.ui.viewholder
+package com.vira.echsan.viewholder
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView

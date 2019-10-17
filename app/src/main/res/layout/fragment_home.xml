@@ -6,18 +6,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_carousel"
             android:layout_width="match_parent"
-            android:layout_height="330dp"
-            android:layout_gravity="bottom"
-            android:clipToPadding="false"
-            android:overScrollMode="never"
-            android:paddingBottom="30dp"
-            android:paddingEnd="20dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingStart="20dp" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:clipToPadding="false" />
 
     <TableLayout
             android:layout_width="match_parent"
@@ -210,27 +204,5 @@
                     android:layout_marginTop="10dp"
                     android:text="@string/tv_home_shop" />
         </LinearLayout>
-
     </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical"
-            android:clipToPadding="false">
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Promo" />
-
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_home_promo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
 </LinearLayout>
