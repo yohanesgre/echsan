@@ -1,14 +1,12 @@
-package com.vira.echsan.ui.fragment
+package com.vira.echsan.ui.fragment.bookings
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentTabHost
 import com.vira.echsan.R
 import com.vira.echsan.util.addPositionTab
-import kotlinx.android.synthetic.main.fragment_bookings.*
 
 class BookingsFragment : androidx.fragment.app.Fragment(){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +28,7 @@ class BookingsFragment : androidx.fragment.app.Fragment(){
     }
 
     companion object {
-        fun newInstance() : BookingsFragment = BookingsFragment()
+        fun newInstance() : BookingsFragment =
+            BookingsFragment()
     }
 }

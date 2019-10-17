@@ -16,7 +16,7 @@
                     android:layout_width="175dp"
                     android:layout_height="125dp"
                     android:scaleType="fitXY"
-                    android:background="@color/colorPrimaryLight"/>
+                    android:background="@color/colorSecondary"/>
         </androidx.cardview.widget.CardView>
 
 </LinearLayout>

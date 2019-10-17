@@ -1,8 +1,6 @@
-package com.vira.echsan.ui.fragment
+package com.vira.echsan.ui.fragment.bookings
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,9 +46,9 @@ class BookingsChildFragment : androidx.fragment.app.Fragment(), View.OnClickList
         root.rv_content_bookings.apply {
             layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity)
             when(position){
-                TAB_COMPLETED->adapter = ListAdapter(dummyList)
-                TAB_PROCESS->adapter = ListAdapter(dummyList2)
-                TAB_CANCELED->adapter = ListAdapter(dummyList3)
+                TAB_COMPLETED ->adapter = ListAdapter(dummyList)
+                TAB_PROCESS ->adapter = ListAdapter(dummyList2)
+                TAB_CANCELED ->adapter = ListAdapter(dummyList3)
             }
         }
 

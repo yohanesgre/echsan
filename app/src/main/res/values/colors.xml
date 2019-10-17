@@ -7,12 +7,20 @@
     <color name="colorPrimaryDarker">#136C7A</color>
     <color name="colorPrimaryLight">#C6EBEF</color>
     -->
-    <color name="colorPrimary">#00CB9A</color>
-    <color name="colorPrimaryDark">#00B97D</color>
-    <color name="colorAccent">#FF6E00</color>
-    <color name="colorPrimaryDarker">#008157</color>
-    <color name="colorPrimaryLight">#BCE0FD</color>
-    <color name="colorPrimaryBrown">#88898A</color>
+
+    <color name="colorPrimary">#2CB9A9</color>
+    <color name="colorPrimaryVariant">#FFFFFF</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#D2FFF4</color>
+    <color name="colorSecondaryVariant">#ffffff</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorError">#F44336</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorOnSurface">#212121</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="background">#ffffff</color>
+    <color name="colorOnBackground">#212121</color>
+
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="grey">#eeeeee</color>

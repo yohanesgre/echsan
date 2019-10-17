@@ -52,7 +52,7 @@
                             android:layout_height="wrap_content"
                             android:minHeight="60dp"
                             android:minWidth="60dp"
-                            android:background="@color/colorPrimaryLight"
+                            android:background="@color/colorSecondary"
                             android:layout_marginRight="5dp"/>
                     <TextView
                             android:id="@+id/booking_content_body_travel"

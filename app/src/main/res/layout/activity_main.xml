@@ -8,7 +8,10 @@
         android:orientation="vertical"
         tools:context=".ui.activity.MainActivity">
 
+        <include layout="@layout/xml_toolbar" android:id="@+id/toolbar"/>
+
         <FrameLayout
+                android:layout_below="@id/toolbar"
                 android:id="@+id/container_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -24,5 +27,4 @@
                 app:labelVisibilityMode="labeled"
                 android:theme="@style/BottomNavBarTheme"
                 app:menu="@menu/navbar_bottom_menu" />
-
 </RelativeLayout>

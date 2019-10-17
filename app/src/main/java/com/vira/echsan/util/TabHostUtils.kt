@@ -1,8 +1,7 @@
 package com.vira.echsan.util
 
 import android.os.Bundle
-import androidx.fragment.app.FragmentTabHost
-import com.vira.echsan.ui.fragment.BookingsChildFragment
+import com.vira.echsan.ui.fragment.bookings.BookingsChildFragment
 
 fun androidx.fragment.app.FragmentTabHost.addPositionTab(position: Int) {
     val arg = Bundle().apply { putInt(BookingsChildFragment.POSITION_KEY, position) }
