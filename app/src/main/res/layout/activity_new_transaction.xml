@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/nmr_transaksi"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Nomor Transaksi"
+            android:textSize="12pt"
+            android:textAlignment="center"/>
+
+    <LinearLayout
+            android:id="@+id/nmrTrans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nmr_transaksi">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="No Transaksi :"
+                android:textSize="12pt"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/keberangkatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nmrTrans">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Keberangkatan :"
+                android:textSize="12pt"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/kedatangan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/keberangkatan">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Kedatangan :"
+                android:textSize="12pt"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/durasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/kedatangan">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="durasi :"
+                android:textSize="12pt"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/jmlh_jamaah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/durasi">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="jumlah jamaah :"
+                android:textSize="12pt"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"/>
+    </LinearLayout>
+
+</RelativeLayout>
