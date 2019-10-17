@@ -2,79 +2,133 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical">
-        <LinearLayout
-                android:id="@+id/layout_top_menu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:elevation="5dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <include layout="@layout/xml_toolbar"
+                android:id="@+id/toolbar"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent">
-            <LinearLayout
+                app:layout_constraintRight_toRightOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layout_top_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipToPadding="false"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/rv_umroh_paket"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+            <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp">
-                    <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_keberangkatan_umroh"/>
-                    <TextView
-                            android:text="@string/tv_umroh_paket_lokasi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:background="@color/greyDark"/>
-            <LinearLayout
+                    android:src="@drawable/ic_keberangkatan_umroh" />
+
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp">
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_calender_umroh"/>
-                <TextView
-                        android:text="@string/tv_umroh_paket_tgl_berangkat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:background="@color/greyDark"/>
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp">
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_jamaah_umroh"/>
-                <TextView
-                        android:text="@string/tv_umroh_paket_jamaah"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-            </LinearLayout>
+                    android:text="@string/tv_umroh_paket_lokasi" />
         </LinearLayout>
+
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:background="@color/greyDark" />
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_calender_umroh" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_umroh_paket_tgl_berangkat" />
+        </LinearLayout>
+
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:background="@color/greyDark" />
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_jamaah_umroh" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_umroh_paket_jamaah" />
+        </LinearLayout>
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_umroh_paket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/layout_top_menu"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/layout_top_menu" />
 
 
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="25dp"
+            android:elevation="5.5dp"
+            android:background="@drawable/border_rounded_white"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="15dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+        <TextView
+                android:id="@+id/fab_umroh_paket_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_filter_umroh"
+                android:drawablePadding="10dp"
+                android:text="@string/fab_umroh_paket_filter"
+                android:layout_marginHorizontal="5dp"/>
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/greyDark"
+                android:layout_marginHorizontal="5dp"/>
+        <TextView
+                android:drawablePadding="10dp"
+                android:id="@+id/fab_umroh_paket_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_sort_umroh"
+                android:text="@string/fab_umroh_paket_sort"
+                android:layout_marginHorizontal="5dp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

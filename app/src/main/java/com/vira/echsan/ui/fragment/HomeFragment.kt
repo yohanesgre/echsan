@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.vira.echsan.R
 import com.vira.echsan.adapter.CarouselAdapter
+import com.vira.echsan.adapter.CarouselPromoAdapter
 import com.vira.echsan.ui.activity.umroh_haji.UmrohActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -33,8 +34,13 @@ class HomeFragment : androidx.fragment.app.Fragment(){
         view.rv_carousel.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         view.rv_carousel.adapter = CarouselAdapter(posts)
 
+        view.rv_carousel_promo.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        view.rv_carousel_promo.adapter = CarouselPromoAdapter(posts)
+
         val snapHelper: SnapHelper = PagerSnapHelper()
+        val snapHelperPromo: SnapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(view.rv_carousel)
+        snapHelperPromo.attachToRecyclerView(view.rv_carousel_promo)
         return view
     }
 

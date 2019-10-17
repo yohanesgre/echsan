@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.vira.echsan">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.vira.echsan">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -26,6 +27,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.umroh_haji.UmrohActivity"/>
+        <activity android:name=".ui.activity.umroh_haji.PaketUmrohActivity"/>
+        <activity android:name=".ui.activity.umroh_haji.PaketUmrohFilterActivity"/>
     </application>
 
 </manifest>

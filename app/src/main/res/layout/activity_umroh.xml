@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <include layout="@layout/xml_toolbar" android:id="@+id/toolbar"/>
-        <ImageView
+        <View
+                android:elevation="5dp"
                 android:layout_below="@id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/bg_rounded"
-                android:layout_alignParentTop="true"/>
+                android:background="@drawable/bg_rounded"/>
         <FrameLayout
+                android:id="@+id/layout_input"
                 android:layout_below="@id/toolbar"
                 android:layout_marginTop="30dp"
                 android:layout_marginHorizontal="25dp"
@@ -22,12 +26,12 @@
                 android:minHeight="100dp"
                 android:padding="10dp"
                 android:layout_centerHorizontal="true"
-                android:clipToPadding="false">
+                android:clipToPadding="false"
+                android:elevation="6dp">
             <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:elevation="5dp"
                     app:cardCornerRadius="10dp"
                     android:focusable="true"
                     android:focusedByDefault="false"
@@ -41,17 +45,18 @@
                     <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            style="@style/TextInputLayoutTheme">
                         <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/et_umroh_cari_tipe"
                                 android:hint="@string/et_umroh_cari_tipe"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:drawableLeft="@drawable/ic_umroh_kabah"
-                                android:drawablePadding="10dp"
-                                android:backgroundTint="@color/colorPrimary"/>
+                                android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputLayoutTheme"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
@@ -61,10 +66,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:drawableLeft="@drawable/ic_umroh_keberangkatan"
-                                android:drawablePadding="10dp"
-                                android:backgroundTint="@color/colorPrimary"/>
+                                android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputLayoutTheme"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
@@ -74,21 +79,20 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:drawableLeft="@drawable/ic_umroh_cal"
-                                android:drawablePadding="10dp"
-                                android:backgroundTint="@color/colorPrimary"/>
+                                android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            style="@style/TextInputLayoutTheme">
                         <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/et_umroh_cari_jamaah"
                                 android:hint="@string/et_umroh_cari_jamaah"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:drawableLeft="@drawable/ic_umroh_jamaah"
-                                android:drawablePadding="10dp"
-                                android:backgroundTint="@color/colorPrimary"/>
+                                android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
                     <Button
                             android:id="@+id/btn_umroh_cari"
@@ -101,4 +105,22 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </FrameLayout>
+    <LinearLayout
+            android:layout_below="@id/layout_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="20dp">
+        <TextView
+                android:text="@string/tv_umroh_recommendations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_carousel_recommendations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
 </RelativeLayout>
+</ScrollView>

@@ -13,12 +13,14 @@
     <string name="tv_home_shop">Shop</string>
     <string name="tv_home_coin_value">99999</string>
     <string name="tv_home_coupon_value">999</string>
+    <string name="tv_home_promo">Promo</string>
 
     <string name="et_umroh_cari_tipe">Tipe Umroh</string>
     <string name="et_umroh_cari_kota">Kota Asal</string>
     <string name="et_umroh_cari_tgl_berangkat">Tanggal Berangkat</string>
     <string name="et_umroh_cari_jamaah">Jamaah</string>
     <string name="btn_umroh_cari">Cari</string>
+    <string name="tv_umroh_recommendations">Recommendations</string>
     
     <string name="tv_detil_umroh_paket">Paket Umroh Spesial</string>
     <string name="tv_detil_umroh_paket_desc">Makkah Madinah</string>
@@ -74,5 +76,10 @@
     <string name="title_4">Ugly card</string>
 
     <string name="text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam eget ligula eu lectus lobortis condimentum.</string>
+    <string name="fab_umroh_paket_filter">Filter</string>
+    <string name="fab_umroh_paket_sort">Sort</string>
+    <string name="tv_umroh_paket_filter_harga">Harga</string>
+    <string name="et_umroh_paket_filter_harga_min">Minimum</string>
+    <string name="et_umroh_paket_filter_harga_max">Maksimal</string>
 
 </resources>

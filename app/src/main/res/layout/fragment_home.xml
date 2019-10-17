@@ -10,7 +10,6 @@
             android:id="@+id/rv_carousel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
             android:clipToPadding="false" />
 
     <TableLayout
@@ -205,4 +204,15 @@
                     android:text="@string/tv_home_shop" />
         </LinearLayout>
     </LinearLayout>
+    <TextView
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/tv_home_promo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_carousel_promo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"/>
 </LinearLayout>
