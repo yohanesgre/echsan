@@ -20,7 +20,7 @@
                 android:inputType="textAutoComplete|textEmailAddress"
                 android:minWidth="350dp"
                 android:drawableLeft="@drawable/ic_mail"
-                app:backgroundTint= "@color/colorPrimary" />
+                app:backgroundTint= "@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -39,7 +39,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textPassword|textNoSuggestions|textAutoComplete"
                 android:minWidth="350dp"
-                app:backgroundTint="@color/colorPrimary" />
+                app:backgroundTint="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton

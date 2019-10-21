@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.vira.echsan.R
 import com.vira.echsan.adapter.CarouselPromoAdapter
@@ -30,12 +31,12 @@ class UmrohActivity : AppCompatActivity(){
         rv_carousel_recommendations.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rv_carousel_recommendations.adapter = CarouselPromoAdapter(posts)
 
-        val snapHelper:SnapHelper = LinearSnapHelper()
+        val snapHelper:SnapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(rv_carousel_recommendations)
 
 
         btn_umroh_cari.setOnClickListener{
-            val intent: Intent = Intent(this, PaketUmrohActivity::class.java)
+            val intent = Intent(this, PaketUmrohActivity::class.java)
             startActivity(intent)
         }
     }

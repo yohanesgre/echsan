@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.vira.echsan.R
 import com.vira.echsan.adapter.PaketUmrohAdapter
 import com.vira.echsan.model.recyclerview.PaketUmrohModel
-import kotlinx.android.synthetic.main.activity_umroh.*
 import kotlinx.android.synthetic.main.activity_umroh_paket.*
 
 class PaketUmrohActivity : AppCompatActivity(){
@@ -46,8 +45,7 @@ class PaketUmrohActivity : AppCompatActivity(){
         rv_umroh_paket.adapter = PaketUmrohAdapter(posts)
 
         fab_umroh_paket_filter.setOnClickListener {
-            val intent:Intent = Intent(this, PaketUmrohFilterActivity::class.java)
-            startActivity(intent)
+            PaketUmrohFilterDialog.display(supportFragmentManager)
         }
     }
 

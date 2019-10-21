@@ -81,5 +81,8 @@
     <string name="tv_umroh_paket_filter_harga">Harga</string>
     <string name="et_umroh_paket_filter_harga_min">Minimum</string>
     <string name="et_umroh_paket_filter_harga_max">Maksimal</string>
+    <string name="item_filter_durasi">Durasi</string>
+    <string name="item_filter_lokasi">Lokasi</string>
+    <string name="tv_filter_durasi">Durasi Perjalanan</string>
 
 </resources>

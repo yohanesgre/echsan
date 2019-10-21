@@ -28,7 +28,7 @@
         </activity>
         <activity android:name=".ui.activity.umroh_haji.UmrohActivity"/>
         <activity android:name=".ui.activity.umroh_haji.PaketUmrohActivity"/>
-        <activity android:name=".ui.activity.umroh_haji.PaketUmrohFilterActivity"/>
+        <activity android:name=".ui.activity.umroh_haji.PaketUmrohFilterDialog"/>
     </application>
 
 </manifest>
