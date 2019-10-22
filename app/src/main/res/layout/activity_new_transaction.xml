@@ -3,6 +3,14 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
+    <View
+            android:id="@+id/bck"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:src="@drawable/bg_rounded"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimaryLight">
+    </View>
 
     <TextView
             android:id="@+id/nmr_transaksi"
@@ -81,5 +89,11 @@
                 android:textSize="12pt"
                 android:layout_marginLeft="@dimen/activity_vertical_margin"/>
     </LinearLayout>
+
+    <Button
+            android:layout_below="@+id/bck"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="50dp"/>
 
 </RelativeLayout>
