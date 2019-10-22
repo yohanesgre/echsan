@@ -46,7 +46,7 @@ open class FilterDurasiAdapter(val context: Context, val listDurasi: ArrayList<F
             }
         }
 
-        fun bind(durasiModel:FilterDurasiModel){
+        fun bind(durasiModel: FilterDurasiModel){
             if (checkedPosition == -1){
                 changeStrokeColor(itemView, StrokeColor.Black)
             }else{

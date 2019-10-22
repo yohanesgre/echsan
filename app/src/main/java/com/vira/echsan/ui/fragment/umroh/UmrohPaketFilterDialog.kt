@@ -1,4 +1,4 @@
-package com.vira.echsan.ui.activity.umroh_haji
+package com.vira.echsan.ui.fragment.umroh
 
 import android.os.Build
 import android.os.Bundle
@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.dialog_umroh_paket_filter.*
 import kotlinx.android.synthetic.main.dialog_umroh_paket_filter.view.*
 
 
-class PaketUmrohFilterDialog : DialogFragment() {
+class UmrohPaketFilterDialog : DialogFragment() {
     var maxVal:String = "0"
     var minVal:String = "0"
 
@@ -148,6 +148,7 @@ class PaketUmrohFilterDialog : DialogFragment() {
         val snapHelperLokasi: SnapHelper = LinearSnapHelper()
         snapHelperLokasi.attachToRecyclerView(rv_filter_lokasi)
     }
+
     fun initRangeSeekBar(){
         rangeSeekbar_filter.setProgress(0F, 100F)
         rangeSeekbar_filter.setRange(2500000F, 50000000F, 1000F)
@@ -180,9 +181,11 @@ class PaketUmrohFilterDialog : DialogFragment() {
 
     companion object{
         val TAG:String = "Paket Umroh Filter Dialog"
-        fun display(fragmentManager: FragmentManager):PaketUmrohFilterDialog{
-            val dialog = PaketUmrohFilterDialog()
-            dialog.show(fragmentManager, TAG)
+        fun display(fragmentManager: FragmentManager): UmrohPaketFilterDialog {
+            val dialog = UmrohPaketFilterDialog()
+            dialog.show(fragmentManager,
+                TAG
+            )
             return dialog
         }
     }

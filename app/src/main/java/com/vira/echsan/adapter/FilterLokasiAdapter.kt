@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.R
-import com.vira.echsan.model.recyclerview.FilterDurasiModel
 import com.vira.echsan.model.recyclerview.FilterLokasiModel
 import kotlinx.android.synthetic.main.item_filter_durasi.view.*
 
