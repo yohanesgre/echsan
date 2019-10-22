@@ -84,5 +84,20 @@
     <string name="item_filter_durasi">Durasi</string>
     <string name="item_filter_lokasi">Lokasi</string>
     <string name="tv_filter_durasi">Durasi Perjalanan</string>
+    <string name="tv_umroh_detil_paket">Umroh Paket</string>
+    <string name="tv_umroh_paket_detil_tgl_keberangkatan">Tanggal Keberangkatan</string>
+    <string name="tv_umroh_paket_detil_separator">:</string>
+    <string name="tv_umroh_paket_detil_tgl_keberangaktan_cons">Kebarangkatan</string>
+    <string name="tv_umroh_paket_detil_tgl_kepulangan_cons">Kepulangan</string>
+    <string name="tv_umroh_paket_detil_durasi_cons">Durasi</string>
+    <string name="tv_umroh_paket_detil_lokasi_keberangkatan">Lokasi Keberangkatan</string>
+    <string name="tv_umroh_paket_detil_kuota">Kuota</string>
+    <string name="tv_umroh_paket_detil_point">Point</string>
+    <string name="tv_umroh_paket_detil_title">Tanggal</string>
+    <string name="tv_item_umroh_paket_pilih_tanggal">Tanggal</string>
+    <string name="tv_umroh_paket_detil_pilih_tanggal_title">Tanggal</string>
+    <string name="tv_item_umroh_paket_fasilitas">Fasilitas</string>
+    <string name="tv_umroh_paket_detil_fasilitas_title">Fasilitas</string>
+    <string name="tv_umroh_paket_detil_fasilitas_footer">Lihat Semua Fasilitas</string>
 
 </resources>

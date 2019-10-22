@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.vira.echsan.R
@@ -36,7 +35,7 @@ class UmrohActivity : AppCompatActivity(){
 
 
         btn_umroh_cari.setOnClickListener{
-            val intent = Intent(this, PaketUmrohActivity::class.java)
+            val intent = Intent(this, UmrohPaketActivity::class.java)
             startActivity(intent)
         }
     }

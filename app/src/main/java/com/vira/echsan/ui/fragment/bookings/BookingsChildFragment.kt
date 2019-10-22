@@ -14,16 +14,46 @@ import kotlinx.android.synthetic.main.fragment_bookings_child.view.*
 class BookingsChildFragment : androidx.fragment.app.Fragment(), View.OnClickListener {
 
     private val dummyList = listOf(
-        BookingsModel(1, "9 Oktober 2019", "Echsan", "10 Oktober 2019 - 20 Oktober 2019") ,
-        BookingsModel(2, "13 Oktober 2019", "Echsan", "10 Oktober 2019 - 20 Oktober 2019")
+        BookingsModel(
+            1,
+            "9 Oktober 2019",
+            "Echsan",
+            "10 Oktober 2019 - 20 Oktober 2019"
+        ),
+        BookingsModel(
+            2,
+            "13 Oktober 2019",
+            "Echsan",
+            "10 Oktober 2019 - 20 Oktober 2019"
+        )
     )
     private val dummyList2 = listOf(
-        BookingsModel(2, "11 Oktober 2019", "Echsan", "10 Oktober 2019 - 20 Oktober 2019"),
-        BookingsModel(1, "12 Oktober 2019", "Echsan", "10 Oktober 2019 - 20 Oktober 2019")
+        BookingsModel(
+            2,
+            "11 Oktober 2019",
+            "Echsan",
+            "10 Oktober 2019 - 20 Oktober 2019"
+        ),
+        BookingsModel(
+            1,
+            "12 Oktober 2019",
+            "Echsan",
+            "10 Oktober 2019 - 20 Oktober 2019"
+        )
     )
     private val dummyList3 = listOf(
-        BookingsModel(1, "10 Oktober 2019", "Echsan", "10 Oktober 2019 - 20 Oktober 2019"),
-        BookingsModel(2, "11 Oktober 2019", "Echsan", "10 Oktober 2019 - 20 Oktober 2019")
+        BookingsModel(
+            1,
+            "10 Oktober 2019",
+            "Echsan",
+            "10 Oktober 2019 - 20 Oktober 2019"
+        ),
+        BookingsModel(
+            2,
+            "11 Oktober 2019",
+            "Echsan",
+            "10 Oktober 2019 - 20 Oktober 2019"
+        )
     )
 
     private var position: Int = 0
