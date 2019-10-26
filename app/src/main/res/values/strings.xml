@@ -100,4 +100,8 @@
     <string name="tv_umroh_paket_detil_fasilitas_title">Fasilitas</string>
     <string name="tv_umroh_paket_detil_fasilitas_footer">Lihat Semua Fasilitas</string>
 
+    <string-array name="names">
+        <item>Tuan</item>
+        <item>Nyonya</item>
+    </string-array>
 </resources>

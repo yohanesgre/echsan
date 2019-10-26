@@ -9,7 +9,7 @@
             android:layout_height="600dp"
             android:src="@drawable/bg_rounded"
             android:layout_alignParentTop="true"
-            android:background="@color/colorPrimaryLight">
+            android:background="">
     </View>
 
     <TextView

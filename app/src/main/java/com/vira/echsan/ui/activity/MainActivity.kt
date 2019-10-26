@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity(){
         toolbar?.title = getString(R.string.nav_home)
         val homeFragment = HomeFragment.newInstance()
         openFragment(homeFragment)
-
     }
 
     private val navbarItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
