@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav_main"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:startDestination="@id/fragment_umroh_cari">
+
+    <fragment
+            android:id="@+id/fragment_umroh_cari"
+            android:name="com.vira.echsan.ui.fragments.HomeFragment"
+            tools:layout="@layout/fragment_home"
+            android:label="Home">
+        <!--
+        <action
+                android:id="@+id/action_fragment_home_to_fragment_bookings"
+                app:destination="@id/fragment_bookings"
+                app:enterAnim="@anim/slide_in_left"
+                app:exitAnim="@anim/slide_out_right"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />-->
+    </fragment>
+
+    <fragment
+            android:id="@+id/fragment_umroh_hasil"
+            android:name="com.vira.echsan.ui.fragments.bookings.BookingsFragment"
+            tools:layout="@layout/fragment_bookings"
+            android:label="Bookings">
+    </fragment>
+
+</navigation>

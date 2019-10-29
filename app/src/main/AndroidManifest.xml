@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         package="com.vira.echsan">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -19,16 +18,16 @@
             android:roundIcon="@mipmap/ic_logo"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.umroh_haji.UmrohActivity"/>
-        <activity android:name=".ui.activity.umroh_haji.PaketUmrohActivity"/>
-        <activity android:name=".ui.activity.umroh_haji.PaketUmrohFilterDialog"/>
+        <activity android:name="com.vira.echsan.ui.activities.umroh_haji.UmrohActivity"/>
+        <activity android:name="com.vira.echsan.ui.activities.umroh_haji.PaketUmrohActivity"/>
+        <activity android:name="com.vira.echsan.ui.activities.umroh_haji.PaketUmrohFilterDialog"/>
     </application>
 
 </manifest>
