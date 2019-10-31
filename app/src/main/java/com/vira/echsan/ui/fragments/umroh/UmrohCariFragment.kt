@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -38,11 +39,15 @@ class UmrohCariFragment : Fragment(), Injectable{
         viewModel = injectViewModel(viewModelFactory)
         sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
         binding = FragmentUmrohCariBinding.inflate(inflater, container, false)
-        initUI(binding)
+        initUI()
         return binding.root
     }
 
-    private fun initUI(binding:FragmentUmrohCariBinding){
+    private fun initUI(){
+        binding.toolbarTitle.text = "Umroh"
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.setOnClick {
             sharedViewModel.searchPaket(binding.etUmrohCariTipe.text.toString(),
                 binding.etUmrohCariKota.text.toString(),

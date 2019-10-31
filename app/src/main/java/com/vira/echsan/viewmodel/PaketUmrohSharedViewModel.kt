@@ -29,6 +29,13 @@ class PaketUmrohSharedViewModel : ViewModel(){
         _selectedTanggal.value = tanggal
     }
 
+    private val _hargaTotal = MutableLiveData<String>()
+    val hargaTotal:LiveData<String> = _hargaTotal
+
+    fun setHargaTotal(harga:String){
+        _hargaTotal.value = harga
+    }
+
     val listOfTanggal = listOf(12, 13, 14, 15, 16, 17, 18, 19, 20, 22)
     val listOfFasilitas = listOf("Visa Umroh", "Catering", "Zam-Zam", "Perlengkapan")
 }

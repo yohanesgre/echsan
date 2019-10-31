@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -18,6 +19,7 @@ import com.vira.echsan.ui.fragments.umroh.paket.UmrohPaketDetilFragment
 import com.vira.echsan.ui.fragments.umroh.paket.UmrohPaketFasilitasFragment
 import com.vira.echsan.ui.fragments.umroh.paket.UmrohPaketPenerbanganFragment
 import com.vira.echsan.ui.fragments.umroh.paket.UmrohPaketTanggalFragment
+import com.vira.echsan.utils.ConvertToCurrency
 import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
 import com.vira.echsan.viewmodel.UmrohViewModel
 import javax.inject.Inject
@@ -41,10 +43,23 @@ class UmrohPaketFragment : Fragment(), Injectable {
         binding = FragmentUmrohPaketBinding.inflate(inflater, container, false)
         context ?: return binding.root
         initUI()
+        subscribeUI()
         return binding.root
     }
 
+    private fun subscribeUI(){
+        sharedViewModel.selectedPaket.observe(viewLifecycleOwner){
+            sharedViewModel.setHargaTotal(it.harga)
+        }
+        sharedViewModel.hargaTotal.observe(viewLifecycleOwner){
+            binding.tvHarga.text = "Harga mulai dari " + ConvertToCurrency(null, it)
+        }
+    }
+
     private fun initUI(){
+        (activity as AppCompatActivity).setSupportActionBar(binding.collapsingToolbar)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         addFragment()
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketFragment){
             sharedViewModel.searchPaket.observe(viewLifecycleOwner){

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -43,6 +44,10 @@ class UmrohHasilFragment : Fragment(), Injectable{
     }
 
     private fun initUI(binding:FragmentUmrohHasilBinding){
+        binding.toolbarTitle.text = "Paket Umroh"
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.rvUmrohPaket.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val adapter = ListPaketUmrohAdapter(sharedViewModel)
         subscribeUI(adapter)
