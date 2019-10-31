@@ -1,15 +1,14 @@
-package com.vira.echsan.adapters
+package com.vira.echsan.adapters.umroh
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.vira.echsan.adapters.viewholder.ListPaketUmrohViewHolder
 import com.vira.echsan.data.entities.PaketUmroh
-import com.vira.echsan.databinding.ItemCardviewUmrohPaketBinding
+import com.vira.echsan.databinding.ItemUmrohPaketBinding
 import com.vira.echsan.ui.fragments.umroh.UmrohHasilFragmentDirections
 import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
 
@@ -18,7 +17,7 @@ class ListPaketUmrohAdapter(
 ) : ListAdapter<PaketUmroh, ListPaketUmrohViewHolder>(ListPaketUmrohDiffCallback()){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListPaketUmrohViewHolder {
         return ListPaketUmrohViewHolder(
-            ItemCardviewUmrohPaketBinding.inflate(
+            ItemUmrohPaketBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )

@@ -5,13 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.vira.echsan.data.entities.Booking
-import com.vira.echsan.databinding.ItemCardviewBookingsBinding
 import com.vira.echsan.adapters.viewholder.BookingsViewHolder
+import com.vira.echsan.databinding.ItemBookingsBinding
 
 class BookingAdapter: ListAdapter<Booking, BookingsViewHolder>(BookingDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookingsViewHolder {
-        return BookingsViewHolder(ItemCardviewBookingsBinding.inflate(
+        return BookingsViewHolder(
+            ItemBookingsBinding.inflate(
             LayoutInflater.from(parent.context), parent, false)
         )
     }

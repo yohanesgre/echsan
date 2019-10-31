@@ -1,21 +1,16 @@
-package com.vira.echsan.adapters
+package com.vira.echsan.adapters.umroh
 
-import android.content.Context
-import android.graphics.drawable.GradientDrawable
-import android.os.Build
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.vira.echsan.R
 import com.vira.echsan.databinding.ItemUmrohPaketFasilitasBinding
-import com.vira.echsan.databinding.ItemUmrohPaketPilihTanggalBinding
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
 
 
-class PaketFasilitasAdapter : ListAdapter<String, PaketFasilitasAdapter.ViewHolder>(PaketFasilitasDiffCallback()) {
+class PaketFasilitasAdapter : ListAdapter<String, PaketFasilitasAdapter.ViewHolder>(
+    PaketFasilitasDiffCallback()
+) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(ItemUmrohPaketFasilitasBinding.inflate(
             LayoutInflater.from(parent.context), parent, false))

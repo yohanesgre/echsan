@@ -10,7 +10,7 @@ import com.vira.echsan.adapters.viewholder.CaraouselPromoViewHolder
 class CarouselPromoAdapter (val posts: ArrayList<String>):RecyclerView.Adapter<CaraouselPromoViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CaraouselPromoViewHolder {
         val view: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_cardview_carousel_promo, parent, false)
+            .inflate(R.layout.item_carousel_promo, parent, false)
         return CaraouselPromoViewHolder(view)
     }
 

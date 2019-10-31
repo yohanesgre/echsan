@@ -13,7 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
-import com.vira.echsan.adapters.ListPaketUmrohAdapter
+import com.vira.echsan.adapters.umroh.ListPaketUmrohAdapter
 import com.vira.echsan.databinding.FragmentUmrohHasilBinding
 import com.vira.echsan.di.Injectable
 import com.vira.echsan.di.injectViewModel
@@ -58,7 +58,7 @@ class UmrohHasilFragment : Fragment(), Injectable{
         }
     }
 
-    private fun subscribeUI(adapter:ListPaketUmrohAdapter){
+    private fun subscribeUI(adapter: ListPaketUmrohAdapter){
         sharedViewModel.searchPaket.observe(viewLifecycleOwner){term ->
             /*viewModel.searchUmrohs(args.cariTipe, args.cariKota, args.cariTanggal).observe(viewLifecycleOwner){*/
             viewModel.searchUmrohs(term[0], term[1], term[2]).observe(viewLifecycleOwner){

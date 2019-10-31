@@ -1,4 +1,4 @@
-package com.vira.echsan.adapters
+package com.vira.echsan.adapters.umroh
 
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
@@ -54,18 +54,26 @@ class PaketTanggalAdapter(
 
         fun bind(_tanggal:Int) {
             if (checkedPosition == -1){
-                changeStrokeColor(itemView, StrokeColor.Black)
+                changeStrokeColor(itemView,
+                    StrokeColor.Black
+                )
             }else{
                 if (checkedPosition == adapterPosition){
-                    changeStrokeColor(itemView, StrokeColor.Primary)
+                    changeStrokeColor(itemView,
+                        StrokeColor.Primary
+                    )
                 }else{
-                    changeStrokeColor(itemView, StrokeColor.Black)
+                    changeStrokeColor(itemView,
+                        StrokeColor.Black
+                    )
                 }
             }
             binding.apply{
                 tanggal = _tanggal
                 clickListener = View.OnClickListener {
-                    changeStrokeColor(it, StrokeColor.Primary)
+                    changeStrokeColor(it,
+                        StrokeColor.Primary
+                    )
                     if (checkedPosition != adapterPosition) {
                         notifyItemChanged(checkedPosition)
                         checkedPosition = adapterPosition

@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.vira.echsan.data.entities.Promo
-import com.vira.echsan.databinding.ItemCardviewCarouselBinding
 import com.vira.echsan.adapters.viewholder.CarouselViewHolder
+import com.vira.echsan.data.entities.Promo
+import com.vira.echsan.databinding.ItemCarouselBinding
 
 class CarouselAdapter : ListAdapter<Promo, CarouselViewHolder>(PromoDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarouselViewHolder {
         return CarouselViewHolder(
-            ItemCardviewCarouselBinding.inflate(
+            ItemCarouselBinding.inflate(
             LayoutInflater.from(parent.context),parent,false)
         )
     }

@@ -1,4 +1,4 @@
-package com.vira.echsan.ui.fragments.umroh
+package com.vira.echsan.ui.fragments.umroh.paket
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
-import com.vira.echsan.R
-import com.vira.echsan.data.entities.PaketUmroh
 import com.vira.echsan.databinding.FragmentUmrohPaketDetilBinding
 import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
-import kotlinx.android.synthetic.main.activity_new_transaction.*
 
 class UmrohPaketDetilFragment : Fragment(){
 
@@ -41,7 +38,7 @@ class UmrohPaketDetilFragment : Fragment(){
     }
 
     companion object{
-        fun newInstance():UmrohPaketDetilFragment{
+        fun newInstance(): UmrohPaketDetilFragment {
             return UmrohPaketDetilFragment()
         }
     }
