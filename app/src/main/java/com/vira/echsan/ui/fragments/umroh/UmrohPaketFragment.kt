@@ -71,9 +71,9 @@ class UmrohPaketFragment : Fragment(), Injectable {
         transaction.add(R.id.container_fragment_fasilitas,
             UmrohPaketFasilitasFragment.newInstance()
         )
-        /*transaction.add(R.id.container_fragment_penerbangan,
+        transaction.add(R.id.container_fragment_penerbangan,
             UmrohPaketPenerbanganFragment.newInstance()
-        )*/
+        )
         transaction.commit()
     }
 }
