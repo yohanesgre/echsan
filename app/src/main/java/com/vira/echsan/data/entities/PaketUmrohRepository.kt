@@ -1,16 +1,18 @@
 package com.vira.echsan.data.entities
 
-class PaketUmrohRepository private constructor(private val paketUmrohDao: PaketUmrohDao){
+import javax.inject.Inject
+
+class PaketUmrohRepository @Inject constructor(private val paketUmrohDao: PaketUmrohDao){
 
     fun getPakets() = paketUmrohDao.getPaketUmrohs()
-
+    fun searchPakets(tipe:String, lokasi:String, tanggal:String) = paketUmrohDao.searchPakets(tipe, lokasi, tanggal)
     fun getPaket(paketId:Int) = paketUmrohDao.getPaketUmroh(paketId)
 
     companion object{
         @Volatile private var instance: PaketUmrohRepository? = null
-        fun getInstance(paketUmrohDao: PaketUmrohDao) =
+        fun getInstance(dao: PaketUmrohDao) =
             instance?: synchronized(this){
-                instance?: PaketUmrohRepository(paketUmrohDao).also{
+                instance?: PaketUmrohRepository(dao).also{
                     instance = it
                 }
             }

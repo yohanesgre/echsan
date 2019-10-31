@@ -1,6 +1,8 @@
 package com.vira.echsan.data.entities
 
-class PromoRepository private constructor(private val promoDao: PromoDao){
+import javax.inject.Inject
+
+class PromoRepository @Inject constructor(private val promoDao: PromoDao){
     fun getPromos() = promoDao.getPromos()
     fun getPromo(promoId:Int) = promoDao.getPromo(promoId)
 

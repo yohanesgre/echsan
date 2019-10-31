@@ -24,8 +24,10 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.vira.echsan.data.database.AppDatabase
+import com.vira.echsan.data.entities.PaketUmroh
 import com.vira.echsan.data.entities.Promo
 import com.vira.echsan.utils.PAKET_UMROH_DATA_FILENAME
+import com.vira.echsan.utils.PROMO_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope
 
 class SeedDatabaseWorker(
@@ -34,15 +36,23 @@ class SeedDatabaseWorker(
 ) : CoroutineWorker(context, workerParams) {
     override suspend fun doWork(): Result = coroutineScope {
         try {
-            applicationContext.assets.open(PAKET_UMROH_DATA_FILENAME).use { inputStream ->
+            applicationContext.assets.open(PROMO_DATA_FILENAME).use { inputStream ->
                 JsonReader(inputStream.reader()).use { jsonReader ->
                     val promoType = object : TypeToken<List<Promo>>() {}.type
                     val promoList: List<Promo> = Gson().fromJson(jsonReader, promoType)
                     val database = AppDatabase.getInstance(applicationContext)
                     database.promoDao().insertAll(promoList)
-                    Result.success()
                 }
             }
+            applicationContext.assets.open(PAKET_UMROH_DATA_FILENAME).use { inputStream ->
+                JsonReader(inputStream.reader()).use { jsonReader ->
+                    val paketUmrohType = object : TypeToken<List<PaketUmroh>>() {}.type
+                    val paketUmrohList: List<PaketUmroh> = Gson().fromJson(jsonReader, paketUmrohType)
+                    val database = AppDatabase.getInstance(applicationContext)
+                    database.paketUmrohDao().insertAll(paketUmrohList)
+                }
+            }
+            Result.success()
         } catch (ex: Exception) {
             Log.e(TAG, "Error seeding database", ex)
             Result.failure()

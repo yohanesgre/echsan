@@ -13,13 +13,12 @@ data class PaketUmroh (
     val penerbangan: String,
     val tanggal: String,
     val durasi: String,
-    val harga: Double,
+    val harga: String,
     val hotel: String,
     val point: Int,
     val kuota: Int,
     val lokasi: String
     ) {
-
     override fun toString(): String = name +"_"+ paketId
-
 }
+

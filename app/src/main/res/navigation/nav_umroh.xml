@@ -7,24 +7,61 @@
 
     <fragment
             android:id="@+id/fragment_umroh_cari"
-            android:name="com.vira.echsan.ui.fragments.HomeFragment"
-            tools:layout="@layout/fragment_home"
-            android:label="Home">
-        <!--
+            android:name="com.vira.echsan.ui.fragments.umroh.UmrohCariFragment"
+            tools:layout="@layout/fragment_umroh_cari"
+            android:label="Umroh">
         <action
-                android:id="@+id/action_fragment_home_to_fragment_bookings"
-                app:destination="@id/fragment_bookings"
-                app:enterAnim="@anim/slide_in_left"
-                app:exitAnim="@anim/slide_out_right"
+                android:id="@+id/action_fragment_umroh_cari_to_fragment_umroh_hasil"
+                app:destination="@id/fragment_umroh_hasil"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
                 app:popEnterAnim="@anim/slide_in_left"
-                app:popExitAnim="@anim/slide_out_right" />-->
+                app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
             android:id="@+id/fragment_umroh_hasil"
-            android:name="com.vira.echsan.ui.fragments.bookings.BookingsFragment"
-            tools:layout="@layout/fragment_bookings"
-            android:label="Bookings">
+            android:name="com.vira.echsan.ui.fragments.umroh.UmrohHasilFragment"
+            tools:layout="@layout/fragment_umroh_hasil"
+            android:label="List Paket Umroh">
+        <argument
+            android:name="cari_tipe"
+            app:argType="string" />
+        <argument
+            android:name="cari_kota"
+            app:argType="string" />
+        <argument
+            android:name="cari_tanggal"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragment_umroh_hasil_to_fragment_umroh_cari"
+            app:destination="@id/fragment_umroh_cari"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_fragment_umroh_hasil_to_fragment_umroh_paket"
+            app:destination="@id/fragment_umroh_paket"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
+    <fragment
+        android:id="@+id/fragment_umroh_paket"
+        android:name="com.vira.echsan.ui.fragments.umroh.UmrohPaketFragment"
+        tools:layout="@layout/fragment_umroh_paket"
+        android:label="Paket Umroh">
+
+        <action
+            android:id="@+id/action_fragment_umroh_paket_to_fragment_umroh_hasil"
+            app:destination="@id/fragment_umroh_hasil"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 </navigation>

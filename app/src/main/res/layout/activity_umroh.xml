@@ -5,12 +5,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <include layout="@layout/toolbar"/>
-                <androidx.coordinatorlayout.widget.CoordinatorLayout
-                        android:id="@+id/containter"
+                <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
+                        android:layout_height="match_parent">
+                        <fragment
+                            android:id="@+id/nav_host"
+                            android:name="androidx.navigation.fragment.NavHostFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                            app:navGraph="@navigation/nav_umroh"/>
+                </FrameLayout>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

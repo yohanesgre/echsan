@@ -1,32 +1,29 @@
 package com.vira.echsan.ui.activities.umroh_haji
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.vira.echsan.R
-import kotlinx.android.synthetic.main.fragment_umroh.*
+import com.vira.echsan.databinding.ActivityUmrohBinding
+import com.vira.echsan.di.injectViewModel
+import com.vira.echsan.viewmodel.UmrohViewModel
+import dagger.android.AndroidInjection
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.HasSupportFragmentInjector
+import javax.inject.Inject
 
-class UmrohActivity : AppCompatActivity(){
-    lateinit var toolbar: Toolbar
+class UmrohActivity : AppCompatActivity(), HasSupportFragmentInjector {
+
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+
+    override fun supportFragmentInjector() = dispatchingAndroidInjector
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_umroh)
-        toolbar = findViewById(R.id.toolbar)
-        toolbar.title = getString(R.string.tv_home_umroh_haji)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-
-        val posts:ArrayList<String> = ArrayList()
-        for(i in 1..100){
-            posts.add("Testing Content #$i")
-        }
-
-        btn_umroh_cari.setOnClickListener{
-            val intent = Intent(this, UmrohPaketActivity::class.java)
-            startActivity(intent)
-        }
+        val binding = DataBindingUtil.setContentView<ActivityUmrohBinding>(this, R.layout.activity_umroh)
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -1,0 +1,44 @@
+[
+  {
+    "paketId": "1",
+    "name": "Umroh",
+    "tipe": "Umroh Reguler",
+    "travel": "Lintas Darfiq",
+    "penerbangan": "Garuda",
+    "tanggal": "Oktober 2019",
+    "durasi": "10 hari",
+    "harga": "25000000",
+    "hotel": "Hotel",
+    "point": 300,
+    "kuota": 10,
+    "lokasi": "Surabaya"
+  },
+  {
+    "paketId": "2",
+    "name": "Umroh",
+    "tipe": "Umroh Reguler",
+    "travel": "Lintas Darfiq",
+    "penerbangan": "Garuda",
+    "tanggal": "Oktober 2019",
+    "durasi": "15 hari",
+    "harga": "30000000",
+    "hotel": "Hotel",
+    "point": 400,
+    "kuota": 20,
+    "lokasi": "Malang"
+  },
+  {
+    "paketId": "3",
+    "name": "Umroh",
+    "tipe": "Umroh Reguler",
+    "travel": "Lintas Darfiq",
+    "penerbangan": "Garuda",
+    "tanggal": "Oktober 2019",
+    "durasi": "15 hari",
+    "harga": "30000000",
+    "hotel": "Hotel",
+    "point": 500,
+    "kuota": 15,
+    "lokasi": "Jakarta"
+  }
+]

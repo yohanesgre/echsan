@@ -73,6 +73,14 @@ dependencies {
     androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
     androidTestImplementation "com.google.truth:truth:$rootProject.truthVersion"
     testImplementation "junit:junit:$rootProject.junitVersion"
+
+    // Dagger
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+
 /*
     //Retrofit 2
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"

@@ -5,26 +5,44 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.observe
 import com.vira.echsan.R
+import com.vira.echsan.data.entities.PaketUmroh
+import com.vira.echsan.databinding.FragmentUmrohPaketDetilBinding
+import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import kotlinx.android.synthetic.main.activity_new_transaction.*
 
 class UmrohPaketDetilFragment : Fragment(){
+
+    lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    lateinit var binding:FragmentUmrohPaketDetilBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_umroh_paket_detil, container, false)
-        return view
+        sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+        binding = FragmentUmrohPaketDetilBinding.inflate(inflater, container, false)
+        initUI()
+        return binding.root
+    }
+
+    private fun initUI() {
+        sharedViewModel.selectedPaket.observe(viewLifecycleOwner){paket->
+            binding.tvUmrohPaketDetilTravel.text = paket.travel
+            binding.tvUmrohPaketDetilBulanBerangkat.text = paket.tanggal
+            binding.tvUmrohPaketDetilDurasi.text = paket.durasi
+            binding.tvUmrohPaketDetilLokasi.text = paket.lokasi
+            binding.tvUmrohPaketDetilKuota.text = paket.kuota.toString()
+            binding.tvUmrohPaketDetilPoint.text = paket.point.toString()
+        }
     }
 
     companion object{
-
-        const val ARG_NAME = "PaketDetilModel"
-
         fun newInstance():UmrohPaketDetilFragment{
-            val fragment = UmrohPaketDetilFragment()
-            return fragment
+            return UmrohPaketDetilFragment()
         }
     }
 }

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingHorizontal="20dp">
-        <TextView
-                android:text="@string/tv_umroh_paket_detil_pilih_tanggal_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"/>
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_umroh_paket_pilih_tanggal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-</LinearLayout>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+                <TextView
+                    android:text="@string/tv_umroh_paket_detil_pilih_tanggal_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_umroh_paket_pilih_tanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+</layout>

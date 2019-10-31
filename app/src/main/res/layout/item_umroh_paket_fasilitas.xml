@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="fasilitas"
+            type="String" />
+    </data>
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp">
-    <FrameLayout
+        <FrameLayout
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:background="@drawable/border_rounded_colorprimary"
             android:padding="10dp">
-    </FrameLayout>
-    <TextView
+        </FrameLayout>
+        <TextView
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:id="@+id/tv_item_umroh_paket_fasilitas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tv_item_umroh_paket_fasilitas"
+            tools:text="@string/tv_item_umroh_paket_fasilitas"
+            android:text="@{fasilitas}"
             android:textSize="15sp" />
-</LinearLayout>
+    </LinearLayout>
+</layout>

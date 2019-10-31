@@ -10,8 +10,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.vira.echsan.databinding.ActivityMainBinding
 import com.vira.echsan.ui.fragments.HomeFragment
 import com.vira.echsan.ui.fragments.bookings.BookingsFragment
+import dagger.android.AndroidInjection
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.HasSupportFragmentInjector
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
+
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+    override fun supportFragmentInjector() = dispatchingAndroidInjector
 
     companion object {
         const val PARAM_NAVIGATION_ID = "navigation_id"

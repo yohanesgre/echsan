@@ -14,6 +14,9 @@ interface PaketUmrohDao {
     @Query("SELECT * FROM paket_umrohs WHERE id = :paketId")
     fun getPaketUmroh(paketId:Int): LiveData<PaketUmroh>
 
+    @Query("SELECT * FROM paket_umrohs WHERE tanggal = :tanggal AND lokasi = :lokasi AND tipe = :tipe")
+    fun searchPakets(tipe:String, lokasi:String, tanggal:String): LiveData<List<PaketUmroh>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(paketUmrohs: List<PaketUmroh>)
+    fun insertAll(paketUmrohs: List<PaketUmroh>)
 }

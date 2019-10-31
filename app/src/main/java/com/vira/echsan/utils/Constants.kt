@@ -20,4 +20,5 @@ package com.vira.echsan.utils
  * Constants used throughout the app.
  */
 const val DATABASE_NAME = "echsan-db"
-const val PAKET_UMROH_DATA_FILENAME = "promo.json"
+const val PROMO_DATA_FILENAME = "promo.json"
+const val PAKET_UMROH_DATA_FILENAME = "paketumroh.json"

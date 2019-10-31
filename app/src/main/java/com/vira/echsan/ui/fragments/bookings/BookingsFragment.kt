@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.vira.echsan.R
 import com.vira.echsan.databinding.FragmentBookingsBinding
-import com.vira.echsan.ui.adapters.BookingsPagerFragmentAdapter
-import com.vira.echsan.ui.adapters.CANCELED_FRAGMENT_INDEX
-import com.vira.echsan.ui.adapters.COMPLETED_FRAGMENT_INDEX
-import com.vira.echsan.ui.adapters.PROCESS_FRAGMENT_INDEX
+import com.vira.echsan.adapters.BookingsPagerFragmentAdapter
+import com.vira.echsan.adapters.CANCELED_FRAGMENT_INDEX
+import com.vira.echsan.adapters.COMPLETED_FRAGMENT_INDEX
+import com.vira.echsan.adapters.PROCESS_FRAGMENT_INDEX
 
 class BookingsFragment : Fragment(){
     override fun onCreateView(

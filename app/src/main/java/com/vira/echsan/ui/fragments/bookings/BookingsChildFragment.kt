@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.vira.echsan.databinding.FragmentBookingsChildBinding
-import com.vira.echsan.ui.adapters.BookingAdapter
-import com.vira.echsan.ui.viewmodel.BookingsChildViewModel
-import com.vira.echsan.utils.InjectorUtils
+import com.vira.echsan.adapters.BookingAdapter
+import com.vira.echsan.viewmodel.BookingsChildViewModel
 
 
 class BookingsChildFragment : Fragment(), View.OnClickListener {
@@ -20,10 +19,6 @@ class BookingsChildFragment : Fragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         position = arguments?.getInt(POSITION_KEY) ?: 0
-    }
-
-    private val viewModel: BookingsChildViewModel by viewModels{
-        InjectorUtils.provideBookingsChieldViewModelFactory(requireContext(), position)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, state: Bundle?): View? {
@@ -44,9 +39,7 @@ class BookingsChildFragment : Fragment(), View.OnClickListener {
     }
 
     fun subcribeUI(adapter: BookingAdapter){
-        viewModel.bookingByStatus.observe(viewLifecycleOwner){
-            adapter.submitList(it)
-        }
+
     }
 
     override fun onClick(v: View) {

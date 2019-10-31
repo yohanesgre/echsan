@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
+            android:name=".App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_logo"
             android:label="@string/app_name"
@@ -26,8 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.vira.echsan.ui.activities.umroh_haji.UmrohActivity"/>
-        <activity android:name="com.vira.echsan.ui.activities.umroh_haji.PaketUmrohActivity"/>
-        <activity android:name="com.vira.echsan.ui.activities.umroh_haji.PaketUmrohFilterDialog"/>
+        <activity android:name="com.vira.echsan.ui.fragments.umroh.UmrohPaketFragment"/>
     </application>
 
 </manifest>

@@ -6,33 +6,41 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.vira.echsan.databinding.FragmentHomeBinding
+import com.vira.echsan.di.Injectable
+import com.vira.echsan.di.injectViewModel
 import com.vira.echsan.ui.activities.umroh_haji.UmrohActivity
-import com.vira.echsan.ui.adapters.CarouselAdapter
-import com.vira.echsan.ui.viewmodel.HomeViewModel
-import com.vira.echsan.utils.InjectorUtils
+import com.vira.echsan.adapters.CarouselAdapter
+import com.vira.echsan.viewmodel.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
+import javax.inject.Inject
 
 
-class HomeFragment : Fragment(){
+class HomeFragment : Fragment(), Injectable{
 
-    private val viewModel: HomeViewModel by viewModels{
-        InjectorUtils.provideHomeViewModelFactory(requireContext())
-    }
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var viewModel: HomeViewModel
+
+    private lateinit var binding: FragmentHomeBinding
+    private val adapter: CarouselAdapter by lazy { CarouselAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View?{
-        val binding = FragmentHomeBinding.inflate(inflater, container, false)
+        viewModel = injectViewModel(viewModelFactory)
+
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         context?: return binding.root
         initUI(binding)
+        subscribeUI(adapter)
         return binding.root
     }
 
@@ -42,15 +50,13 @@ class HomeFragment : Fragment(){
             startActivity(intent)
         }
         binding.rvCarousel.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = CarouselAdapter()
-        subscribeUI(adapter)
         binding.rvCarousel.adapter = adapter
         val snapHelper: SnapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(binding.rvCarousel)
     }
 
     private fun subscribeUI(adapter: CarouselAdapter){
-        viewModel.promos.observe(viewLifecycleOwner){ promos ->
+        viewModel.promoSets.observe(viewLifecycleOwner){ promos ->
             adapter.submitList(promos)
         }
     }
