@@ -3,6 +3,8 @@ package com.vira.echsan.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.vira.echsan.R
+import com.vira.echsan.adapters.pembayaran.SectionItem
 import com.vira.echsan.data.entities.PaketUmroh
 
 class PaketUmrohSharedViewModel : ViewModel(){
@@ -42,4 +44,6 @@ class PaketUmrohSharedViewModel : ViewModel(){
         listOf("1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien dignissim, consequat eros."),
         listOf("2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien dignissim, consequat eros."),
         listOf("3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien dignissim, consequat eros."))
+    val tipePembayaranSection = SectionItem("Title0", R.color.colorPrimary, listOf("item0", "item1", "item2", "item3"))
+    val progressCheckoutDesc = arrayOf("Pemesanan", "Pembayaran", "Selesai")
 }

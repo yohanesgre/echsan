@@ -76,31 +76,50 @@
         android:label="fragment_umroh_paket_pembayaran">
 
         <action
-            android:id="@+id/action_fragment_umroh_paket_pemesanan_to_fragment_umroh_paket_pembayran"
-            app:destination="@id/fragment_umroh_paket_pembayran"
-            app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_right"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left" />
+            android:id="@+id/action_fragment_umroh_paket_pemesanan_to_fragment_umroh_paket_pembayaran"
+            app:destination="@id/fragment_umroh_paket_pembayaran"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_fragment_umroh_paket_pemesanan_to_fragment_umroh_paket"
             app:destination="@id/fragment_umroh_paket"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_umroh_paket_pembayaran"
+        android:name="com.vira.echsan.view.fragments.umroh.UmrohPaketPembayaranFragment"
+        android:label="UmrohPaketPembayaranFragment" >
+
+        <action
+            android:id="@+id/action_fragment_umroh_paket_pembayaran_to_fragment_umroh_paket_pemesanan"
+            app:destination="@id/fragment_umroh_paket_pemesanan"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"  />
+        <action
+            android:id="@+id/action_fragment_umroh_paket_pembayaran_to_fragment_umroh_paket_pembayaran_2"
+            app:destination="@id/fragment_umroh_paket_pembayaran_2"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_umroh_paket_pembayran"
-        android:name="com.vira.echsan.view.fragments.umroh.UmrohPaketPembayaranFragment"
+        android:id="@+id/fragment_umroh_paket_pembayaran_2"
+        android:name="com.vira.echsan.view.fragments.umroh.UmrohPaketPembayaran2Fragment"
         android:label="UmrohPaketPembayaranFragment" >
-
         <action
-            android:id="@+id/action_fragment_umroh_paket_pembayran_to_fragment_umroh_paket_pemesanan"
-            app:destination="@id/fragment_umroh_paket_pemesanan"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left" />
+            android:id="@+id/action_fragment_umroh_paket_pembayaran_2_to_fragment_umroh_paket_pembayaran"
+            app:destination="@id/fragment_umroh_paket_pembayaran"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"  />
     </fragment>
 </navigation>

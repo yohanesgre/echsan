@@ -66,7 +66,7 @@ class UmrohPaketFragment : Fragment(), Injectable {
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         addFragment()
         binding.buttonBayar.setOnClickListener {
-            val nav = UmrohPaketFragmentDirections.actionFragmentUmrohPaketToUmrohPaketPemesananFragment()
+            val nav = UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohPemesanan()
             binding.root.findNavController().navigate(nav)
         }
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketFragment){

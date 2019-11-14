@@ -12,17 +12,20 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import com.vira.echsan.R
-import com.vira.echsan.databinding.FragmentUmrohCheckoutPemesananBinding
+import com.vira.echsan.adapters.pembayaran.TipePembayaranParentAdapter
+import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaran2Binding
+import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaranBinding
+import com.vira.echsan.view.fragments.umroh.pembayaran.UmrohPembayaran2HargaFragment
 import com.vira.echsan.view.fragments.umroh.pemesanan.UmrohPemesananDataFragment
 import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
 import javax.inject.Inject
 
-class UmrohPaketPemesananFragment : Fragment(){
+class UmrohPaketPembayaran2Fragment : Fragment(){
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var sharedViewModel: PaketUmrohSharedViewModel
-    private lateinit var binding: FragmentUmrohCheckoutPemesananBinding
-
+    private lateinit var binding: FragmentUmrohCheckoutPembayaran2Binding
+    private val adapter by lazy { TipePembayaranParentAdapter() }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,13 +33,7 @@ class UmrohPaketPemesananFragment : Fragment(){
     ): View? {
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
-        binding = FragmentUmrohCheckoutPemesananBinding.inflate(inflater, container, false).apply{
-            this.setOnClick {
-                val nav =
-                    UmrohPaketPemesananFragmentDirections.actionFragmentUmrohPaketPemesananToFragmentUmrohPaketPembayaran()
-                this.root.findNavController().navigate(nav)
-            }
-        }
+        binding = FragmentUmrohCheckoutPembayaran2Binding.inflate(inflater, container, false)
         context ?: return binding.root
         initUI()
         subscribeUI()
@@ -48,16 +45,16 @@ class UmrohPaketPemesananFragment : Fragment(){
     }
 
     private fun initUI(){
-        binding.toolbar.title = "PEMESANAN"
+        binding.toolbar.title = "PEMBAYARAN"
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         addFragment()
         binding.stateCheckout.setStateDescriptionData(sharedViewModel.progressCheckoutDesc)
-        requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketPemesananFragment){
+        requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketPembayaran2Fragment){
             sharedViewModel.searchPaket.observe(viewLifecycleOwner){
                 val nav =
-                    UmrohPaketPemesananFragmentDirections.actionFragmentUmrohPaketPemesananToFragmentUmrohPaket()
+                    UmrohPaketPembayaran2FragmentDirections.actionFragmentUmrohPaketPembayaran2ToFragmentUmrohPaketPembayaran()
                 binding.root.findNavController().navigate(nav)
             }
         }
@@ -66,9 +63,9 @@ class UmrohPaketPemesananFragment : Fragment(){
     private fun addFragment(){
         val fragmentManager = childFragmentManager
         val transaction = fragmentManager.beginTransaction()
-        transaction.add(
-            R.id.container_data_pemesan,
-            UmrohPemesananDataFragment.newInstance()
+        transaction.replace(
+            R.id.container_rincian_harga,
+            UmrohPembayaran2HargaFragment.newInstance()
         )
         transaction.commit()
     }

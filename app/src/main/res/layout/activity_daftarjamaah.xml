@@ -50,7 +50,7 @@
                             android:layout_height="wrap_content"
                             style="@style/TextInputLayoutTheme">
                         <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/"
+
                                 android:hint="Tuan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                             android:layout_height="wrap_content"
                             style="@style/TextInputLayoutTheme">
                         <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/"
+
                                 android:hint="Muhammad Safrobit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                                 android:layout_height="wrap_content"
                                 style="@style/TextInputLayoutTheme">
                             <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/"
+
                                     android:hint="Tanggal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                                 android:layout_height="wrap_content"
                                 style="@style/TextInputLayoutTheme">
                             <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/"
+
                                     android:hint="Muhammad Safrobit"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
                                 android:layout_height="wrap_content"
                                 style="@style/TextInputLayoutTheme">
                             <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/"
+
                                     android:hint="Muhammad Safrobit"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -131,7 +131,7 @@
                             android:layout_height="wrap_content"
                             style="@style/TextInputLayoutTheme">
                         <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/"
+
                                 android:hint="081234567890"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
                             android:layout_height="wrap_content"
                             style="@style/TextInputLayoutTheme">
                         <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/"
+
                                 android:hint="Echsan@gmail.com"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
