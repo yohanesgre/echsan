@@ -41,67 +41,134 @@
                         android:paddingHorizontal="20dp"
                         android:orientation="vertical">
                     <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Category"
-                            style="@style/TextView.InputLabel"
-                            />
-
-                    <android.support.v7.widget.AppCompatSpinner
-                            android:id="@+id/categorySpinner"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:spinnerMode="dialog"
-                            style="@style/Widget.AppCompat.Spinner.Underlined"
-                            />
-
+                            android:text="Title"
+                            android:paddingHorizontal="10dp"/>
                     <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             style="@style/TextInputLayoutTheme">
                         <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/et_umroh_cari_tipe"
-                                android:hint="@string/et_umroh_cari_tipe"
+                                android:id="@+id/"
+                                android:hint="Tuan"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                            style="@style/TextInputLayoutTheme"
-                            android:layout_width="match_parent"
+                    <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
-                        <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/et_umroh_cari_tgl_berangkat"
-                                android:hint="@string/et_umroh_cari_tgl_berangkat"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:drawableLeft="@drawable/ic_umroh_cal"
-                                android:drawablePadding="10dp" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:text="Nama Lengkap"
+                            android:paddingHorizontal="10dp"/>
                     <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             style="@style/TextInputLayoutTheme">
                         <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/et_umroh_cari_jamaah"
-                                android:hint="@string/et_umroh_cari_jamaah"
+                                android:id="@+id/"
+                                android:hint="Muhammad Safrobit"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:drawableLeft="@drawable/ic_umroh_jamaah"
+                                android:layout_height="wrap_content"
                                 android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tanggal Lahir"
+                            android:paddingHorizontal="10dp"/>
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="20dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/TextInputLayoutTheme">
+                            <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/"
+                                    android:hint="Tanggal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="10dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/TextInputLayoutTheme">
+                            <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/"
+                                    android:hint="Muhammad Safrobit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="10dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/TextInputLayoutTheme">
+                            <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/"
+                                    android:hint="Muhammad Safrobit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="10dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nomor Telfon"
+                            android:paddingHorizontal="10dp"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextInputLayoutTheme">
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/"
+                                android:hint="081234567890"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="10dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:paddingHorizontal="10dp"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextInputLayoutTheme">
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/"
+                                android:hint="Echsan@gmail.com"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="10dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Syarat dan Ketentuan"/>
+                    <CheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Syarat dan Ketentuan"/>
                     <Button
-                            android:id="@+id/btn_umroh_cari"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="@string/btn_umroh_cari"
-                            android:theme="@style/ButtonUmroh"
-                            android:background="@color/colorPrimary"/>
+                            android:layout_height="match_parent"
+                            android:text="Simpan">
+
+                    </Button>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </FrameLayout>
