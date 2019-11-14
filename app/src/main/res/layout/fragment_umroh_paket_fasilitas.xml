@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingHorizontal="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
                 <TextView
                     android:text="@string/tv_umroh_paket_detil_fasilitas_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paket_space_start_end"
                     android:layout_marginBottom="10dp"/>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_gravity="center"
-                    android:id="@+id/rv_umroh_paket_fasilitas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/tv_umroh_paket_detil_fasilitas_footer"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/tv_umroh_paket_detil_fasilitas_footer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-        </LinearLayout>
+                        <ru.rhanza.constraintexpandablelayout.ExpandableLayout
+                            android:id="@+id/layout_fasilitas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/paket_space_start_end"
+                            android:paddingEnd="@dimen/paket_space_start_end"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never">
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:layout_gravity="center"
+                                    android:id="@+id/rv_umroh_paket_fasilitas"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clipToPadding="false"
+                                    android:overScrollMode="never"
+                                    android:nestedScrollingEnabled="false"/>
+                        </ru.rhanza.constraintexpandablelayout.ExpandableLayout>
+                </LinearLayout>
+
 </layout>

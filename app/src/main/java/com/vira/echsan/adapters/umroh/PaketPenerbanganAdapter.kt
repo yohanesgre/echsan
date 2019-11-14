@@ -27,10 +27,10 @@ class PaketPenerbanganAdapter : ListAdapter<List<String>, PaketPenerbanganAdapte
 
         fun bind(_status:String, _asal:String, _tujuan:String, _maskapai:String) {
             binding.apply{
-                binding.tvPenerbanganStatus.text = _status
-                binding.tvPenerbanganAsal.text = _asal
-                binding.tvPenerbanganTujuan.text = _tujuan
-                binding.tvPenerbanganMaskapai.text = _maskapai
+                binding.status = _status
+                binding.asal = _asal
+                binding.tujuan = _tujuan
+                binding.maskapai = _maskapai
                 executePendingBindings()
             }
         }

@@ -37,5 +37,9 @@ class PaketUmrohSharedViewModel : ViewModel(){
     }
 
     val listOfTanggal = listOf(12, 13, 14, 15, 16, 17, 18, 19, 20, 22)
-    val listOfFasilitas = listOf("Visa Umroh", "Catering", "Zam-Zam", "Perlengkapan")
+    val listOfFasilitas = listOf("Visa Umroh", "Catering", "Zam-Zam", "Perlengkapan", "Test", "Test", "Test")
+    val listOfRencanaPerjalanan = listOf(
+        listOf("1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien dignissim, consequat eros."),
+        listOf("2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien dignissim, consequat eros."),
+        listOf("3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien dignissim, consequat eros."))
 }

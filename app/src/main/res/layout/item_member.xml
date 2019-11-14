@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="cost"
+            type="String" />
+        <variable
+            name="tipe"
+            type="String" />
+        <variable
+            name="voucher"
+            type="String" />
+        <variable
+            name="point"
+            type="String" />
+        <variable
+            name="double_point"
+            type="String" />
+        <variable
+            name="agent_reward"
+            type="String" />
+        <variable
+            name="agent_gathering"
+            type="String" />
+        <variable
+            name="agent_refferal"
+            type="String" />
+        <variable
+            name="ClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        android:layout_marginVertical="5dp"
+        android:clipToPadding="false"
+        android:onClick="@{ClickListener}">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <TextView
+                android:elevation="1dp"
+                android:text="@{cost}"
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:background="@color/orange"/>
+            <ImageView
+                android:id="@+id/iv_umroh_paket_cv_paket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:minWidth="100dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/paket_umroh"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_toRightOf="@id/iv_umroh_paket_cv_paket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="20sp"
+                    android:id="@+id/tv_umroh_paket_cv_paket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Tipe Member"
+                    android:text="@{tipe}"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"/>
+                <LinearLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:paddingBottom="5dp"
+                        android:id="@+id/tv_voucher_umroh"
+                        android:text="@{voucher}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:paddingBottom="5dp"
+                        android:id="@+id/tv_point"
+                        android:text="@{point}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:paddingBottom="5dp"
+                        android:id="@+id/tv_double_point"
+                        android:text="@{double_point}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:paddingBottom="5dp"
+                        android:id="@+id/tv_agent_reward"
+                        android:text="@{agent_reward}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:paddingBottom="5dp"
+                        android:id="@+id/tv_agent_gathering"
+                        android:text="@{agent_gathering}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:paddingBottom="5dp"
+                        android:id="@+id/tv_refferal"
+                        android:text="@{agent_refferal}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

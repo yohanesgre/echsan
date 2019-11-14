@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.vira.echsan.adapters.viewholder.ListPaketUmrohViewHolder
+import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.data.entities.PaketUmroh
 import com.vira.echsan.databinding.ItemUmrohPaketBinding
 import com.vira.echsan.ui.fragments.umroh.UmrohHasilFragmentDirections
@@ -14,9 +14,9 @@ import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
 
 class ListPaketUmrohAdapter(
     private val sharedViewModel: PaketUmrohSharedViewModel
-) : ListAdapter<PaketUmroh, ListPaketUmrohViewHolder>(ListPaketUmrohDiffCallback()){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListPaketUmrohViewHolder {
-        return ListPaketUmrohViewHolder(
+) : ListAdapter<PaketUmroh, ListPaketUmrohAdapter.ViewHolder>(ListPaketUmrohDiffCallback()){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
             ItemUmrohPaketBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
@@ -31,13 +31,23 @@ class ListPaketUmrohAdapter(
         }
     }
 
-    override fun onBindViewHolder(holder: ListPaketUmrohViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val paket = getItem(position)
         holder.apply {
             bind(createOnClickListener(paket), paket)
         }
     }
-
+    inner class ViewHolder(
+        private val binding: ItemUmrohPaketBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(listener:View.OnClickListener, item:PaketUmroh){
+            binding.apply {
+                clickListener = listener
+                paket = item
+                executePendingBindings()
+            }
+        }
+    }
 }
 
 private class ListPaketUmrohDiffCallback : DiffUtil.ItemCallback<PaketUmroh>() {
