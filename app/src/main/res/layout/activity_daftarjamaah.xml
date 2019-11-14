@@ -43,9 +43,7 @@
                     <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Category"
-                            style="@style/TextView.InputLabel"
-                            />
+                            android:text="Category" />
 
                     <android.support.v7.widget.AppCompatSpinner
                             android:id="@+id/categorySpinner"

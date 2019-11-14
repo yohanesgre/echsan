@@ -6,5 +6,9 @@
   {
     "promoId": "2",
     "name": "Testing 2"
+  },
+  {
+    "promoId": "3",
+    "name": "Testing 3"
   }
 ]

@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.data.entities.Booking
-import com.vira.echsan.adapters.viewholder.BookingsViewHolder
 import com.vira.echsan.databinding.ItemBookingsBinding
 
-class BookingAdapter: ListAdapter<Booking, BookingsViewHolder>(BookingDiffCallback()) {
+class BookingAdapter: ListAdapter<Booking, BookingAdapter.BookingsViewHolder>(BookingDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookingsViewHolder {
         return BookingsViewHolder(
@@ -21,6 +21,18 @@ class BookingAdapter: ListAdapter<Booking, BookingsViewHolder>(BookingDiffCallba
         val booking = getItem(position)
         holder.bind(booking)
     }
+    inner class BookingsViewHolder (
+        private val binding : ItemBookingsBinding
+    ) : RecyclerView.ViewHolder(binding.root){
+        fun bind(item: Booking){
+            binding.apply {
+                booking = item
+                executePendingBindings()
+            }
+        }
+    }
+
+
 }
 private class BookingDiffCallback : DiffUtil.ItemCallback<Booking>() {
     override fun areItemsTheSame(oldItem: Booking, newItem: Booking): Boolean {

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="hari"
+            type="String" />
+        <variable
+            name="kegiatan"
+            type="String" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/border_rounded_stroke_thin_grey_darker">
+        <TextView
+            android:drawableLeft="@drawable/ic_calender_umroh"
+            android:drawablePadding="10dp"
+            android:text="Hari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"/>
+        <TextView
+            android:id="@+id/tv_hari"
+            android:text="@{hari}"
+            tools:text="Hari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"/>
+        <View
+            android:background="@color/greyDarker"
+            android:layout_width="1.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"/>
+        <TextView
+            android:id="@+id/tv_kegiatan"
+            android:text="@{kegiatan}"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="100"
+            android:ellipsize="end"
+            android:scrollHorizontally="false"
+            android:singleLine="false"/>
+    </LinearLayout>
+</layout>

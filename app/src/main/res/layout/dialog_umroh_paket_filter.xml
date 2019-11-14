@@ -89,8 +89,7 @@
             app:rsb_tick_mark_mode="number"
             app:layout_constraintTop_toBottomOf="@id/input_layout_filter_harga_min"
             app:layout_constraintRight_toRightOf="@id/input_layout_filter_harga_max"
-            app:layout_constraintLeft_toLeftOf="@id/input_layout_filter_harga_min"
-            />
+            app:layout_constraintLeft_toLeftOf="@id/input_layout_filter_harga_min" />
     <View
             android:id="@+id/line1"
             android:layout_width="match_parent"

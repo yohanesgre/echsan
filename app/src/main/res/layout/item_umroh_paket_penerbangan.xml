@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <data><!--
+    <data>
         <variable
             name="status"
             type="String" />
@@ -13,60 +13,65 @@
             type="String" />
         <variable
             name="maskapai"
-            type="String" />-->
+            type="String" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/border_rounded_stroke_thin_grey_darker">
         <TextView
             android:id="@+id/tv_penerbangan_status"
+            android:text="@{status}"
             tools:text="Penerbangan"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TableLayout
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TableRow>
-                <TextView
-                    tools:text="Asal"
-                    android:id="@+id/tv_penerbangan_asal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_weight="3" />
-                <ImageView
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_keberangkatan_umroh"
-                    android:id="@+id/iv_penerbangan_status"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_column="1"
-                    android:layout_weight="1"/>
-                <TextView
-                    android:minWidth="70dp"
-                    tools:text="Tujuan"
-                    android:id="@+id/tv_penerbangan_tujuan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_weight="3" />
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/greyDark"
-                    android:layout_column="3"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tv_penerbangan_maskapai"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Garuda"
-                    android:layout_weight="2"/>
-            </TableRow>
-        </TableLayout>
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_keberangkatan_umroh"
+                android:id="@+id/iv_penerbangan_status"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="12dp"/>
+            <TextView
+                android:text="@{asal}"
+                android:layout_marginEnd="12dp"
+                tools:text="Asal"
+                android:id="@+id/tv_penerbangan_asal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                tools:text=" - "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@{tujuan}"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:minWidth="70dp"
+                tools:text="Tujuan"
+                android:id="@+id/tv_penerbangan_tujuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                tools:text=" | "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@{maskapai}"
+                android:layout_marginStart="12dp"
+                android:minWidth="70dp"
+                tools:text="Maskapai"
+                android:id="@+id/tv_penerbangan_maskapai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 </layout>

@@ -4,7 +4,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp">
+        android:paddingStart="@dimen/paket_space_start_end"
+        android:paddingEnd="@dimen/paket_space_start_end">
         <TextView
             android:text="Penerbangan"
             android:layout_width="wrap_content"

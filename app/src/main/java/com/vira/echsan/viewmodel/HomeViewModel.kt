@@ -12,8 +12,8 @@ class HomeViewModel @Inject constructor(
         repository.getPromos()
     }
 
-    override fun onCleared() {
-        super.onCleared()
-
+    val getPromoList by lazy {
+        promoSets.value!!.toList()
     }
+
 }
