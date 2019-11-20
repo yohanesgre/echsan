@@ -12,7 +12,7 @@
     <color name="colorPrimaryVariant">#FFFFFF</color>
     <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorSecondary">#D2FFF4</color>
-    <color name="colorSecondaryVariant">#ffffff</color>
+    <color name="colorSecondaryVariant">#FF6E00</color>
     <color name="colorOnSecondary">#FFFFFF</color>
     <color name="colorError">#F44336</color>
     <color name="colorOnError">#FFFFFF</color>

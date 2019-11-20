@@ -13,12 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp">
-        <FrameLayout
+        <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:background="@drawable/border_rounded_colorprimary"
             android:padding="10dp">
-        </FrameLayout>
+        </ImageView>
         <TextView
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             tools:text="@string/tv_item_umroh_paket_fasilitas"
             android:text="@{fasilitas}"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textAlignment="center"/>
     </LinearLayout>
 </layout>

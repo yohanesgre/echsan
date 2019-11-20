@@ -9,8 +9,9 @@ fun ConvertToCurrency(ammountDbl:Double?=null, ammountStr:String?=null): String{
         value = ammountStr.toDouble()
     else if (ammountDbl!=null)
         value = ammountDbl
-    val format = NumberFormat.getCurrencyInstance()
-    format.setMaximumFractionDigits(0)
-    format.setCurrency(Currency.getInstance("IDR"))
+    val localeID = Locale("in", "ID")
+    val format = NumberFormat.getCurrencyInstance(localeID)
+    //format.setMaximumFractionDigits(0)
+    //format.setCurrency(Currency.getInstance("IDR"))
     return format.format(value)
 }

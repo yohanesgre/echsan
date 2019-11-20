@@ -11,7 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.vira.echsan.R
+import com.vira.echsan.adapters.pembayaran.MetodePembayaranAdapter
 import com.vira.echsan.adapters.pembayaran.TipePembayaranParentAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaranBinding
 import com.vira.echsan.view.fragments.umroh.pembayaran.UmrohPembayaranPaketFragment
@@ -24,7 +26,8 @@ class UmrohPaketPembayaranFragment : Fragment(){
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var sharedViewModel: PaketUmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPembayaranBinding
-    private val adapter by lazy { TipePembayaranParentAdapter() }
+    private val adapterTipePembayaran by lazy { TipePembayaranParentAdapter() }
+    private lateinit var adapterMetodePembayaran:MetodePembayaranAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -63,14 +66,17 @@ class UmrohPaketPembayaranFragment : Fragment(){
                 binding.root.findNavController().navigate(nav)
             }
         }
-        binding.rvTipePembayaran.adapter = adapter
-        adapter.addSectionItem(sharedViewModel.tipePembayaranSection)
+        binding.rvTipePembayaran.adapter = adapterTipePembayaran
+        adapterTipePembayaran.addSectionItem(sharedViewModel.tipePembayaranSection)
+
+        adapterMetodePembayaran = MetodePembayaranAdapter(sharedViewModel.metodePembayaran)
+        binding.rvMetodePembayaran.adapter = adapterMetodePembayaran
     }
 
     private fun addFragment(){
         val fragmentManager = childFragmentManager
         val transaction = fragmentManager.beginTransaction()
-        transaction.replace(
+        transaction.add(
             R.id.container_paket_umroh,
             UmrohPembayaranPaketFragment.newInstance()
         )

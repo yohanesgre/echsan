@@ -26,92 +26,105 @@
                 app:title="Pembayaran">
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
-        <LinearLayout
-            android:orientation="vertical"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-            <com.kofigyan.stateprogressbar.StateProgressBar
-                android:id="@+id/state_checkout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:spb_currentStateNumber="two"
-                app:spb_maxStateNumber="three"
-                app:spb_justifyMultilineDescription="true"
-                app:spb_descriptionLinesSpacing="5dp"
-                app:spb_stateBackgroundColor="@color/greyDark"
-                app:spb_stateForegroundColor="@color/colorPrimary"
-                app:spb_currentStateDescriptionColor="@color/colorPrimary"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="20dp"/>
-            <TextView
-                android:layout_marginStart="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nomer Transaksi"
-                android:layout_marginBottom="10dp"/>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/container_data_pemesan"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="2dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp">
-                <TextView
-                    android:padding="10dp"
-                    android:id="@+id/tv_nomer_transaksi"
-                    tools:text="Nomer Transaksi"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+                <com.kofigyan.stateprogressbar.StateProgressBar
+                    android:id="@+id/state_checkout"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </androidx.cardview.widget.CardView>
-            <TextView
-                android:layout_marginStart="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Paket Umroh"
-                android:layout_marginBottom="10dp"/>
-            <FrameLayout
-                android:id="@+id/container_paket_umroh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="100dp"
-                android:layout_marginBottom="10dp" />
-            <TextView
-                android:layout_marginStart="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tipe Pembayaran"
-                android:layout_marginBottom="10dp"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_tipe_pembayaran"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="150dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-            <TextView
-                android:layout_marginStart="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Metode Pembayaran"
-                android:layout_marginBottom="10dp"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/container_metode_pembayaran"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="100dp"
-                android:layout_marginBottom="10dp" />
-            <Button
-                android:onClick="@{onClick}"
-                android:paddingVertical="10dp"
-                android:layout_marginHorizontal="10dp"
-                android:id="@+id/btn_lanjutkan"
-                android:text="LANJUTKAN"
-                android:textSize="15sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                    android:layout_height="wrap_content"
+                    app:spb_currentStateNumber="two"
+                    app:spb_maxStateNumber="three"
+                    app:spb_justifyMultilineDescription="true"
+                    app:spb_descriptionLinesSpacing="5dp"
+                    app:spb_stateBackgroundColor="@color/greyDark"
+                    app:spb_stateForegroundColor="@color/colorPrimary"
+                    app:spb_currentStateDescriptionColor="@color/colorPrimary"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="42dp"/>
+                <TextView
+                    android:layout_marginStart="31dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nomer Transaksi"
+                    android:layout_marginBottom="10dp"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/container_data_pemesan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginEnd="29dp">
+                    <TextView
+                        android:padding="19dp"
+                        android:id="@+id/tv_nomer_transaksi"
+                        tools:text="Nomer Transaksi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_marginStart="31dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paket Umroh"
+                    android:layout_marginBottom="10dp"/>
+                <FrameLayout
+                    android:id="@+id/container_paket_umroh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginEnd="26dp"
+                    android:padding="3dp"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    tools:layout="@layout/fragment_umroh_checkout_pembayaran_paket"/>
+                <TextView
+                    android:layout_marginStart="31dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tipe Pembayaran"
+                    android:layout_marginBottom="10dp"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tipe_pembayaran"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="28dp"
+                    android:paddingEnd="29dp"
+                    android:paddingVertical="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:clipToPadding="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                <TextView
+                    android:layout_marginStart="33dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metode Pembayaran"
+                    android:layout_marginBottom="10dp"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_metode_pembayaran"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="28dp"
+                    android:paddingEnd="29dp"
+                    android:paddingVertical="3dp"
+                    android:layout_marginBottom="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/item_umroh_pembayaran_metode_pembayaran"
+                    tools:itemCount="3"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
 

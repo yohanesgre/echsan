@@ -12,7 +12,7 @@ class TipePembayaranChildAdapter(
 ) : BaseAdapter(){
 
     init{
-        addSection(emptyList<String>())
+        addSection(ArrayList<String>())
     }
 
     fun addItemList(itemList: List<String>) {

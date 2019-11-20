@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.item_tipe_pembayaran_section.view.*
 class TipePembayaranParentAdapter : BaseAdapter(){
 
     init {
-        addSection(emptyList<String>())
+        addSection(ArrayList<SectionItem>())
     }
 
     fun addSectionItem(sectionItem: SectionItem) {
@@ -40,18 +40,16 @@ class TipePembayaranParentAdapter : BaseAdapter(){
         }
 
         private fun drawItemUI() {
-            if (!sectionItem.initailized) {
-                itemView.run {
-                    with(expandableLayout) {
-                        parentLayoutResource = R.layout.item_tipe_pembayaran_parent
-                        secondLayoutResource = R.layout.item_tipe_pembayaran_child
-                        duration = 200L
-                        parentLayout.title.text = sectionItem.title
-                        parentLayout.setBackgroundColor(ContextCompat.getColor(context, sectionItem.color))
-                        secondLayout.recyclerViewChild.adapter = childAdapter
-                        childAdapter.addItemList(sectionItem.itemList)
-                        sectionItem.initailized = true
-                    }
+            itemView.run {
+                with(expandableLayout) {
+                    parentLayoutResource = R.layout.item_tipe_pembayaran_parent
+                    secondLayoutResource = R.layout.item_tipe_pembayaran_child
+                    duration = 200L
+                    parentLayout.title.text = sectionItem.title
+                    parentLayout.setBackgroundColor(ContextCompat.getColor(context, sectionItem.color))
+                    secondLayout.recyclerViewChild.adapter = childAdapter
+                    childAdapter.addItemList(sectionItem.itemList)
+                    sectionItem.initailized = true
                 }
             }
         }
@@ -67,7 +65,14 @@ class TipePembayaranParentAdapter : BaseAdapter(){
 
         override fun onLongClick(p0: View?) = false
 
-        override fun onRowItemClick(position: Int, title: String) =
-            Toast.makeText(context(), "position : $position, title: $title", Toast.LENGTH_SHORT).show()
+        override fun onRowItemClick(position: Int, title: String) {
+            Toast.makeText(context(), "position : $position, title: $title", Toast.LENGTH_SHORT)
+                .show()
+            itemView.run {
+                with(expandableLayout) {
+                    parentLayout.title.text = title
+                }
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@
         android:orientation="horizontal"
         android:padding="10dp"
         android:layout_margin="10dp"
-        android:background="@drawable/border_rounded_stroke_thin_grey_darker">
+        android:background="@drawable/border_rounded_stroke_10_thin_grey_darker">
         <TextView
             android:drawableLeft="@drawable/ic_calender_umroh"
             android:drawablePadding="10dp"

@@ -6,7 +6,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp"
-            android:background="@drawable/border_rounded_stroke_thin_grey_darker">
+            android:background="@drawable/border_rounded_stroke_10_thin_grey_darker">
 
         <TextView
                 android:id="@+id/tv_penerbangan_status"

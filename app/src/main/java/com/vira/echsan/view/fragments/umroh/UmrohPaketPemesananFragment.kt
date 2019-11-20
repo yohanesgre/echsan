@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import com.vira.echsan.R
+import com.vira.echsan.adapters.pemesanan.PemesananDataJamaahAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPemesananBinding
 import com.vira.echsan.view.fragments.umroh.pemesanan.UmrohPemesananDataFragment
 import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
@@ -22,6 +23,7 @@ class UmrohPaketPemesananFragment : Fragment(){
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var sharedViewModel: PaketUmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPemesananBinding
+    private lateinit var adapter:PemesananDataJamaahAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,10 +33,18 @@ class UmrohPaketPemesananFragment : Fragment(){
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPemesananBinding.inflate(inflater, container, false).apply{
-            this.setOnClick {
+            this.setOnClickLanjut {
                 val nav =
                     UmrohPaketPemesananFragmentDirections.actionFragmentUmrohPaketPemesananToFragmentUmrohPaketPembayaran()
                 this.root.findNavController().navigate(nav)
+            }
+            this.setOnClickTambah{
+                if (sharedViewModel.jumlahJamaah.value!! < 5)
+                    sharedViewModel.addJumlahJamaah()
+            }
+            this.setOnClickKurang {
+                if (sharedViewModel.jumlahJamaah.value!! > 0)
+                    sharedViewModel.minusJumlahJamaah()
             }
         }
         context ?: return binding.root
@@ -44,11 +54,18 @@ class UmrohPaketPemesananFragment : Fragment(){
     }
 
     private fun subscribeUI(){
-
+        sharedViewModel.jumlahJamaah.observe(viewLifecycleOwner){jumlah ->
+            binding.jumlahJamaah = jumlah.toString()
+            var listJamaah = mutableListOf<String>()
+            (1..jumlah).forEach { i ->
+                listJamaah.add("Data Jamaah $i")
+            }
+            adapter.itemList = listJamaah
+        }
     }
 
     private fun initUI(){
-        binding.toolbar.title = "PEMESANAN"
+        binding.toolbar.title = "Pemesanan"
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -61,6 +78,8 @@ class UmrohPaketPemesananFragment : Fragment(){
                 binding.root.findNavController().navigate(nav)
             }
         }
+        adapter = PemesananDataJamaahAdapter()
+        binding.rvDataJamaah.adapter = adapter
     }
 
     private fun addFragment(){
