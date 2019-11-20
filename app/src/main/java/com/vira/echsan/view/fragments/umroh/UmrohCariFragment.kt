@@ -1,6 +1,7 @@
 package com.vira.echsan.ui.fragments.umroh
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -61,5 +62,15 @@ class UmrohCariFragment : Fragment(), Injectable{
         binding.etUmrohCariTipe.setAdapter(ArrayAdapter<String>(requireContext(), R.layout.material_spinner_item, viewModel.tipeUmroh))
         binding.etUmrohCariKota.setAdapter(ArrayAdapter<String>(requireContext(), R.layout.material_spinner_item, viewModel.kotaUmroh))
         binding.etUmrohCariTglBerangkat.setAdapter(ArrayAdapter<String>(requireContext(), R.layout.material_spinner_item, viewModel.tglUmroh))
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            binding.etUmrohCariTipe.requestFocus()
+            binding.etUmrohCariTipe.showSoftInputOnFocus = false
+            binding.etUmrohCariKota.requestFocus()
+            binding.etUmrohCariKota.showSoftInputOnFocus = false
+            binding.etUmrohCariTglBerangkat.requestFocus()
+            binding.etUmrohCariTglBerangkat.showSoftInputOnFocus = false
+            binding.etUmrohCariHarga.requestFocus()
+            binding.etUmrohCariHarga.showSoftInputOnFocus = false
+        }
     }
 }

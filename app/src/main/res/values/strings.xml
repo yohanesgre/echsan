@@ -99,6 +99,9 @@
     <string name="tv_item_umroh_paket_fasilitas">Fasilitas</string>
     <string name="tv_umroh_paket_detil_fasilitas_title">Fasilitas</string>
     <string name="tv_umroh_paket_detil_fasilitas_footer">Lihat Semua Fasilitas</string>
+    <string name="tv_home_benefit">Benefit</string>
+    <string name="tv_home_doa">Doa</string>
+    <string name="tv_home_medsos">Media Sosial</string>
 
     <string-array name="names">
         <item>Tuan</item>

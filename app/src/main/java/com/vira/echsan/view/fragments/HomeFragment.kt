@@ -41,17 +41,18 @@ class HomeFragment : Fragment(), Injectable{
         savedInstanceState: Bundle?
     ): View?{
         viewModel = injectViewModel(viewModelFactory)
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false).apply {
+            setOnClickUmroh {
+                val intent = Intent(activity, UmrohActivity::class.java)
+                startActivity(intent)
+            }
+        }
         initUI(binding)
         subscribeUI()
         return binding.root
     }
 
     private fun initUI(binding:FragmentHomeBinding){
-        binding.btnHomeUmrohHaji.setOnClickListener {
-            val intent = Intent(activity, UmrohActivity::class.java)
-            startActivity(intent)
-        }
         val pagerSnapper = PagerSnapHelper()
         adapter = PromoAdapter()
         carousel = Carousel(requireContext(), binding.carouselPromo, adapter)
@@ -78,8 +79,7 @@ class HomeFragment : Fragment(), Injectable{
                 val item = CarouselModel(it)
                 carousel.add(item)
             }
-            carousel.setCurrentPosition((promos.size / 2F).roundToInt())
-            binding.indicator.createIndicators(promos.size,(promos.size / 2F).roundToInt())
+            binding.indicator.createIndicators(promos.size, carousel.getCurrentPosition())
         }
     }
 
