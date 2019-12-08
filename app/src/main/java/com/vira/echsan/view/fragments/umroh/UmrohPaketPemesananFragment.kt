@@ -15,13 +15,13 @@ import com.vira.echsan.R
 import com.vira.echsan.adapters.pemesanan.PemesananDataJamaahAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPemesananBinding
 import com.vira.echsan.view.fragments.umroh.pemesanan.UmrohPemesananDataFragment
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
 class UmrohPaketPemesananFragment : Fragment(){
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPemesananBinding
     private lateinit var adapter:PemesananDataJamaahAdapter
 
@@ -31,7 +31,7 @@ class UmrohPaketPemesananFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         sharedViewModel =
-            ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPemesananBinding.inflate(inflater, container, false).apply{
             this.setOnClickLanjut {
                 val nav =

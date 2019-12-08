@@ -12,27 +12,30 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
 import com.vira.echsan.R
+import com.vira.echsan.data.Result
 import com.vira.echsan.databinding.FragmentUmrohPaketBinding
 import com.vira.echsan.di.Injectable
 import com.vira.echsan.di.injectViewModel
 import com.vira.echsan.ui.fragments.umroh.paket.UmrohPaketDetilFragment
 import com.vira.echsan.view.fragments.umroh.paket.UmrohPaketFasilitasFragment
-import com.vira.echsan.utils.ConvertToCurrency
 import com.vira.echsan.view.fragments.umroh.paket.UmrohPaketHotelFragment
 import com.vira.echsan.view.fragments.umroh.paket.UmrohPaketPenerbanganFragment
 import com.vira.echsan.view.fragments.umroh.paket.UmrohPaketRencanaPerjalananFragment
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
-import com.vira.echsan.viewmodel.UmrohViewModel
+import com.vira.echsan.viewmodel.PaketUmrohViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
 class UmrohPaketFragment : Fragment(), Injectable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var viewModel: UmrohViewModel
-    private lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    private lateinit var viewModel: PaketUmrohViewModel
+    private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohPaketBinding
+    private val args: UmrohPaketFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +44,8 @@ class UmrohPaketFragment : Fragment(), Injectable {
     ): View? {
         viewModel = injectViewModel(viewModelFactory)
         sharedViewModel =
-            ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
+        viewModel.id = args.paketId
         binding = FragmentUmrohPaketBinding.inflate(inflater, container, false)
         context ?: return binding.root
         initUI()
@@ -50,11 +54,25 @@ class UmrohPaketFragment : Fragment(), Injectable {
     }
 
     private fun subscribeUI(){
-        sharedViewModel.selectedPaket.observe(viewLifecycleOwner){
-            sharedViewModel.setHargaTotal(it.harga)
-        }
-        sharedViewModel.hargaTotal.observe(viewLifecycleOwner){
-            binding.tvHarga.text = "Harga mulai dari " + ConvertToCurrency(null, it)
+        viewModel.paketUmrohResult.observe(viewLifecycleOwner) { result ->
+            when (result.status) {
+                Result.Status.SUCCESS -> {
+                    addFragment()
+                    UmrohPaketDetilFragment.newInstance().binding.apply {
+                        tvUmrohPaketDetilTravel.text = result.data!!.travel_vendor.trav_name
+                        tvUmrohPaketDetilBulanBerangkat.text = result.data.date_of_departure
+                        tvUmrohPaketDetilDurasi.text = result.data.day_amount.toString()
+                        tvUmrohPaketDetilLokasi.text = result.data.departure_city.city_name
+                        tvUmrohPaketDetilKuota.text = result.data.quota.toString()
+                        tvUmrohPaketDetilPoint.text = result.data.point.toString()
+                    }
+                }
+                Result.Status.LOADING -> {
+                }
+                Result.Status.ERROR -> {
+                    Snackbar.make(binding.root, result.message!!, Snackbar.LENGTH_LONG).show()
+                }
+            }
         }
     }
 
@@ -64,7 +82,6 @@ class UmrohPaketFragment : Fragment(), Injectable {
         (activity as AppCompatActivity).supportActionBar!!.title = ""
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        addFragment()
         binding.buttonBayar.setOnClickListener {
             val nav = UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohPemesanan()
             binding.root.findNavController().navigate(nav)
@@ -72,11 +89,7 @@ class UmrohPaketFragment : Fragment(), Injectable {
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketFragment){
             sharedViewModel.searchPaket.observe(viewLifecycleOwner){
                 val nav =
-                    UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohHasil(
-                        it[0],
-                        it[1],
-                        it[2]
-                    )
+                    UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohHasil()
                 binding.root.findNavController().navigate(nav)
             }
         }
@@ -98,17 +111,6 @@ class UmrohPaketFragment : Fragment(), Injectable {
                 }
             }
         )
-        binding.toolbar.setNavigationOnClickListener {
-            sharedViewModel.searchPaket.observe(viewLifecycleOwner){
-                val nav =
-                    UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohHasil(
-                        it[0],
-                        it[1],
-                        it[2]
-                    )
-                binding.root.findNavController().navigate(nav)
-            }
-        }
 
         /*binding.toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {

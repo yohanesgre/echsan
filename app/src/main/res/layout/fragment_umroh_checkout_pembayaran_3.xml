@@ -31,304 +31,354 @@
                 app:title="Pembayaran">
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
-        <LinearLayout
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:orientation="vertical">
-            <com.kofigyan.stateprogressbar.StateProgressBar
-                android:id="@+id/state_checkout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:spb_currentStateNumber="two"
-                app:spb_maxStateNumber="three"
-                app:spb_justifyMultilineDescription="true"
-                app:spb_descriptionLinesSpacing="5dp"
-                app:spb_stateBackgroundColor="@color/greyDark"
-                app:spb_stateForegroundColor="@color/colorPrimary"
-                app:spb_currentStateDescriptionColor="@color/colorPrimary"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="4dp"/>
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#20707070"
-                android:paddingStart="18dp"
-                android:paddingVertical="18dp"
-                android:layout_marginBottom="33dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <TextView
-                        android:text="1"
-                        android:paddingHorizontal="5.6dp"
-                        android:background="@drawable/circle_stroke_white"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="17dp"/>
-                    <TextView
-                        android:text="Selesaikan Pembayaran Sebelum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-            </FrameLayout>
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="85dp"
-                android:gravity="center"
-                android:layout_marginBottom="24dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_clock_regular"
-                    android:layout_marginEnd="16dp"/>
-                <LinearLayout
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.kofigyan.stateprogressbar.StateProgressBar
+                    android:id="@+id/state_checkout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="4dp"
+                    app:spb_currentStateDescriptionColor="@color/colorPrimary"
+                    app:spb_currentStateNumber="two"
+                    app:spb_descriptionLinesSpacing="5dp"
+                    app:spb_justifyMultilineDescription="true"
+                    app:spb_maxStateNumber="three"
+                    app:spb_stateBackgroundColor="@color/greyDark"
+                    app:spb_stateForegroundColor="@color/colorPrimary" />
+
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="3.10 AM Hari ini"
-                        android:textSize="12sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="10sp"
-                        tools:text="Selesaikan Pembayaran dalam 3 jam 30 menit"/>
-                </LinearLayout>
-            </LinearLayout>
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#20707070"
-                android:paddingStart="18dp"
-                android:paddingVertical="18dp"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <TextView
-                        android:text="2"
-                        android:paddingHorizontal="5.6dp"
-                        android:background="@drawable/circle_stroke_white"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="17dp"/>
-                    <TextView
-                        android:text="Mohon Transfer ke"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-            </FrameLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="71dp"
-                    android:paddingEnd="43dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="10dp"
-                    android:weightSum="2"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="33dp"
+                    android:background="#20707070"
+                    android:paddingVertical="18dp"
+                    android:paddingStart="18dp">
+
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal">
-                        <LinearLayout
-                            android:layout_width="match_parent"
+
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Kode Bank"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="10sp"/>
-                            <TextView
-                                android:text="009"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"/>
-                        </LinearLayout>
+                            android:layout_marginEnd="17dp"
+                            android:background="@drawable/circle_stroke_white"
+                            android:paddingHorizontal="5.6dp"
+                            android:text="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selesaikan Pembayaran Sebelum" />
                     </LinearLayout>
-                </LinearLayout>
+                </FrameLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="71dp"
-                    android:paddingEnd="43dp"
-                    android:weightSum="2"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="10dp"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.7"
-                        android:orientation="horizontal">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="No Rekening"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="10sp"/>
-                            <TextView
-                                android:text="5152-2651561-9849"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.3"
-                        android:textAlignment="center"
-                        android:textSize="10sp"
-                        android:text="SALIN"
-                        android:textColor="@color/colorPrimary"
-                        android:onClick="@{OnClickSalinRekening}"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="71dp"
-                    android:paddingEnd="43dp"
-                    android:weightSum="2"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="10dp"
-                    android:orientation="horizontal"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="85dp"
+                    android:layout_marginBottom="24dp"
                     android:gravity="center"
-                    android:background="#20707070">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.7"
-                        android:orientation="horizontal">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Nama Pemilik Rekening"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="10sp"/>
-                            <TextView
-                                android:text="Echsan Multimedia"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"/>
-                        </LinearLayout>
-                    </LinearLayout>
+                    android:orientation="horizontal">
+
                     <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="22dp"
-                        android:layout_weight="0.3"
-                        android:background="@drawable/ic_rek_echsan_bayar"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="16dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_clock_regular" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            tools:text="3.10 AM Hari ini" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10sp"
+                            tools:text="Selesaikan Pembayaran dalam 3 jam 30 menit" />
+                    </LinearLayout>
                 </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="#20707070"
+                    android:paddingVertical="18dp"
+                    android:paddingStart="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="17dp"
+                            android:background="@drawable/circle_stroke_white"
+                            android:paddingHorizontal="5.6dp"
+                            android:text="2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mohon Transfer ke" />
+                    </LinearLayout>
+                </FrameLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="71dp"
-                    android:paddingEnd="43dp"
-                    android:weightSum="2"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="10dp"
-                    android:orientation="horizontal"
-                    android:gravity="center">
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.7"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingStart="71dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="43dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="2">
+
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Jumlah Total"
-                                android:layout_width="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="10sp"/>
-                            <TextView
-                                android:text="Rp. 25.000.897"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"/>
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kode Bank"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="009"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
-                    <TextView
-                        android:layout_width="0dp"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.3"
-                        android:textAlignment="center"
-                        android:textSize="10sp"
-                        android:text="SALIN"
-                        android:textColor="@color/colorPrimary"
-                        android:onClick="@{OnClickSalinJumlahUang}"/>
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="71dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="43dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.7"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="No Rekening"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="5152-2651561-9849"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:onClick="@{OnClickSalinRekening}"
+                            android:text="SALIN"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#20707070"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="71dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="43dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.7"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Nama Pemilik Rekening"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Echsan Multimedia"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="22dp"
+                            android:layout_weight="0.3"
+                            android:background="@drawable/ic_rek_echsan_bayar" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="71dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="43dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.7"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jumlah Total"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rp. 25.000.897"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:onClick="@{OnClickSalinJumlahUang}"
+                            android:text="SALIN"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="10sp" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#20707070"
-                android:paddingStart="18dp"
-                android:paddingVertical="18dp"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
+
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <TextView
-                        android:text="3"
-                        android:paddingHorizontal="5.6dp"
-                        android:background="@drawable/circle_stroke_white"
-                        android:layout_width="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="#20707070"
+                    android:paddingVertical="18dp"
+                    android:paddingStart="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="17dp"/>
-                    <TextView
-                        android:text="Anda Sudah Membayar?"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-            </FrameLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Setelah pembayaran Anda dikonfirmasi, kami akan mengirimkan bukti pembelian dan e-ticket ke alamat email Anda."
-                android:layout_marginStart="48dp"
-                android:layout_marginEnd="26dp"
-                android:textAlignment="center"
-                android:textSize="10sp"
-                android:layout_marginBottom="40dp"/>
-            <Button
-                android:paddingVertical="15dp"
-                android:layout_marginHorizontal="17dp"
-                android:id="@+id/btn_lanjutkan"
-                android:text="SAYA SUDAH BAYAR"
-                android:textSize="12sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{OnClickSudahBayar}"/>
-        </LinearLayout>
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="17dp"
+                            android:background="@drawable/circle_stroke_white"
+                            android:paddingHorizontal="5.6dp"
+                            android:text="3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Anda Sudah Membayar?" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="Setelah pembayaran Anda dikonfirmasi, kami akan mengirimkan bukti pembelian dan e-ticket ke alamat email Anda."
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/btn_lanjutkan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="17dp"
+                    android:onClick="@{OnClickSudahBayar}"
+                    android:paddingVertical="15dp"
+                    android:text="SAYA SUDAH BAYAR"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

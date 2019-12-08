@@ -51,6 +51,8 @@ object AppInjector {
     }
 
     private fun handleActivity(activity: Activity) {
+        if (activity is Injectable)
+            AndroidInjection.inject(activity)
         if (activity is HasSupportFragmentInjector) {
             AndroidInjection.inject(activity)
         }

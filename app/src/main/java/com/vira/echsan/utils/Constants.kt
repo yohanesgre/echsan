@@ -22,3 +22,4 @@ package com.vira.echsan.utils
 const val DATABASE_NAME = "echsan-db"
 const val PROMO_DATA_FILENAME = "promo.json"
 const val PAKET_UMROH_DATA_FILENAME = "paketumroh.json"
+const val ENDPOINT = "http://echsan.sepaystudio.com/api/"

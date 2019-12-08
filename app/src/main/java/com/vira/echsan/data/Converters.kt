@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.vira.echsan.data.database
+package com.vira.echsan.data
 
 import androidx.room.TypeConverter
 import java.util.*

@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView
 class CarouselLayoutManager(context: Context?, orientation: Int, reverseLayout: Boolean) :
     LinearLayoutManager(context, orientation, reverseLayout) {
 
-    private val shrinkAmount = 0.15f
-    private val shrinkDistance = 0.9f
+    private val shrinkAmount = 0.05f
+    private val shrinkDistance = 0.5f
     private var smoothScroller: SmoothScroller? = null
 
     var anchor: Int = 0

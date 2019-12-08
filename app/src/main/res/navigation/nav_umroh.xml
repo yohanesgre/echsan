@@ -24,15 +24,7 @@
             android:name="com.vira.echsan.ui.fragments.umroh.UmrohHasilFragment"
             tools:layout="@layout/fragment_umroh_hasil"
             android:label="List Paket Umroh">
-        <argument
-            android:name="cari_tipe"
-            app:argType="string" />
-        <argument
-            android:name="cari_kota"
-            app:argType="string" />
-        <argument
-            android:name="cari_tanggal"
-            app:argType="string" />
+
         <action
             android:id="@+id/action_fragment_umroh_hasil_to_fragment_umroh_cari"
             app:destination="@id/fragment_umroh_cari"
@@ -55,6 +47,12 @@
         android:name="com.vira.echsan.ui.fragments.umroh.UmrohPaketFragment"
         tools:layout="@layout/fragment_umroh_paket"
         android:label="Paket Umroh">
+
+        <argument
+            android:name="paketId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
         <action
             android:id="@+id/action_fragment_umroh_paket_to_fragment_umroh_hasil"
             app:destination="@id/fragment_umroh_hasil"

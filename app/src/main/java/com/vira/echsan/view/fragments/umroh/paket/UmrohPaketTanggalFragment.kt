@@ -10,11 +10,11 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
 import com.vira.echsan.adapters.umroh.PaketTanggalAdapter
 import com.vira.echsan.databinding.FragmentUmrohPaketPilihTanggalBinding
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 
 class UmrohPaketTanggalFragment : Fragment(){
 
-    lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    lateinit var sharedViewModel: UmrohSharedViewModel
     lateinit var binding:FragmentUmrohPaketPilihTanggalBinding
 
     override fun onCreateView(
@@ -22,7 +22,8 @@ class UmrohPaketTanggalFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+        sharedViewModel =
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohPaketPilihTanggalBinding.inflate(inflater, container, false)
         initUI()
         return binding.root

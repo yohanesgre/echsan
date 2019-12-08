@@ -1,20 +1,19 @@
 package com.vira.echsan.adapters.umroh
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.data.entities.PaketUmroh
 import com.vira.echsan.databinding.ItemUmrohPaketBinding
 import com.vira.echsan.ui.fragments.umroh.UmrohHasilFragmentDirections
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
 
-class ListPaketUmrohAdapter(
-    private val sharedViewModel: PaketUmrohSharedViewModel
-) : ListAdapter<PaketUmroh, ListPaketUmrohAdapter.ViewHolder>(ListPaketUmrohDiffCallback()){
+class ListPaketUmrohAdapter :
+    PagedListAdapter<PaketUmroh, ListPaketUmrohAdapter.ViewHolder>(ListPaketUmrohDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemUmrohPaketBinding.inflate(
@@ -23,27 +22,35 @@ class ListPaketUmrohAdapter(
         )
     }
 
-    private fun createOnClickListener(paket:PaketUmroh): View.OnClickListener {
+    private fun createOnClickListener(id: Int): View.OnClickListener {
         return View.OnClickListener {
-            sharedViewModel.setSelectedPaket(paket)
-            val direction = UmrohHasilFragmentDirections.actionFragmentUmrohHasilToFragmentUmrohPaket()
+            val direction =
+                UmrohHasilFragmentDirections.actionFragmentUmrohHasilToFragmentUmrohPaket(id)
             it.findNavController().navigate(direction)
         }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val paket = getItem(position)
-        holder.apply {
-            bind(createOnClickListener(paket), paket)
+        paket?.let {
+            holder.apply {
+                bind(createOnClickListener(paket.id), paket)
+            }
         }
     }
     inner class ViewHolder(
         private val binding: ItemUmrohPaketBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(listener:View.OnClickListener, item:PaketUmroh){
             binding.apply {
                 clickListener = listener
-                paket = item
+                tvUmrohPaketCvPaket.text = item.name
+                tvUmrohPaketCvBerangkat.text = item.date_of_departure
+                tvUmrohPaketCvDurasi.text = item.day_amount.toString()
+                tvUmrohPaketCvHotel.text = item.madinah_hotel + " | " + item.makkah_hotel
+                tvUmrohPaketCvPenerbangan.text = item.departure_plane.dep_plane_name
+                tvUmrohPaketCvHarga2.text = item.price
                 executePendingBindings()
             }
         }
@@ -52,7 +59,7 @@ class ListPaketUmrohAdapter(
 
 private class ListPaketUmrohDiffCallback : DiffUtil.ItemCallback<PaketUmroh>() {
     override fun areItemsTheSame(oldItem: PaketUmroh, newItem: PaketUmroh): Boolean {
-        return oldItem.paketId == newItem.paketId
+        return oldItem.id == newItem.id
     }
     override fun areContentsTheSame(oldItem: PaketUmroh, newItem: PaketUmroh): Boolean {
         return oldItem == newItem

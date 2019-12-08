@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<layout>
+
+    <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:gravity="center_horizontal">
 
-    <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_login_mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
             android:gravity="center">
-        <com.google.android.material.textfield.TextInputEditText
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_et_login_mail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -21,9 +24,9 @@
                 android:minWidth="350dp"
                 android:drawableLeft="@drawable/ic_mail"
                 app:backgroundTint= "@color/white" />
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_login_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +34,7 @@
             android:gravity="center"
             android:layout_below="@id/input_layout_login_mail">
 
-        <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_et_login_pass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -40,9 +43,9 @@
                 android:inputType="textPassword|textNoSuggestions|textAutoComplete"
                 android:minWidth="350dp"
                 app:backgroundTint="@color/white" />
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,34 +59,37 @@
             android:layout_centerHorizontal="true"
             app:cornerRadius="10dp"/>
 
-    <TableRow
+        <TableRow
             android:id="@+id/row_login"
             android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/btn_login">
-        <ImageView
+
+            <ImageView
                 android:id="@+id/btn_login_google"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:paddingHorizontal="10dp"/>
-        <ImageView
+
+            <ImageView
                 android:id="@+id/btn_login_facebook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:paddingHorizontal="10dp"/>
-    </TableRow>
-    <androidx.appcompat.widget.AppCompatTextView
+        </TableRow>
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have an acoount?"
             android:layout_centerHorizontal="true"
-            android:layout_above="@id/btn_signup_login">
-    </androidx.appcompat.widget.AppCompatTextView>
-    <com.google.android.material.button.MaterialButton
+            android:layout_above="@id/btn_signup_login"></androidx.appcompat.widget.AppCompatTextView>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_signup_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,4 +101,5 @@
             android:background="@color/colorPrimary"
             app:cornerRadius="10dp"
             android:layout_centerHorizontal="true"/>
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

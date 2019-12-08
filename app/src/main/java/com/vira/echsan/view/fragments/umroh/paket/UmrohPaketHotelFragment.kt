@@ -8,13 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vira.echsan.adapters.umroh.PaketHotelAdapter
-import com.vira.echsan.adapters.umroh.PaketPenerbanganAdapter
 import com.vira.echsan.databinding.FragmentUmrohPaketHotelBinding
-import com.vira.echsan.databinding.FragmentUmrohPaketPenerbanganBinding
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 
 class UmrohPaketHotelFragment : Fragment(){
-    lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    lateinit var sharedViewModel: UmrohSharedViewModel
     lateinit var binding: FragmentUmrohPaketHotelBinding
 
     override fun onCreateView(
@@ -22,17 +20,16 @@ class UmrohPaketHotelFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+        sharedViewModel =
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohPaketHotelBinding.inflate(inflater, container, false)
         binding.rvUmrohPaketHotel.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
-        /*sharedViewModel.selectedPaket.observe(viewLifecycleOwner){paket->
-
-        }*/
-        val list = listOf(listOf("Surabaya", "Hotel"),
-            listOf("Jeddah", "Hotel"))
         val adapter = PaketHotelAdapter()
-        adapter.submitList(list)
         binding.rvUmrohPaketHotel.adapter = adapter
+        /*sharedViewModel.selectedPaket.observe(viewLifecycleOwner){paket->
+            val list = listOf(listOf("Makkah", paket.makkah_hotel), listOf("Madinah",paket.madinah_hotel))
+            adapter.submitList(list)
+        }*/
         return binding.root
     }
     companion object{

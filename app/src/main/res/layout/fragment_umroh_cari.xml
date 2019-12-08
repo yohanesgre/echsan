@@ -76,7 +76,8 @@
                                     android:id="@+id/et_umroh_cari_tipe"
                                     android:hint="Tipe Umroh"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
+                                    android:layout_height="match_parent"
+                                    android:inputType="none" />
                             </com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/layout_kota"
@@ -91,7 +92,8 @@
                                     android:id="@+id/et_umroh_cari_kota"
                                     android:hint="Kota Keberangkatan"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
+                                    android:layout_height="match_parent"
+                                    android:inputType="none" />
                             </com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/layout_tgl"
@@ -106,7 +108,8 @@
                                     android:id="@+id/et_umroh_cari_tgl_berangkat"
                                     android:hint="Bulan Keberangkatan"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
+                                    android:layout_height="match_parent"
+                                    android:inputType="none" />
                             </com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/layout_harga"
@@ -121,7 +124,8 @@
                                     android:id="@+id/et_umroh_cari_harga"
                                     android:hint="Harga"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
+                                    android:layout_height="match_parent"
+                                    android:inputType="none" />
                             </com.google.android.material.textfield.TextInputLayout>
                             <Button
                                 android:id="@+id/btn_umroh_cari"

@@ -5,102 +5,197 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="paket"
-            type="com.vira.echsan.data.entities.PaketUmroh" />
-        <variable
             name="ClickListener"
             type="android.view.View.OnClickListener" />
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        android:layout_marginVertical="5dp"
+        android:layout_height="170dp"
+        android:layout_margin="3dp"
+        app:cardElevation="3dp"
         android:clipToPadding="false"
         android:onClick="@{ClickListener}">
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
-            <ImageView
-                android:id="@+id/iv_umroh_paket_cv_paket"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minHeight="100dp"
-                android:minWidth="100dp"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/paket_umroh"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/tv_umroh_paket_cv_paket"
-                android:layout_width="wrap_content"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_umroh_paket_cv_paket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:minHeight="100dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/paket_umroh" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/ic_umroh_paket_img_banner" />
+
+                    <TextView
+                        android:id="@+id/tv_paket_img_banner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        tools:text="9 Hari" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/iv_umroh_paket_cv_paket"
-                tools:text="@string/tv_umroh_paket_cv_paket"
-                android:text="@{paket.name}"
-                android:layout_marginBottom="5dp"/>
-            <TextView
-                android:layout_marginBottom="5dp"
-                android:drawableLeft="@drawable/ic_calender_umroh"
-                android:drawablePadding="10dp"
-                android:layout_toRightOf="@id/iv_umroh_paket_cv_paket"
-                android:layout_below="@id/tv_umroh_paket_cv_paket"
-                android:id="@+id/tv_umroh_paket_cv_berangkat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Tanggal Keberangkatan"
-                android:text="@{paket.tanggal}"
-                />
-            <TextView
-                android:drawableLeft="@drawable/ic_durasi_umroh"
-                android:drawablePadding="10dp"
-                android:id="@+id/tv_umroh_paket_cv_durasi"
-                android:layout_below="@id/tv_umroh_paket_cv_berangkat"
-                android:layout_toRightOf="@id/iv_umroh_paket_cv_paket"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="@string/tv_umroh_paket_cv_durasi"
-                android:text="@{paket.durasi}"
-                android:layout_marginBottom="5dp"/>
-            <TextView
-                android:drawableLeft="@drawable/ic_hotel_umroh"
-                android:drawablePadding="10dp"
-                android:layout_toRightOf="@id/iv_umroh_paket_cv_paket"
-                android:layout_below="@id/tv_umroh_paket_cv_durasi"
-                android:id="@+id/tv_umroh_paket_cv_hotel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="@string/tv_umroh_paket_cv_hotel"
-                android:text="@{paket.hotel}"
-                android:layout_marginBottom="5dp"/>
-            <TextView
-                android:drawableLeft="@drawable/ic_keberangkatan_umroh"
-                android:drawablePadding="10dp"
-                android:layout_toRightOf="@id/iv_umroh_paket_cv_paket"
-                android:layout_below="@id/tv_umroh_paket_cv_hotel"
-                android:id="@+id/tv_umroh_paket_cv_penerbangan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="@string/tv_umroh_paket_cv_penerbangan"
-                android:text="@{paket.penerbangan}"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_below="@id/tv_umroh_paket_cv_penerbangan"
-                android:id="@+id/tv_umroh_paket_cv_harga1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_umroh_paket_cv_harga1"
-                android:layout_toRightOf="@id/iv_umroh_paket_cv_paket"
-                android:layout_marginRight="10dp"/>
-            <TextView
-                android:layout_below="@id/tv_umroh_paket_cv_harga1"
-                android:id="@+id/tv_umroh_paket_cv_harga2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="@string/tv_umroh_paket_cv_harga2"
-                android:layout_marginRight="10dp"
-                android:layout_toRightOf="@id/iv_umroh_paket_cv_paket"
-                android:text="@{paket.harga}"/>
-        </RelativeLayout>
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_umroh_paket_cv_paket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="12dp"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    tools:text="@string/tv_umroh_paket_cv_paket" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_paket_kalender_solid" />
+
+                    <TextView
+                        android:id="@+id/tv_umroh_paket_cv_berangkat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:textSize="12sp"
+                        tools:text="Tanggal Keberangkatan" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_paket_durasi_solid" />
+
+                    <TextView
+                        android:id="@+id/tv_umroh_paket_cv_durasi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:textSize="12sp"
+                        tools:text="@string/tv_umroh_paket_cv_durasi" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_paket_hotel_solid" />
+
+                    <TextView
+                        android:id="@+id/tv_umroh_paket_cv_hotel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:textSize="12sp"
+                        tools:text="@string/tv_umroh_paket_cv_hotel" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_paket_penerbangan_solid" />
+
+                    <TextView
+                        android:id="@+id/tv_umroh_paket_cv_penerbangan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:textSize="12sp"
+                        tools:text="@string/tv_umroh_paket_cv_penerbangan" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_umroh_paket_cv_harga1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/tv_umroh_paket_cv_harga1"
+                    android:textSize="10sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_umroh_paket_cv_harga2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:textColor="@color/orange"
+                        android:textSize="14sp"
+                        tools:text="@string/tv_umroh_paket_cv_harga2" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="0.4"
+                        android:text="/pax"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 </layout>

@@ -1,10 +1,10 @@
-package com.vira.echsan.data.database
+package com.vira.echsan.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
-import com.vira.echsan.data.database.Result.Status.ERROR
-import com.vira.echsan.data.database.Result.Status.SUCCESS
+import com.vira.echsan.data.Result.Status.ERROR
+import com.vira.echsan.data.Result.Status.SUCCESS
 import kotlinx.coroutines.Dispatchers
 
 /**
@@ -20,9 +20,12 @@ fun <T, A> resultLiveData(databaseQuery: () -> LiveData<T>,
                           saveCallResult: suspend (A) -> Unit): LiveData<Result<T>> =
         liveData(Dispatchers.IO) {
             emit(Result.loading<T>())
-            val source = databaseQuery.invoke().map { Result.success(it) }
+            val source = databaseQuery.invoke().map {
+                Result.success(
+                    it
+                )
+            }
             emitSource(source)
-
             val responseStatus = networkCall.invoke()
             if (responseStatus.status == SUCCESS) {
                 saveCallResult(responseStatus.data!!)

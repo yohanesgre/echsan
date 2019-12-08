@@ -1,21 +1,16 @@
 package com.vira.echsan.viewmodel
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.graphics.drawable.Drawable
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.vira.echsan.R
 import com.vira.echsan.adapters.pembayaran.ImageMetodePembayaranItem
-import com.vira.echsan.adapters.pembayaran.ImgMetodePembayaranAdapter
 import com.vira.echsan.adapters.pembayaran.MetodePembayaranItem
 import com.vira.echsan.adapters.pembayaran.SectionItem
 import com.vira.echsan.data.entities.PaketUmroh
 
-class PaketUmrohSharedViewModel : ViewModel(){
+class UmrohSharedViewModel : ViewModel() {
+
     private val _selectedPaket = MutableLiveData<PaketUmroh>()
     val selectedPaket:LiveData<PaketUmroh> = _selectedPaket
 

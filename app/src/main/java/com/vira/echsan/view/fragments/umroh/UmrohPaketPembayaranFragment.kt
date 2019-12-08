@@ -11,20 +11,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.vira.echsan.R
 import com.vira.echsan.adapters.pembayaran.MetodePembayaranAdapter
 import com.vira.echsan.adapters.pembayaran.TipePembayaranParentAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaranBinding
 import com.vira.echsan.view.fragments.umroh.pembayaran.UmrohPembayaranPaketFragment
-import com.vira.echsan.view.fragments.umroh.pemesanan.UmrohPemesananDataFragment
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
 class UmrohPaketPembayaranFragment : Fragment(){
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPembayaranBinding
     private val adapterTipePembayaran by lazy { TipePembayaranParentAdapter() }
     private lateinit var adapterMetodePembayaran:MetodePembayaranAdapter
@@ -34,7 +32,7 @@ class UmrohPaketPembayaranFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         sharedViewModel =
-            ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPembayaranBinding.inflate(inflater, container, false).apply {
             this.setOnClick {
                 val nav =
