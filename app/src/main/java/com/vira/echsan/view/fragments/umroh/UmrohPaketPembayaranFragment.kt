@@ -1,5 +1,6 @@
 package com.vira.echsan.view.fragments.umroh
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,26 +12,30 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
-import com.vira.echsan.R
 import com.vira.echsan.adapters.pembayaran.MetodePembayaranAdapter
 import com.vira.echsan.adapters.pembayaran.TipePembayaranParentAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaranBinding
-import com.vira.echsan.view.fragments.umroh.pembayaran.UmrohPembayaranPaketFragment
+import com.vira.echsan.di.Injectable
+import com.vira.echsan.di.injectViewModel
+import com.vira.echsan.viewmodel.PaketPembayaranViewModel
 import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
-class UmrohPaketPembayaranFragment : Fragment(){
+class UmrohPaketPembayaranFragment : Fragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var pembayaranViewModel: PaketPembayaranViewModel
     private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPembayaranBinding
     private val adapterTipePembayaran by lazy { TipePembayaranParentAdapter() }
     private lateinit var adapterMetodePembayaran:MetodePembayaranAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        pembayaranViewModel = injectViewModel(viewModelFactory)
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPembayaranBinding.inflate(inflater, container, false).apply {
@@ -46,8 +51,16 @@ class UmrohPaketPembayaranFragment : Fragment(){
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     private fun subscribeUI(){
-
+        sharedViewModel.SelectedPaket.observe(viewLifecycleOwner) {
+            binding.tvJadwalKeberangkatan.text = it.date_of_departure
+            binding.tvDurasi.text = it.day_amount.toString()
+            binding.tvHotel.text = "${it.makkah_hotel} | ${it.madinah_hotel}"
+            binding.tvPenerbangan.text =
+                "${it.departure_plane.dep_plane_name} | ${it.return_plane.ret_plane_name}"
+            binding.tvHarga.text = it.price
+        }
     }
 
     private fun initUI(){
@@ -55,29 +68,17 @@ class UmrohPaketPembayaranFragment : Fragment(){
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        addFragment()
         binding.stateCheckout.setStateDescriptionData(sharedViewModel.progressCheckoutDesc)
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketPembayaranFragment){
-            sharedViewModel.searchPaket.observe(viewLifecycleOwner){
-                val nav =
-                    UmrohPaketPembayaranFragmentDirections.actionFragmentUmrohPaketPembayaranToFragmentUmrohPaketPemesanan()
-                binding.root.findNavController().navigate(nav)
-            }
+            val nav =
+                UmrohPaketPembayaranFragmentDirections.actionFragmentUmrohPaketPembayaranToFragmentUmrohPaketPemesanan()
+            binding.root.findNavController().navigate(nav)
+
         }
         binding.rvTipePembayaran.adapter = adapterTipePembayaran
-        adapterTipePembayaran.addSectionItem(sharedViewModel.tipePembayaranSection)
+        adapterTipePembayaran.addSectionItem(pembayaranViewModel.tipePembayaranSection)
 
-        adapterMetodePembayaran = MetodePembayaranAdapter(sharedViewModel.metodePembayaran)
+        adapterMetodePembayaran = MetodePembayaranAdapter(pembayaranViewModel.metodePembayaran)
         binding.rvMetodePembayaran.adapter = adapterMetodePembayaran
-    }
-
-    private fun addFragment(){
-        val fragmentManager = childFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.add(
-            R.id.container_paket_umroh,
-            UmrohPembayaranPaketFragment.newInstance()
-        )
-        transaction.commit()
     }
 }

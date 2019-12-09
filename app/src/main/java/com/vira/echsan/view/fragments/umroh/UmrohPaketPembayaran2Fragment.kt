@@ -11,16 +11,20 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
-import com.vira.echsan.R
 import com.vira.echsan.adapters.pembayaran.TipePembayaranParentAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaran2Binding
-import com.vira.echsan.view.fragments.umroh.pembayaran.UmrohPembayaran2HargaFragment
+import com.vira.echsan.di.Injectable
+import com.vira.echsan.di.injectViewModel
+import com.vira.echsan.utils.ConvertCurrencyToDouble
+import com.vira.echsan.utils.ConvertToCurrency
+import com.vira.echsan.viewmodel.PaketPembayaran2ViewModel
 import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
-class UmrohPaketPembayaran2Fragment : Fragment(){
+class UmrohPaketPembayaran2Fragment : Fragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var pembayaran2ViewModel: PaketPembayaran2ViewModel
     private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPembayaran2Binding
     private val adapter by lazy { TipePembayaranParentAdapter() }
@@ -29,6 +33,7 @@ class UmrohPaketPembayaran2Fragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        pembayaran2ViewModel = injectViewModel(viewModelFactory)
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPembayaran2Binding.inflate(inflater, container, false).apply {
@@ -45,7 +50,13 @@ class UmrohPaketPembayaran2Fragment : Fragment(){
     }
 
     private fun subscribeUI(){
-
+        sharedViewModel.SelectedPaket.observe(viewLifecycleOwner) {
+            binding.tvPaketHarga.text = it.price
+            binding.tvPaketHargaJamaah.text =
+                ConvertToCurrency(ConvertCurrencyToDouble(it.price) * 2, null)
+            binding.tvPaketHargaTotal.text =
+                ConvertToCurrency(ConvertCurrencyToDouble(it.price) * 2, null)
+        }
     }
 
     private fun initUI(){
@@ -53,24 +64,12 @@ class UmrohPaketPembayaran2Fragment : Fragment(){
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        addFragment()
         binding.stateCheckout.setStateDescriptionData(sharedViewModel.progressCheckoutDesc)
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketPembayaran2Fragment){
-            sharedViewModel.searchPaket.observe(viewLifecycleOwner){
-                val nav =
-                    UmrohPaketPembayaran2FragmentDirections.actionFragmentUmrohPaketPembayaran2ToFragmentUmrohPaketPembayaran()
-                binding.root.findNavController().navigate(nav)
-            }
+            val nav =
+                UmrohPaketPembayaran2FragmentDirections.actionFragmentUmrohPaketPembayaran2ToFragmentUmrohPaketPembayaran()
+            binding.root.findNavController().navigate(nav)
         }
     }
 
-    private fun addFragment(){
-        val fragmentManager = childFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.replace(
-            R.id.container_rincian_harga,
-            UmrohPembayaran2HargaFragment.newInstance()
-        )
-        transaction.commit()
-    }
 }

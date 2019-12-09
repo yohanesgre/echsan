@@ -45,7 +45,6 @@ class HomeFragment : Fragment(), Injectable{
             setOnClickUmroh {
                 val intent = Intent(activity, UmrohActivity::class.java)
                 startActivity(intent)
-                requireActivity().finish()
             }
         }
         initUI(binding)
@@ -61,6 +60,10 @@ class HomeFragment : Fragment(), Injectable{
         carousel.autoScroll(true, 3000, true)
         carousel.scaleView(true)
         pagerSnapper.attachToRecyclerView(carousel.getView() as RecyclerView)
+    }
+
+    override fun onResume() {
+        super.onResume()
         carousel.addCarouselListener(object : CarouselListener {
             override fun onPositionChange(position: Int) {
                 Log.d(TAG, "currentPosition : $position")
@@ -73,6 +76,11 @@ class HomeFragment : Fragment(), Injectable{
         })
     }
 
+    override fun onPause() {
+        super.onPause()
+        carousel.removeCarouselListener()
+    }
+
     private fun subscribeUI(){
         viewModel.promoSets.observe(viewLifecycleOwner){ promos ->
             adapter.setList(promos)
@@ -83,9 +91,5 @@ class HomeFragment : Fragment(), Injectable{
             carousel.setCurrentPosition((promos.size / 2f).roundToInt())
             binding.indicator.createIndicators(promos.size, (promos.size / 2f).roundToInt())
         }
-    }
-
-    companion object {
-        fun newInstance() : HomeFragment = HomeFragment()
     }
 }

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="OnClick"
+            type="android.view.View.OnClickListener" />
+    </data>
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -62,20 +69,261 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="45dp"
                         android:layout_marginTop="20dp"/>
-
                     <View
                         android:id="@+id/line1"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
                         android:background="@color/greyDark"
                         android:layout_marginTop="20dp"/>
-
                     <FrameLayout
                         android:layout_marginTop="20dp"
                         android:id="@+id/container_fragment_detil"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content">
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/iv_umroh_paket_detil_img"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_marginRight="10dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/logo_travel" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_umroh_paket_detil_travel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/tv_umroh_paket_cv_travel"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_umroh_paket_detil_bulan_berangkat"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/tv_umroh_paket_cv_keberangkatan"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginBottom="10dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_weight="3"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="0.2"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_paket_kalender_solid" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.4"
+                                        android:drawablePadding="10dp"
+                                        android:text="Jadwal Keberangkatan"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.1"
+                                        android:text="@string/tv_umroh_paket_detil_separator" />
+
+                                    <TextView
+                                        android:id="@+id/tv_umroh_paket_detil_keberangkatan"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.3"
+                                        android:text="1 - 10 Oktober 2019"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_weight="3"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="0.2"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_paket_durasi_solid" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.4"
+                                        android:text="@string/tv_umroh_paket_detil_durasi_cons"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.1"
+                                        android:text="@string/tv_umroh_paket_detil_separator" />
+
+                                    <TextView
+                                        android:id="@+id/tv_umroh_paket_detil_durasi"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.3"
+                                        android:text="@string/tv_umroh_paket_detil_durasi_cons"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_weight="3"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="0.2"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_paket_lokasi" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.4"
+                                        android:text="@string/tv_umroh_paket_detil_lokasi_keberangkatan"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.1"
+                                        android:text="@string/tv_umroh_paket_detil_separator" />
+
+                                    <TextView
+                                        android:id="@+id/tv_umroh_paket_detil_lokasi"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.3"
+                                        android:text="@string/tv_umroh_paket_detil_lokasi_keberangkatan"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_weight="3"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="0.2"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_paket_kuota" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.4"
+                                        android:text="@string/tv_umroh_paket_detil_kuota"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.1"
+                                        android:text="@string/tv_umroh_paket_detil_separator" />
+
+                                    <TextView
+                                        android:id="@+id/tv_umroh_paket_detil_kuota"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.3"
+                                        android:text="@string/tv_umroh_paket_detil_kuota"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_weight="3"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="0.2"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_paket_point" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.4"
+                                        android:text="@string/tv_umroh_paket_detil_point"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.1"
+                                        android:text="@string/tv_umroh_paket_detil_separator" />
+
+                                    <TextView
+                                        android:id="@+id/tv_umroh_paket_detil_point"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.3"
+                                        android:text="@string/tv_umroh_paket_detil_point"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </FrameLayout>
                     <View
                         android:id="@+id/line2"
                         android:layout_width="match_parent"
@@ -87,7 +335,28 @@
                         android:id="@+id/container_fragment_fasilitas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:clipToPadding="false"/>
+                        android:clipToPadding="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/paket_space_start_end"
+                            android:paddingEnd="@dimen/paket_space_start_end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="Fasilitas" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_umroh_paket_fasilitas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:listitem="@layout/item_umroh_paket_fasilitas_new" />
+                        </LinearLayout>
+                    </FrameLayout>
                     <View
                         android:id="@+id/line4"
                         android:layout_width="match_parent"
@@ -98,7 +367,29 @@
                         android:layout_marginTop="20dp"
                         android:id="@+id/container_fragment_penerbangan"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/paket_space_start_end"
+                            android:paddingEnd="@dimen/paket_space_start_end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="Penerbangan" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_umroh_paket_penerbangan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:itemCount="2"
+                                tools:listitem="@layout/item_umroh_paket_penerbangan" />
+                        </LinearLayout>
+                    </FrameLayout>
                     <View
                         android:id="@+id/line5"
                         android:layout_width="match_parent"
@@ -110,7 +401,27 @@
                         android:layout_marginTop="20dp"
                         android:id="@+id/container_fragment_hotel"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/paket_space_start_end"
+                            android:paddingEnd="@dimen/paket_space_start_end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="Hotel" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_umroh_paket_hotel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </FrameLayout>
                     <View
                         android:id="@+id/line6"
                         android:layout_width="match_parent"
@@ -122,7 +433,33 @@
                         android:layout_marginTop="20dp"
                         android:id="@+id/container_fragment_rencana_perjalanan"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/paket_space_start_end"
+                            android:paddingEnd="@dimen/paket_space_start_end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="Rencana Perjalanan" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_rencana_perjalanan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{OnClick}"
+                                android:text="Lihat Semua" />
+                        </LinearLayout>
+                    </FrameLayout>
                     <View
                         android:id="@+id/line7"
                         android:layout_width="match_parent"

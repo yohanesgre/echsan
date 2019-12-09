@@ -77,7 +77,7 @@ class PaketTanggalAdapter(
                     if (checkedPosition != adapterPosition) {
                         notifyItemChanged(checkedPosition)
                         checkedPosition = adapterPosition
-                        sharedViewModel.setSelectedTanggal(_tanggal)
+                        //sharedViewModel.setSelectedTanggal(_tanggal)
                     }
                 }
                 executePendingBindings()

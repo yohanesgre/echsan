@@ -4,7 +4,6 @@ import alirezat775.lib.carouselview.helper.EndlessListener
 import alirezat775.lib.carouselview.helper.ViewHelper
 import android.content.Context
 import androidx.annotation.NonNull
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
 /**
@@ -41,11 +40,11 @@ class Carousel constructor(
         val padding: Int
         when (orientation) {
             CarouselView.HORIZONTAL -> {
-                padding = if (enablePadding) ViewHelper.getScreenWidth() / 4 else 1
+                padding = if (enablePadding) ViewHelper.getScreenWidth() / 20 else 1
                 carouselView.setPadding(padding, 0, padding, 0)
             }
             CarouselView.VERTICAL -> {
-                padding = if (enablePadding) ViewHelper.getScreenHeight() / 4 else 1
+                padding = if (enablePadding) ViewHelper.getScreenHeight() / 20 else 1
                 carouselView.setPadding(0, padding, 0, padding)
             }
         }

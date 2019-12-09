@@ -1,7 +1,9 @@
 package com.vira.echsan.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.vira.echsan.data.entities.PaketUmrohRepository
+import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 class PaketUmrohViewModel @Inject constructor(
@@ -9,7 +11,10 @@ class PaketUmrohViewModel @Inject constructor(
 ): ViewModel(){
 
     var id: Int = 0
-    val paketUmrohResult by lazy { repository.observePaketUmroh(id) }
+    val paketUmrohResult = liveData(Dispatchers.IO) {
+        val retrivePaket = repository.getPaketUmroh(id)
+        emit(retrivePaket)
+    }
 
 
     /*

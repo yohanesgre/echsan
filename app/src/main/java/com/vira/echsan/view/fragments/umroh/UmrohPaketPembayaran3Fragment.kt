@@ -9,15 +9,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaran3Binding
+import com.vira.echsan.di.Injectable
+import com.vira.echsan.di.injectViewModel
+import com.vira.echsan.viewmodel.PaketPembayaran3ViewModel
 import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
-class UmrohPaketPembayaran3Fragment : Fragment(){
+class UmrohPaketPembayaran3Fragment : Fragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var pembayaran3ViewModel: PaketPembayaran3ViewModel
     private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPembayaran3Binding
     override fun onCreateView(
@@ -25,6 +28,7 @@ class UmrohPaketPembayaran3Fragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        pembayaran3ViewModel = injectViewModel(viewModelFactory)
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPembayaran3Binding.inflate(inflater, container, false).apply {
@@ -51,11 +55,9 @@ class UmrohPaketPembayaran3Fragment : Fragment(){
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.stateCheckout.setStateDescriptionData(sharedViewModel.progressCheckoutDesc)
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketPembayaran3Fragment){
-            sharedViewModel.searchPaket.observe(viewLifecycleOwner){
-                val nav =
-                    UmrohPaketPembayaran3FragmentDirections.actionFragmentUmrohPaketPembayaran3ToFragmentUmrohPaketPembayaran2()
-                binding.root.findNavController().navigate(nav)
-            }
+            val nav =
+                UmrohPaketPembayaran3FragmentDirections.actionFragmentUmrohPaketPembayaran3ToFragmentUmrohPaketPembayaran2()
+            binding.root.findNavController().navigate(nav)
         }
     }
 }

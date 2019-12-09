@@ -8,22 +8,21 @@ import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.vira.echsan.R
+import com.vira.echsan.adapters.umroh.PaketHotelAdapter
+import com.vira.echsan.adapters.umroh.PaketPenerbanganAdapter
+import com.vira.echsan.adapters.umroh.PaketRencanaPerjalananAdapter
 import com.vira.echsan.data.Result
+import com.vira.echsan.data.entities.PaketUmroh
 import com.vira.echsan.databinding.FragmentUmrohPaketBinding
 import com.vira.echsan.di.Injectable
 import com.vira.echsan.di.injectViewModel
-import com.vira.echsan.ui.fragments.umroh.paket.UmrohPaketDetilFragment
-import com.vira.echsan.view.fragments.umroh.paket.UmrohPaketFasilitasFragment
-import com.vira.echsan.view.fragments.umroh.paket.UmrohPaketHotelFragment
-import com.vira.echsan.view.fragments.umroh.paket.UmrohPaketPenerbanganFragment
-import com.vira.echsan.view.fragments.umroh.paket.UmrohPaketRencanaPerjalananFragment
 import com.vira.echsan.viewmodel.PaketUmrohViewModel
 import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
@@ -37,6 +36,12 @@ class UmrohPaketFragment : Fragment(), Injectable {
     private lateinit var binding: FragmentUmrohPaketBinding
     private val args: UmrohPaketFragmentArgs by navArgs()
 
+    /*Adapter RecyclerView*/
+    private lateinit var hotelAdapter: PaketHotelAdapter
+    private lateinit var penerbanganAdapter: PaketPenerbanganAdapter
+    private lateinit var rencanaPerjalananAdapter: PaketRencanaPerjalananAdapter
+    /*----------------------------------*/
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,24 +52,20 @@ class UmrohPaketFragment : Fragment(), Injectable {
             ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         viewModel.id = args.paketId
         binding = FragmentUmrohPaketBinding.inflate(inflater, container, false)
-        context ?: return binding.root
+        //context ?: return binding.root
         initUI()
         subscribeUI()
         return binding.root
     }
 
     private fun subscribeUI(){
-        viewModel.paketUmrohResult.observe(viewLifecycleOwner) { result ->
+        viewModel.paketUmrohResult.observe(viewLifecycleOwner, Observer { result ->
             when (result.status) {
                 Result.Status.SUCCESS -> {
-                    addFragment()
-                    UmrohPaketDetilFragment.newInstance().binding.apply {
-                        tvUmrohPaketDetilTravel.text = result.data!!.travel_vendor.trav_name
-                        tvUmrohPaketDetilBulanBerangkat.text = result.data.date_of_departure
-                        tvUmrohPaketDetilDurasi.text = result.data.day_amount.toString()
-                        tvUmrohPaketDetilLokasi.text = result.data.departure_city.city_name
-                        tvUmrohPaketDetilKuota.text = result.data.quota.toString()
-                        tvUmrohPaketDetilPoint.text = result.data.point.toString()
+                    println("Success")
+                    if (result.data != null) {
+                        bindView(result.data)
+                        sharedViewModel.UpdateSelectedPaket(result.data)
                     }
                 }
                 Result.Status.LOADING -> {
@@ -73,6 +74,36 @@ class UmrohPaketFragment : Fragment(), Injectable {
                     Snackbar.make(binding.root, result.message!!, Snackbar.LENGTH_LONG).show()
                 }
             }
+        })
+    }
+
+    private fun bindView(paketUmroh: PaketUmroh) {
+        paketUmroh.apply {
+            binding.tvUmrohDetilPaket.text = this.name
+            binding.tvUmrohPaketDetilTravel.text = this.travel_vendor.trav_name
+            binding.tvUmrohPaketDetilBulanBerangkat.text = this.date_of_departure
+            binding.tvUmrohPaketDetilDurasi.text = this.day_amount.toString()
+            binding.tvUmrohPaketDetilLokasi.text = this.departure_city.city_name
+            binding.tvUmrohPaketDetilKuota.text = this.quota.toString()
+            binding.tvUmrohPaketDetilPoint.text = this.point.toString()
+            val listHotel =
+                listOf(listOf("Makkah", this.makkah_hotel), listOf("Madinah", this.madinah_hotel))
+            val listPenerbangan = listOf(
+                listOf(
+                    "Keberangkatan",
+                    this.departure_city.city_name,
+                    "Jeddah",
+                    this.departure_plane.dep_plane_name
+                ),
+                listOf(
+                    "Kepulangan",
+                    "Jeddah",
+                    this.departure_city.city_name,
+                    this.return_plane.ret_plane_name
+                )
+            )
+            hotelAdapter.submitList(listHotel)
+            penerbanganAdapter.submitList(listPenerbangan)
         }
     }
 
@@ -87,19 +118,25 @@ class UmrohPaketFragment : Fragment(), Injectable {
             binding.root.findNavController().navigate(nav)
         }
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketFragment){
-            sharedViewModel.searchPaket.observe(viewLifecycleOwner){
-                val nav =
-                    UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohHasil()
-                binding.root.findNavController().navigate(nav)
-            }
+            val nav =
+                UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohHasil()
+            binding.root.findNavController().navigate(nav)
         }
+        hotelAdapter = PaketHotelAdapter()
+        penerbanganAdapter = PaketPenerbanganAdapter()
+        rencanaPerjalananAdapter = PaketRencanaPerjalananAdapter()
+
+        binding.rvUmrohPaketHotel.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rvUmrohPaketPenerbangan.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rvUmrohPaketHotel.adapter = hotelAdapter
+        binding.rvUmrohPaketPenerbangan.adapter = penerbanganAdapter
         binding.nestedScrollview.setOnScrollChangeListener(
             NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, _ ->
-
                 // User scrolled past image to height of toolbar and the title text is
                 // underneath the toolbar, so the toolbar should be shown.
                 val shouldHideToolbar = scrollY > binding.toolbar.height
-
                 // The new state of the toolbar differs from the previous state; update
                 // appbar and toolbar attributes.
                 if (isToolbarShown == shouldHideToolbar) {
@@ -112,35 +149,26 @@ class UmrohPaketFragment : Fragment(), Injectable {
             }
         )
 
-        /*binding.toolbar.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                R.id.action_share -> {
-                    createShareIntent()
-                    true
-                }
-                else -> false
-            }
-        }*/
     }
 
-    private fun addFragment(){
-        val fragmentManager = childFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.add(R.id.container_fragment_detil,
-            UmrohPaketDetilFragment.newInstance()
-        )
-        transaction.add(R.id.container_fragment_fasilitas,
-            UmrohPaketFasilitasFragment.newInstance()
-        )
-        transaction.add(R.id.container_fragment_penerbangan,
-            UmrohPaketPenerbanganFragment.newInstance()
-        )
-        transaction.add(R.id.container_fragment_hotel,
-            UmrohPaketHotelFragment.newInstance()
-        )
-        transaction.add(R.id.container_fragment_rencana_perjalanan,
-            UmrohPaketRencanaPerjalananFragment.newInstance()
-        )
-        transaction.commit()
-    }
+    /* private fun addFragment(){
+         val fragmentManager = childFragmentManager
+         val transaction = fragmentManager.beginTransaction()
+         transaction.add(R.id.container_fragment_detil,
+             UmrohPaketDetilFragment.newInstance()
+         )
+         transaction.add(R.id.container_fragment_fasilitas,
+             UmrohPaketFasilitasFragment.newInstance()
+         )
+         transaction.add(R.id.container_fragment_penerbangan,
+             UmrohPaketPenerbanganFragment.newInstance()
+         )
+         transaction.add(R.id.container_fragment_hotel,
+             UmrohPaketHotelFragment.newInstance()
+         )
+         transaction.add(R.id.container_fragment_rencana_perjalanan,
+             UmrohPaketRencanaPerjalananFragment.newInstance()
+         )
+         transaction.commit()
+     }*/
 }

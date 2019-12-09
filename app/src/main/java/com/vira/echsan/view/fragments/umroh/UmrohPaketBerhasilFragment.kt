@@ -9,12 +9,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.vira.echsan.databinding.FragmentUmrohCheckoutBerhasilBinding
+import com.vira.echsan.di.Injectable
+import com.vira.echsan.di.injectViewModel
+import com.vira.echsan.viewmodel.PaketBerhasilViewModel
 import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
-class UmrohPaketBerhasilFragment : Fragment(){
+class UmrohPaketBerhasilFragment : Fragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var viewModel: PaketBerhasilViewModel
     private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutBerhasilBinding
     override fun onCreateView(
@@ -22,6 +26,7 @@ class UmrohPaketBerhasilFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = injectViewModel(viewModelFactory)
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutBerhasilBinding.inflate(inflater, container, false)

@@ -38,6 +38,8 @@ class PaketUmrohRepository @Inject constructor(
         ).build()
     }
 
+    suspend fun getPaketUmroh(id: Int) = paketUmrohRemoteDataSource.fetchPaketUmroh(id)
+
     fun observePaketUmroh(id: Int) = resultLiveData(
         databaseQuery = { dao.getPaketUmroh(id) },
         networkCall = { paketUmrohRemoteDataSource.fetchPaketUmroh(id) },

@@ -11,16 +11,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
-import com.vira.echsan.R
 import com.vira.echsan.adapters.pemesanan.PemesananDataJamaahAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPemesananBinding
-import com.vira.echsan.view.fragments.umroh.pemesanan.UmrohPemesananDataFragment
+import com.vira.echsan.di.Injectable
+import com.vira.echsan.di.injectViewModel
+import com.vira.echsan.viewmodel.PaketPemesananViewModel
 import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
-class UmrohPaketPemesananFragment : Fragment(){
+class UmrohPaketPemesananFragment : Fragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var pemesananViewModel: PaketPemesananViewModel
     private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPemesananBinding
     private lateinit var adapter:PemesananDataJamaahAdapter
@@ -30,6 +32,7 @@ class UmrohPaketPemesananFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        pemesananViewModel = injectViewModel(viewModelFactory)
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPemesananBinding.inflate(inflater, container, false).apply{
@@ -39,12 +42,12 @@ class UmrohPaketPemesananFragment : Fragment(){
                 this.root.findNavController().navigate(nav)
             }
             this.setOnClickTambah{
-                if (sharedViewModel.jumlahJamaah.value!! < 5)
-                    sharedViewModel.addJumlahJamaah()
+                if (pemesananViewModel.jumlahJamaah.value!! < 5)
+                    pemesananViewModel.addJumlahJamaah()
             }
             this.setOnClickKurang {
-                if (sharedViewModel.jumlahJamaah.value!! > 0)
-                    sharedViewModel.minusJumlahJamaah()
+                if (pemesananViewModel.jumlahJamaah.value!! > 0)
+                    pemesananViewModel.minusJumlahJamaah()
             }
         }
         context ?: return binding.root
@@ -54,7 +57,7 @@ class UmrohPaketPemesananFragment : Fragment(){
     }
 
     private fun subscribeUI(){
-        sharedViewModel.jumlahJamaah.observe(viewLifecycleOwner){jumlah ->
+        pemesananViewModel.jumlahJamaah.observe(viewLifecycleOwner) { jumlah ->
             binding.jumlahJamaah = jumlah.toString()
             var listJamaah = mutableListOf<String>()
             (1..jumlah).forEach { i ->
@@ -69,26 +72,13 @@ class UmrohPaketPemesananFragment : Fragment(){
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        addFragment()
         binding.stateCheckout.setStateDescriptionData(sharedViewModel.progressCheckoutDesc)
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketPemesananFragment){
-            sharedViewModel.searchPaket.observe(viewLifecycleOwner){
-                val nav =
-                    UmrohPaketPemesananFragmentDirections.actionFragmentUmrohPaketPemesananToFragmentUmrohPaket()
-                binding.root.findNavController().navigate(nav)
-            }
+            val nav =
+                UmrohPaketPemesananFragmentDirections.actionFragmentUmrohPaketPemesananToFragmentUmrohPaket()
+            binding.root.findNavController().navigate(nav)
         }
         adapter = PemesananDataJamaahAdapter()
         binding.rvDataJamaah.adapter = adapter
-    }
-
-    private fun addFragment(){
-        val fragmentManager = childFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.add(
-            R.id.container_data_pemesan,
-            UmrohPemesananDataFragment.newInstance()
-        )
-        transaction.commit()
     }
 }
