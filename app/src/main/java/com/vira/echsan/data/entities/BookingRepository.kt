@@ -1,5 +1,8 @@
 package com.vira.echsan.data.entities
 
+import javax.inject.Singleton
+
+@Singleton
 class BookingRepository private constructor(private val bookingDao: BookingDao){
     fun getBookings() = bookingDao.getBookings()
     fun getBookingsByStatus(status:Int) = bookingDao.getBookingsByStatus(status)

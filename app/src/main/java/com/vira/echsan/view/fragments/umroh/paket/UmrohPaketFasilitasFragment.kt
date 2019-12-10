@@ -8,15 +8,14 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.GridLayoutManager
-import com.vira.echsan.R
-import com.vira.echsan.adapters.umroh.PaketFasilitasAdapter
-import com.vira.echsan.databinding.FragmentUmrohPaketFasilitasBinding
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.vira.echsan.adapters.umroh.PaketFasilitasNewAdapter
+import com.vira.echsan.databinding.FragmentUmrohPaketFasilitasNewBinding
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 
 class UmrohPaketFasilitasFragment : Fragment(){
-    lateinit var sharedViewModel: PaketUmrohSharedViewModel
-    lateinit var binding: FragmentUmrohPaketFasilitasBinding
+    lateinit var sharedViewModel: UmrohSharedViewModel
+    lateinit var binding: FragmentUmrohPaketFasilitasNewBinding
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
@@ -24,10 +23,15 @@ class UmrohPaketFasilitasFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
-        binding = FragmentUmrohPaketFasilitasBinding.inflate(inflater, container, false)
-        val adapter = PaketFasilitasAdapter()
+        sharedViewModel =
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
+        binding = FragmentUmrohPaketFasilitasNewBinding.inflate(inflater, container, false)
+        val adapter = PaketFasilitasNewAdapter()
         adapter.submitList(sharedViewModel.listOfFasilitas)
+        binding.rvUmrohPaketFasilitas.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rvUmrohPaketFasilitas.adapter = adapter
+        /* Old View
         binding.rvUmrohPaketFasilitas.layoutManager = GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
         binding.rvUmrohPaketFasilitas.adapter = adapter
         binding.layoutFasilitas.showButton = true
@@ -35,7 +39,7 @@ class UmrohPaketFasilitasFragment : Fragment(){
         binding.layoutFasilitas.animationDuration = 300
         binding.layoutFasilitas.collapsedHeight = 250
         binding.layoutFasilitas.moreText = "Lihat Semua Fasilitas"
-        binding.layoutFasilitas.moreColor = requireActivity().getColor(R.color.colorPrimary)
+        binding.layoutFasilitas.moreColor = requireActivity().getColor(R.color.colorPrimary)*/
         return binding.root
     }
     companion object{

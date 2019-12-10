@@ -9,10 +9,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vira.echsan.adapters.umroh.PaketPenerbanganAdapter
 import com.vira.echsan.databinding.FragmentUmrohPaketPenerbanganBinding
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 
 class UmrohPaketPenerbanganFragment : Fragment(){
-    lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    lateinit var sharedViewModel: UmrohSharedViewModel
     lateinit var binding: FragmentUmrohPaketPenerbanganBinding
 
     override fun onCreateView(
@@ -20,17 +20,17 @@ class UmrohPaketPenerbanganFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+        sharedViewModel =
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohPaketPenerbanganBinding.inflate(inflater, container, false)
         binding.rvUmrohPaketPenerbangan.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
-        /*sharedViewModel.selectedPaket.observe(viewLifecycleOwner){paket->
-
-        }*/
-        val list = listOf(listOf("Keberangkatan", "Surabaya", "Jeddah", "Garuda"),
-            listOf("Kepulangan", "Jeddah", "Surabaya", "Garuda"))
         val adapter = PaketPenerbanganAdapter()
-        adapter.submitList(list)
         binding.rvUmrohPaketPenerbangan.adapter = adapter
+        /*sharedViewModel.selectedPaket.observe(viewLifecycleOwner){paket->
+            val list = listOf(listOf("Keberangkatan", paket.departure_city.city_name, "Jeddah", paket.departure_plane.dep_plane_name),
+                listOf("Kepulangan", "Jeddah", paket.departure_city.city_name, paket.return_plane.ret_plane_name))
+            adapter.submitList(list)
+        }*/
         return binding.root
     }
     companion object{

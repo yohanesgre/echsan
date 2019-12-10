@@ -45,6 +45,7 @@ class HomeFragment : Fragment(), Injectable{
             setOnClickUmroh {
                 val intent = Intent(activity, UmrohActivity::class.java)
                 startActivity(intent)
+                requireActivity().finish()
             }
         }
         initUI(binding)
@@ -79,7 +80,8 @@ class HomeFragment : Fragment(), Injectable{
                 val item = CarouselModel(it)
                 carousel.add(item)
             }
-            binding.indicator.createIndicators(promos.size, carousel.getCurrentPosition())
+            carousel.setCurrentPosition((promos.size / 2f).roundToInt())
+            binding.indicator.createIndicators(promos.size, (promos.size / 2f).roundToInt())
         }
     }
 

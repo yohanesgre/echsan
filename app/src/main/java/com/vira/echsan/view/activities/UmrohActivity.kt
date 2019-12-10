@@ -4,12 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.vira.echsan.R
 import com.vira.echsan.databinding.ActivityUmrohBinding
-import com.vira.echsan.di.injectViewModel
-import com.vira.echsan.viewmodel.UmrohViewModel
-import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject

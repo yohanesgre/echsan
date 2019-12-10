@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.R
 import com.vira.echsan.databinding.ItemUmrohPaketPilihTanggalBinding
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 
 
 class PaketTanggalAdapter(
     private val context: Context,
-    private val sharedViewModel: PaketUmrohSharedViewModel
+    private val sharedViewModel: UmrohSharedViewModel
 ) : ListAdapter<Int, PaketTanggalAdapter.ViewHolder>(PaketTanggalDiffCallback()) {
 
     private var checkedPosition = -1

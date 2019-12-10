@@ -11,12 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.vira.echsan.R
 import com.vira.echsan.adapters.umroh.PaketRencanaPerjalananAdapter
 import com.vira.echsan.databinding.DialogUmrohPaketRencanaPerjalananBinding
-import com.vira.echsan.ui.fragments.umroh.UmrohPaketFilterDialog
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 
 class UmrohPaketRencanaPerjalananDialog : DialogFragment(){
     lateinit var binding: DialogUmrohPaketRencanaPerjalananBinding
-    lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    lateinit var sharedViewModel: UmrohSharedViewModel
     lateinit var adapter:PaketRencanaPerjalananAdapter
 
     companion object{
@@ -51,7 +50,8 @@ class UmrohPaketRencanaPerjalananDialog : DialogFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+        sharedViewModel =
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = DialogUmrohPaketRencanaPerjalananBinding.inflate(inflater, container, false)
         initUI()
         return binding.root

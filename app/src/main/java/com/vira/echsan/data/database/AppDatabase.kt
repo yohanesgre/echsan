@@ -24,20 +24,43 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import com.vira.echsan.data.Converters
 import com.vira.echsan.data.entities.*
 import com.vira.echsan.utils.DATABASE_NAME
-import com.vira.echsan.utils.ioThread
 import com.vira.echsan.workers.SeedDatabaseWorker
 
 /**
  * The Room database for this app
  */
-@Database(entities = [PaketUmroh::class, Promo::class, Booking::class], version = 1, exportSchema = false)
+@Database(
+    entities = [
+        PaketUmroh::class,
+        Promo::class,
+        Booking::class,
+        Profile::class
+        /* Category::class,
+         DepartureCity::class,
+         DeparturePlane::class,
+         ProductCategory::class,
+         ReturnPlane::class,
+         TravelVendor::class*/],
+    version = 1,
+    exportSchema = false
+)
+
+
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun paketUmrohDao(): PaketUmrohDao
     abstract fun promoDao(): PromoDao
     abstract fun bookingDao(): BookingDao
+    abstract fun profileDao(): ProfileDao
+    /* abstract fun categoryDao(): CategoryDao
+     abstract fun departureCityDao(): DepartureCityDao
+     abstract fun departurePlaneDao(): DeparturePlaneDao
+     abstract fun productCategoryDao(): ProductCategoryDao
+     abstract fun returnPlaneDao(): ReturnPlaneDao
+     abstract fun travelVendorDao(): TravelVendorDao*/
 
     companion object {
 
@@ -99,14 +122,14 @@ abstract class AppDatabase : RoomDatabase() {
 
         private fun buildDatabase(context: Context): AppDatabase {
             return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
-                    .addCallback(object : RoomDatabase.Callback() {
-                        override fun onCreate(db: SupportSQLiteDatabase) {
-                            super.onCreate(db)
-                            val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
-                            WorkManager.getInstance(context).enqueue(request)
-                        }
-                    })
-                    .build()
+                .addCallback(object : RoomDatabase.Callback() {
+                    override fun onCreate(db: SupportSQLiteDatabase) {
+                        super.onCreate(db)
+                        val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
+                        WorkManager.getInstance(context).enqueue(request)
+                    }
+                })
+                .build()
         }
     }
 }

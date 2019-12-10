@@ -1,4 +1,4 @@
-package com.vira.echsan.data.database
+package com.vira.echsan.data
 
 /**
  * A generic class that holds a value with its loading status.
@@ -7,7 +7,7 @@ package com.vira.echsan.data.database
  * `LiveData<Result<T>>` to pass back the latest data to the UI with its fetch status.
  */
 
-data class Result<out T>(val status: Status, val data: T?, val message: String?) {
+data class Result<out T>(var status: Status, val data: T?, var message: String?) {
 
     enum class Status {
         SUCCESS,
@@ -17,15 +17,27 @@ data class Result<out T>(val status: Status, val data: T?, val message: String?)
 
     companion object {
         fun <T> success(data: T): Result<T> {
-            return Result(Status.SUCCESS, data, null)
+            return Result(
+                Status.SUCCESS,
+                data,
+                null
+            )
         }
 
         fun <T> error(message: String, data: T? = null): Result<T> {
-            return Result(Status.ERROR, data, message)
+            return Result(
+                Status.ERROR,
+                data,
+                message
+            )
         }
 
         fun <T> loading(data: T? = null): Result<T> {
-            return Result(Status.LOADING, data, null)
+            return Result(
+                Status.LOADING,
+                data,
+                null
+            )
         }
     }
 }

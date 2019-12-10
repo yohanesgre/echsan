@@ -30,8 +30,16 @@ buildscript {
         uiAutomatorVersion = '2.2.0'
         viewPagerVersion = '1.0.0-beta03'
         workVersion = '2.1.0'
-
+        pagingVersion = '2.1.0'
+        gsonVersion = '2.8.2'
+        okhttp = '3.10.0'
+        retrofit = '2.6.0'
+        stetho = '1.5.1'
+        timberVersion = '4.7.1'
         daggerVersion = '2.23.2'
+        stetho = '1.5.1'
+        mockwebserverVersion = "3.8.1"
+        testCoreVersion = "1.1.0"
     }
     repositories {
         google()

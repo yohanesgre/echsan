@@ -4,27 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.observe
-import androidx.navigation.findNavController
-import com.vira.echsan.R
-import com.vira.echsan.adapters.pembayaran.TipePembayaranParentAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutBerhasilBinding
-import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaran2Binding
-import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaranBinding
-import com.vira.echsan.view.fragments.umroh.pembayaran.UmrohPembayaran2HargaFragment
-import com.vira.echsan.view.fragments.umroh.pemesanan.UmrohPemesananDataFragment
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
 class UmrohPaketBerhasilFragment : Fragment(){
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutBerhasilBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +23,7 @@ class UmrohPaketBerhasilFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         sharedViewModel =
-            ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutBerhasilBinding.inflate(inflater, container, false)
         context ?: return binding.root
         initUI()

@@ -44,341 +44,391 @@
                 app:layout_collapseMode="parallax">
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
-        <LinearLayout
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:orientation="vertical">
-            <alirezat775.lib.carouselview.CarouselView
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:clipToPadding="false"
-                android:id="@+id/carouselPromo"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <me.relex.circleindicator.CircleIndicator2
-                android:id="@+id/indicator"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginBottom="20dp"
-                app:ci_drawable="@drawable/color_primary_radius"
-                app:ci_drawable_unselected="@drawable/grey_radius"
-                app:ci_gravity="left|center_vertical"/>
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
-                android:layout_marginBottom="20dp"
-                android:padding="3dp"
-                android:clipToPadding="false"
-                android:background="@drawable/border_rounded_colorprimary">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <alirezat775.lib.carouselview.CarouselView
+                    android:id="@+id/carouselPromo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clipToPadding="false" />
+
+                <me.relex.circleindicator.CircleIndicator2
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="20dp"
+                    app:ci_drawable="@drawable/color_primary_radius"
+                    app:ci_drawable_unselected="@drawable/grey_radius"
+                    app:ci_gravity="left|center_vertical" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/border_rounded_colorprimary"
+                    android:clipToPadding="false"
+                    android:padding="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/tv_home_coin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginVertical="10dp"
+                            android:layout_weight="1.5"
+                            android:drawableStart="@drawable/ic_home_coin"
+                            android:drawablePadding="15dp"
+                            android:text="@string/tv_home_coupon_value"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/grey" />
+
+                        <TextView
+                            android:id="@+id/tv_home_coupon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginVertical="10dp"
+                            android:layout_weight="1.5"
+                            android:drawableStart="@drawable/ic_home_coupon"
+                            android:drawablePadding="15dp"
+                            android:text="@string/tv_home_coupon_value"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </FrameLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:clipToPadding="false"
+                    android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="3"
-                    android:gravity="center">
-                    <TextView
-                        android:id="@+id/tv_home_coin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.5"
-                        android:drawableStart="@drawable/ic_home_coin"
-                        android:drawablePadding="15dp"
-                        android:text="@string/tv_home_coupon_value"
-                        android:textSize="14sp"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:layout_marginHorizontal="15dp"
-                        android:layout_marginVertical="10dp"/>
-                    <View
-                        android:layout_width="2dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/grey"/>
-                    <TextView
-                        android:id="@+id/tv_home_coupon"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.5"
-                        android:text="@string/tv_home_coupon_value"
-                        android:drawableStart="@drawable/ic_home_coupon"
-                        android:drawablePadding="15dp"
-                        android:textSize="14sp"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:layout_marginHorizontal="15dp"
-                        android:layout_marginVertical="10dp"/>
-                </LinearLayout>
-            </FrameLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="35dp"
-                android:layout_marginBottom="25dp"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal"
-                android:clipToPadding="false">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp"
-                    android:clipToPadding="false">
-                    <FrameLayout
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/border_rounded_white"
-                        android:layout_marginBottom="5dp"
-                        android:padding="15dp"
-                        android:elevation="2dp"
-                        android:gravity="center"
-                        android:onClick="@{OnClickUmroh}">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_kaba_solid" />
-                    </FrameLayout>
-                    <TextView
-                        android:textSize="10sp"
+                    android:paddingHorizontal="35dp">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tv_home_umroh_haji" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp"
-                    android:clipToPadding="false">
-                    <FrameLayout
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/border_rounded_white"
-                        android:layout_marginBottom="5dp"
-                        android:padding="15dp"
-                        android:elevation="2dp"
+                        android:layout_marginEnd="30dp"
+                        android:clipToPadding="false"
                         android:gravity="center"
-                        android:onClick="@{OnClickSocial}">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_social_solid" />
-                    </FrameLayout>
-                    <TextView
-                        android:textSize="10sp"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <FrameLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/border_rounded_white"
+                            android:elevation="2dp"
+                            android:gravity="center"
+                            android:onClick="@{OnClickUmroh}"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_kaba_solid" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_home_umroh_haji"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tv_home_sosial" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp"
-                    android:clipToPadding="false">
-                    <FrameLayout
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/border_rounded_white"
-                        android:layout_marginBottom="5dp"
-                        android:padding="15dp"
-                        android:elevation="2dp"
+                        android:layout_marginEnd="30dp"
+                        android:clipToPadding="false"
                         android:gravity="center"
-                        android:onClick="@{OnClickTravel}">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_travel_solid" />
-                    </FrameLayout>
-                    <TextView
-                        android:textSize="10sp"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <FrameLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/border_rounded_white"
+                            android:elevation="2dp"
+                            android:gravity="center"
+                            android:onClick="@{OnClickSocial}"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_social_solid" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_home_sosial"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tv_home_travel" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp"
-                    android:clipToPadding="false">
-                    <FrameLayout
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/border_rounded_white"
-                        android:layout_marginBottom="5dp"
-                        android:padding="15dp"
-                        android:elevation="2dp"
+                        android:layout_marginEnd="30dp"
+                        android:clipToPadding="false"
                         android:gravity="center"
-                        android:onClick="@{OnClickShop}">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_shop" />
-                    </FrameLayout>
-                    <TextView
-                        android:textSize="10sp"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <FrameLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/border_rounded_white"
+                            android:elevation="2dp"
+                            android:gravity="center"
+                            android:onClick="@{OnClickTravel}"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_travel_solid" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_home_travel"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tv_home_shop" />
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <FrameLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/border_rounded_white"
+                            android:elevation="2dp"
+                            android:gravity="center"
+                            android:onClick="@{OnClickShop}"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_shop" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_home_shop"
+                            android:textSize="10sp" />
+                    </LinearLayout>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:clipToPadding="false"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="35dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <FrameLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/border_rounded_white"
+                            android:elevation="2dp"
+                            android:gravity="center"
+                            android:onClick="@{OnClickMember}"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_member_solid" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_home_member"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <FrameLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/border_rounded_white"
+                            android:elevation="2dp"
+                            android:gravity="center"
+                            android:onClick="@{OnClickBenefit}"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_benefit_solid" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_home_benefit"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <FrameLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/border_rounded_white"
+                            android:elevation="2dp"
+                            android:gravity="center"
+                            android:onClick="@{OnClickDoa}"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_doa_solid" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_home_doa"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <FrameLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/border_rounded_white"
+                            android:elevation="2dp"
+                            android:gravity="center"
+                            android:onClick="@{OnClickMedsos}"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_member_solid" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_home_medsos"
+                            android:textAlignment="center"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Rekomendasi Paket Umroh"
+                    android:textSize="14sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_carousel_promo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginBottom="30dp"
+                    android:clipToPadding="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Kategori Paket Umroh"
+                    android:textSize="14sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_carousel_kat_umroh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:clipToPadding="false" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="35dp"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal"
-                android:clipToPadding="false"
-                android:layout_marginBottom="30dp">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp"
-                    android:clipToPadding="false">
-                    <FrameLayout
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/border_rounded_white"
-                        android:layout_marginBottom="5dp"
-                        android:padding="15dp"
-                        android:elevation="2dp"
-                        android:gravity="center"
-                        android:onClick="@{OnClickMember}">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_member_solid" />
-                    </FrameLayout>
-                    <TextView
-                        android:textSize="10sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tv_home_member" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp"
-                    android:clipToPadding="false">
-                    <FrameLayout
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/border_rounded_white"
-                        android:layout_marginBottom="5dp"
-                        android:padding="15dp"
-                        android:elevation="2dp"
-                        android:gravity="center"
-                        android:onClick="@{OnClickBenefit}">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_benefit_solid" />
-                    </FrameLayout>
-                    <TextView
-                        android:textSize="10sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tv_home_benefit" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp"
-                    android:clipToPadding="false">
-                    <FrameLayout
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/border_rounded_white"
-                        android:layout_marginBottom="5dp"
-                        android:padding="15dp"
-                        android:elevation="2dp"
-                        android:gravity="center"
-                        android:onClick="@{OnClickDoa}">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_doa_solid" />
-                    </FrameLayout>
-                    <TextView
-                        android:textSize="10sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tv_home_doa" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp"
-                    android:clipToPadding="false">
-                    <FrameLayout
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/border_rounded_white"
-                        android:layout_marginBottom="5dp"
-                        android:padding="15dp"
-                        android:elevation="2dp"
-                        android:gravity="center"
-                        android:onClick="@{OnClickMedsos}">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_member_solid" />
-                    </FrameLayout>
-                    <TextView
-                        android:textSize="10sp"
-                        android:textAlignment="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tv_home_medsos" />
-                </LinearLayout>
-            </LinearLayout>
-            <TextView
-                android:textSize="14sp"
-                android:layout_marginStart="25dp"
-                android:layout_marginBottom="10dp"
-                android:text="Rekomendasi Paket Umroh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_carousel_promo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:clipToPadding="false"
-                android:layout_marginBottom="30dp"/>
-            <TextView
-                android:textSize="14sp"
-                android:layout_marginStart="25dp"
-                android:layout_marginBottom="10dp"
-                android:text="Kategori Paket Umroh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_carousel_kat_umroh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:clipToPadding="false"/>
-        </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

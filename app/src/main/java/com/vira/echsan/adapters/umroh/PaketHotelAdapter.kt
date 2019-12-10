@@ -24,7 +24,6 @@ class PaketHotelAdapter : ListAdapter<List<String>, PaketHotelAdapter.ViewHolder
     inner class ViewHolder(
         private val binding:ItemUmrohPaketHotelBinding
     ):RecyclerView.ViewHolder(binding.root){
-
         fun bind(kota:String, hotel:String) {
             binding.apply{
                 binding.kota = kota

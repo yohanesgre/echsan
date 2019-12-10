@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.observe
 import com.vira.echsan.databinding.FragmentUmrohPaketDetilBinding
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.PaketUmrohViewModel
 
 class UmrohPaketDetilFragment : Fragment(){
 
-    lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    lateinit var sharedViewModel: PaketUmrohViewModel
     lateinit var binding:FragmentUmrohPaketDetilBinding
 
     override fun onCreateView(
@@ -20,21 +19,17 @@ class UmrohPaketDetilFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+        sharedViewModel =
+            ViewModelProviders.of(requireParentFragment()).get(PaketUmrohViewModel::class.java)
         binding = FragmentUmrohPaketDetilBinding.inflate(inflater, container, false)
         initUI()
         return binding.root
     }
 
     private fun initUI() {
-        sharedViewModel.selectedPaket.observe(viewLifecycleOwner){paket->
-            binding.tvUmrohPaketDetilTravel.text = paket.travel
-            binding.tvUmrohPaketDetilBulanBerangkat.text = paket.tanggal
-            binding.tvUmrohPaketDetilDurasi.text = paket.durasi
-            binding.tvUmrohPaketDetilLokasi.text = paket.lokasi
-            binding.tvUmrohPaketDetilKuota.text = paket.kuota.toString()
-            binding.tvUmrohPaketDetilPoint.text = paket.point.toString()
-        }
+        /*sharedViewModel.paketUmroh.observe(requireParentFragment().viewLifecycleOwner){
+
+        }*/
     }
 
     companion object{

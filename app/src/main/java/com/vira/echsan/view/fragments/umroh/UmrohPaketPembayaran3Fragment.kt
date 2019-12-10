@@ -11,16 +11,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
-import com.vira.echsan.R
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaran3Binding
-import com.vira.echsan.view.fragments.umroh.pembayaran.UmrohPembayaran2HargaFragment
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 import javax.inject.Inject
 
 class UmrohPaketPembayaran3Fragment : Fragment(){
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    private lateinit var sharedViewModel: UmrohSharedViewModel
     private lateinit var binding: FragmentUmrohCheckoutPembayaran3Binding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +26,7 @@ class UmrohPaketPembayaran3Fragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         sharedViewModel =
-            ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPembayaran3Binding.inflate(inflater, container, false).apply {
             setOnClickSudahBayar {
                 val nav =

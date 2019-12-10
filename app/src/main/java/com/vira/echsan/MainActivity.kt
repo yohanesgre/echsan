@@ -8,8 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.vira.echsan.databinding.ActivityMainBinding
-import com.vira.echsan.view.fragments.HomeFragment
 import com.vira.echsan.ui.fragments.bookings.BookingsFragment
+import com.vira.echsan.view.fragments.HomeFragment
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val binding:ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.navbarBottom.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         val navigationId = intent.getIntExtra(PARAM_NAVIGATION_ID, R.id.fragment_home)
@@ -46,10 +47,10 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
         val tag = itemId.toString()
         val fragment = supportFragmentManager.findFragmentByTag(tag) ?: when (itemId) {
             R.id.fragment_home -> {
-                HomeFragment.newInstance()
+                HomeFragment()
             }
             R.id.fragment_bookings -> {
-                BookingsFragment.newInstance()
+                BookingsFragment()
             }
             R.id.fragment_points -> {
 

@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaranPaketBinding
-import com.vira.echsan.databinding.FragmentUmrohCheckoutPemesananDataBinding
-import com.vira.echsan.viewmodel.PaketUmrohSharedViewModel
+import com.vira.echsan.viewmodel.UmrohSharedViewModel
 
 class UmrohPembayaranPaketFragment : Fragment(){
-    lateinit var sharedViewModel: PaketUmrohSharedViewModel
+    lateinit var sharedViewModel: UmrohSharedViewModel
     lateinit var binding: FragmentUmrohCheckoutPembayaranPaketBinding
 
     override fun onCreateView(
@@ -19,7 +18,8 @@ class UmrohPembayaranPaketFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(PaketUmrohSharedViewModel::class.java)
+        sharedViewModel =
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohCheckoutPembayaranPaketBinding.inflate(inflater, container, false)
         initUI()
         return binding.root
