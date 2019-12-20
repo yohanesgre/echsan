@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.R
 import com.vira.echsan.databinding.ItemUmrohPaketPilihTanggalBinding
-import com.vira.echsan.viewmodel.UmrohSharedViewModel
+import com.vira.echsan.features.umroh.viewmodel.UmrohSharedViewModel
 
 
 class PaketTanggalAdapter(
@@ -77,7 +77,7 @@ class PaketTanggalAdapter(
                     if (checkedPosition != adapterPosition) {
                         notifyItemChanged(checkedPosition)
                         checkedPosition = adapterPosition
-                        sharedViewModel.setSelectedTanggal(_tanggal)
+                        //sharedViewModel.setSelectedTanggal(_tanggal)
                     }
                 }
                 executePendingBindings()

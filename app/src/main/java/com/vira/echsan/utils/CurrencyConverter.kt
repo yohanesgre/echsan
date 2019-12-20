@@ -13,5 +13,11 @@ fun ConvertToCurrency(ammountDbl:Double?=null, ammountStr:String?=null): String{
     val format = NumberFormat.getCurrencyInstance(localeID)
     //format.setMaximumFractionDigits(0)
     //format.setCurrency(Currency.getInstance("IDR"))
-    return format.format(value)
+    var result = format.format(value)
+    result = StringBuffer(result).insert(2, ". ").toString()
+    return result
+}
+
+fun ConvertCurrencyToDouble(input: String): Double {
+    return input.replace("[Rp. ]".toRegex(), "").toDouble()
 }

@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <data>
-        <variable
-            name="OnClickUmroh"
-            type="android.view.View.OnClickListener" />
-        <variable
-            name="OnClickSocial"
-            type="android.view.View.OnClickListener" />
-        <variable
-            name="OnClickTravel"
-            type="android.view.View.OnClickListener" />
-        <variable
-            name="OnClickShop"
-            type="android.view.View.OnClickListener" />
-        <variable
-            name="OnClickMember"
-            type="android.view.View.OnClickListener" />
-        <variable
-            name="OnClickBenefit"
-            type="android.view.View.OnClickListener" />
-        <variable
-            name="OnClickDoa"
-            type="android.view.View.OnClickListener" />
-        <variable
-            name="OnClickMedsos"
-            type="android.view.View.OnClickListener" />
-    </data>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
@@ -42,6 +17,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="parallax">
+
+                <ImageView
+                    android:id="@+id/iv_logo_toolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logoechsan" />
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -55,13 +38,12 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <alirezat775.lib.carouselview.CarouselView
-                    android:id="@+id/carouselPromo"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/rv_top_carousel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:clipToPadding="false" />
+                    android:clipToPadding="false"></androidx.recyclerview.widget.RecyclerView>
 
                 <me.relex.circleindicator.CircleIndicator2
                     android:id="@+id/indicator"
@@ -97,7 +79,6 @@
                             android:layout_weight="1.5"
                             android:drawableStart="@drawable/ic_home_coin"
                             android:drawablePadding="15dp"
-                            android:text="@string/tv_home_coupon_value"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
@@ -116,7 +97,6 @@
                             android:layout_weight="1.5"
                             android:drawableStart="@drawable/ic_home_coupon"
                             android:drawablePadding="15dp"
-                            android:text="@string/tv_home_coupon_value"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
@@ -134,21 +114,21 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
+                        android:layout_height="78dp"
+                        android:layout_marginEnd="20dp"
                         android:clipToPadding="false"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="2dp">
 
                         <FrameLayout
+                            android:id="@+id/layout_umroh"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/border_rounded_white"
                             android:elevation="2dp"
                             android:gravity="center"
-                            android:onClick="@{OnClickUmroh}"
                             android:padding="15dp">
 
                             <ImageView
@@ -167,20 +147,20 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
+                        android:layout_marginEnd="20dp"
                         android:clipToPadding="false"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="2dp">
 
                         <FrameLayout
+                            android:id="@+id/layout_sosial"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/border_rounded_white"
                             android:elevation="2dp"
                             android:gravity="center"
-                            android:onClick="@{OnClickSocial}"
                             android:padding="15dp">
 
                             <ImageView
@@ -199,20 +179,20 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
+                        android:layout_marginEnd="20dp"
                         android:clipToPadding="false"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="5dp">
 
                         <FrameLayout
+                            android:id="@+id/layout_travel"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/border_rounded_white"
                             android:elevation="2dp"
                             android:gravity="center"
-                            android:onClick="@{OnClickTravel}"
                             android:padding="15dp">
 
                             <ImageView
@@ -234,16 +214,16 @@
                         android:clipToPadding="false"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="2dp">
 
                         <FrameLayout
+                            android:id="@+id/layout_shop"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/border_rounded_white"
                             android:elevation="2dp"
                             android:gravity="center"
-                            android:onClick="@{OnClickShop}"
                             android:padding="15dp">
 
                             <ImageView
@@ -272,20 +252,20 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
+                        android:layout_marginEnd="20dp"
                         android:clipToPadding="false"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="2dp">
 
                         <FrameLayout
+                            android:id="@+id/layout_member"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/border_rounded_white"
                             android:elevation="2dp"
                             android:gravity="center"
-                            android:onClick="@{OnClickMember}"
                             android:padding="15dp">
 
                             <ImageView
@@ -304,20 +284,20 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
+                        android:layout_marginEnd="20dp"
                         android:clipToPadding="false"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="2dp">
 
                         <FrameLayout
+                            android:id="@+id/layout_benefit"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/border_rounded_white"
                             android:elevation="2dp"
                             android:gravity="center"
-                            android:onClick="@{OnClickBenefit}"
                             android:padding="15dp">
 
                             <ImageView
@@ -336,20 +316,20 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
+                        android:layout_marginEnd="20dp"
                         android:clipToPadding="false"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="2dp">
 
                         <FrameLayout
+                            android:id="@+id/layout_doa"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/border_rounded_white"
                             android:elevation="2dp"
                             android:gravity="center"
-                            android:onClick="@{OnClickDoa}"
                             android:padding="15dp">
 
                             <ImageView
@@ -371,16 +351,16 @@
                         android:clipToPadding="false"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="2dp">
 
                         <FrameLayout
+                            android:id="@+id/layout_medsos"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/border_rounded_white"
                             android:elevation="2dp"
                             android:gravity="center"
-                            android:onClick="@{OnClickMedsos}"
                             android:padding="15dp">
 
                             <ImageView
@@ -407,10 +387,10 @@
                     android:textSize="14sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_carousel_promo"
+                    android:id="@+id/rv_rekomendasi_home"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
+                    android:paddingStart="25dp"
                     android:layout_marginBottom="30dp"
                     android:clipToPadding="false" />
 
@@ -423,11 +403,15 @@
                     android:textSize="14sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_carousel_kat_umroh"
+                    android:id="@+id/rv_kat_umroh_home"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
+                    android:paddingStart="25dp"
                     android:clipToPadding="false" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

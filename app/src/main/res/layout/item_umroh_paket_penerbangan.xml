@@ -32,45 +32,55 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="3">
             <ImageView
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_keberangkatan_umroh"
                 android:id="@+id/iv_penerbangan_status"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginEnd="12dp"/>
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="0.3"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                tools:src="@drawable/ic_paket_penerbangan_solid" />
             <TextView
                 android:text="@{asal}"
                 android:layout_marginEnd="12dp"
                 tools:text="Asal"
                 android:id="@+id/tv_penerbangan_asal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
             <TextView
-                tools:text=" - "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="-"
+                android:textAlignment="center" />
             <TextView
                 android:text="@{tujuan}"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
-                android:minWidth="70dp"
                 tools:text="Tujuan"
                 android:id="@+id/tv_penerbangan_tujuan"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:text="|"
+                android:textAlignment="center"
                 android:layout_height="wrap_content" />
             <TextView
-                tools:text=" | "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
+                android:layout_width="0dp"
                 android:text="@{maskapai}"
                 android:layout_marginStart="12dp"
-                android:minWidth="70dp"
                 tools:text="Maskapai"
                 android:id="@+id/tv_penerbangan_maskapai"
-                android:layout_width="wrap_content"
+                android:layout_weight="1.2"
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>

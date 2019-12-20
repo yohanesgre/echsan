@@ -54,52 +54,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="31dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Nomer Transaksi" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/container_nomor_transaksi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginEnd="29dp"
-                    android:layout_marginBottom="32dp"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="1.5">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:padding="10dp"
-                            android:text="ID" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.1"
-                            android:text=" : " />
-
-                        <TextView
-                            android:id="@+id/tv_nomer_transaksi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.2"
-                            android:padding="10dp"
-                            tools:text="Nomer Transaksi" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginBottom="10dp"
                     android:text="Voucher" />
@@ -157,7 +111,164 @@
                     android:layout_marginBottom="10dp"
                     android:clipToPadding="false"
                     android:minHeight="100dp"
-                    android:padding="3dp" />
+                    android:padding="3dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/tv_paket_nama"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.75"
+                                    android:text="Paket Umroh" />
+
+                                <TextView
+                                    android:id="@+id/tv_paket_harga"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.25"
+                                    android:text="Rp. 25.000.000" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/tv_paket_jamaah"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.75"
+                                    android:text="2 Jamaah" />
+
+                                <TextView
+                                    android:id="@+id/tv_paket_harga_jamaah"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.25"
+                                    android:text="Rp. 50.000.000" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/greyDark" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="21dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.75"
+                                    android:text="Total Harga" />
+
+                                <TextView
+                                    android:id="@+id/tv_paket_harga_total"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.25"
+                                    android:text="Rp. 50.000.000" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/tv_paket_dp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.75"
+                                    android:text="Uang Muka per Jamaah" />
+
+                                <TextView
+                                    android:id="@+id/tv_paket_dp_harga"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.25"
+                                    android:text="Rp. 5.000.000" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/tv_paket_dp_jamaah"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.75"
+                                    android:text="2 Jamaah" />
+
+                                <TextView
+                                    android:id="@+id/tv_paket_dp_harga_jamaah"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.25"
+                                    android:text="Rp. 10.000.000" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/greyDark" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.75"
+                                    android:text="Total Harga" />
+
+                                <TextView
+                                    android:id="@+id/tv_paket_dp_total_harga"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.25"
+                                    android:text="Rp. 10.000.000" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -182,6 +293,7 @@
                             android:text="Point yang didapatkan" />
 
                         <TextView
+                            android:id="@+id/tv_point"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.5"

@@ -24,8 +24,8 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.vira.echsan.data.database.AppDatabase
-import com.vira.echsan.data.entities.PaketUmroh
 import com.vira.echsan.data.entities.Promo
+import com.vira.echsan.features.umroh.data.PaketUmroh
 import com.vira.echsan.utils.PAKET_UMROH_DATA_FILENAME
 import com.vira.echsan.utils.PROMO_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope

@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.vira.echsan.data.entities.PaketUmroh
 import com.vira.echsan.databinding.ItemMemberBinding
+import com.vira.echsan.features.umroh.data.PaketUmroh
 
 class MemberAdapter : ListAdapter<List<String>, MemberAdapter.ViewHolder>(MemberDiffCallback()){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,7 +18,7 @@ class MemberAdapter : ListAdapter<List<String>, MemberAdapter.ViewHolder>(Member
         )
     }
 
-    private fun createOnClickListener(paket:PaketUmroh): View.OnClickListener {
+    private fun createOnClickListener(paket: PaketUmroh): View.OnClickListener {
         return View.OnClickListener {
         }
     }

@@ -2,12 +2,10 @@ package com.vira.echsan.adapters.pemesanan
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.databinding.ItemPemesananJamaahBinding
-import com.vira.echsan.databinding.ItemUmrohPaketPenerbanganBinding
+import com.vira.echsan.features.umroh.view.UmrohPaketPemesananFragmentDirections
 
 class PemesananDataJamaahAdapter : RecyclerView.Adapter<PemesananDataJamaahAdapter.ViewHolder>(){
     var itemList = emptyList<String>()
@@ -27,12 +25,18 @@ class PemesananDataJamaahAdapter : RecyclerView.Adapter<PemesananDataJamaahAdapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(itemList[position])
+        holder.binding.setOnClick {
+            val nav =
+                UmrohPaketPemesananFragmentDirections.actionFragmentUmrohPaketPemesananToFragmentUmrohPaketInputJamaah(
+                    position
+                )
+            holder.binding.root.findNavController().navigate(nav)
+        }
     }
 
     class ViewHolder (val binding:ItemPemesananJamaahBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(item:String){
             binding.apply {
-                setOnClick { Toast.makeText(this.root.context, "$item is clicked!", Toast.LENGTH_SHORT).show()}
                 jamaah = item
             }
         }

@@ -1,13 +1,12 @@
 package com.vira.echsan.adapters.pembayaran
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.databinding.ItemUmrohPembayaranMetodePembayaranBinding
-import com.vira.echsan.view.fragments.umroh.UmrohPaketPembayaranFragmentDirections
+import com.vira.echsan.features.umroh.view.UmrohPaketPembayaranFragmentDirections
 
 class MetodePembayaranAdapter(
     private val itemList:List<MetodePembayaranItem>

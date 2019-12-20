@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="42dp"
                     app:spb_currentStateDescriptionColor="@color/colorPrimary"
                     app:spb_currentStateNumber="two"
                     app:spb_descriptionLinesSpacing="5dp"
@@ -55,6 +55,52 @@
                     app:spb_maxStateNumber="three"
                     app:spb_stateBackgroundColor="@color/greyDark"
                     app:spb_stateForegroundColor="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Nomer Transaksi" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/container_nomor_transaksi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginEnd="29dp"
+                    android:layout_marginBottom="32dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:padding="10dp"
+                            android:text="ID" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:text=" : " />
+
+                        <TextView
+                            android:id="@+id/tv_nomer_transaksi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:padding="10dp"
+                            tools:text="Nomer Transaksi" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <FrameLayout
                     android:layout_width="match_parent"

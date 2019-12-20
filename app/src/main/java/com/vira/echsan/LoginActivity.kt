@@ -11,7 +11,7 @@ import com.vira.echsan.data.Result
 import com.vira.echsan.databinding.ActivityAuthLoginBinding
 import com.vira.echsan.di.Injectable
 import com.vira.echsan.di.injectViewModel
-import com.vira.echsan.viewmodel.LoginViewModel
+import com.vira.echsan.features.viewmodel.LoginViewModel
 import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity(), Injectable {

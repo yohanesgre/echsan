@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.vira.echsan.R
 import com.vira.echsan.databinding.ItemUmrohPaketPenerbanganBinding
 
 class PaketPenerbanganAdapter : ListAdapter<List<String>, PaketPenerbanganAdapter.ViewHolder>(
@@ -27,6 +28,11 @@ class PaketPenerbanganAdapter : ListAdapter<List<String>, PaketPenerbanganAdapte
 
         fun bind(_status:String, _asal:String, _tujuan:String, _maskapai:String) {
             binding.apply{
+                if (_status == "Keberangkatan") {
+                    binding.ivPenerbanganStatus.setImageResource(R.drawable.ic_paket_penerbangan_berangkat)
+                } else {
+                    binding.ivPenerbanganStatus.setImageResource(R.drawable.ic_paket_penerbangan_pulang)
+                }
                 binding.status = _status
                 binding.asal = _asal
                 binding.tujuan = _tujuan

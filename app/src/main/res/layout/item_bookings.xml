@@ -5,7 +5,7 @@
     <data>
         <variable
                 name="booking"
-                type="com.vira.echsan.data.entities.Booking" />
+            type="com.vira.echsan.api.resp.TransactionResp" />
 
     </data>
     <LinearLayout
@@ -31,7 +31,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="@string/tv_bookings_content_header_title"
-                            android:text="@{booking.name}"
                             android:layout_alignParentLeft="true"/>
 
                     <TextView
@@ -39,7 +38,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="@string/tv_bookings_content_header_date"
-                            android:text="@{booking.date}"
                             android:layout_alignParentRight="true"/>
                 </RelativeLayout>
                 <RelativeLayout
@@ -65,21 +63,13 @@
                                 android:minWidth="60dp"
                                 android:background="@color/colorSecondary"
                                 android:layout_marginRight="5dp"/>
-                        <TextView
-                                android:id="@+id/booking_content_body_travel"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@id/booking_content_body_image"
-                                tools:text="@string/tv_bookings_content_body_travel"
-                                android:text="@{booking.travel}"/>
+
                         <TextView
                                 android:id="@+id/booking_content_body_duration"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_toRightOf="@id/booking_content_body_image"
-                                tools:text="@string/tv_bookings_content_body_duration"
-                                android:text="@{booking.duration}"
-                                android:layout_below="@id/booking_content_body_travel"/>
+                            tools:text="@string/tv_bookings_content_body_duration" />
                     </RelativeLayout>
                     <View
                             android:layout_width="match_parent"
