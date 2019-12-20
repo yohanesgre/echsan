@@ -1,5 +1,6 @@
 package com.vira.echsan.data.entities
 
+import com.vira.echsan.data.dao.ProfileDao
 import com.vira.echsan.data.resultLiveData
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,0 +1,49 @@
+package com.vira.echsan.features.umroh.view
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import com.vira.echsan.databinding.FragmentUmrohCheckoutBerhasilBinding
+import com.vira.echsan.di.Injectable
+import com.vira.echsan.di.injectViewModel
+import com.vira.echsan.features.umroh.viewmodel.PaketBerhasilViewModel
+import com.vira.echsan.features.umroh.viewmodel.UmrohSharedViewModel
+import javax.inject.Inject
+
+class UmrohPaketBerhasilFragment : Fragment(), Injectable {
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var viewModel: PaketBerhasilViewModel
+    private lateinit var sharedViewModel: UmrohSharedViewModel
+    private lateinit var binding: FragmentUmrohCheckoutBerhasilBinding
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        viewModel = injectViewModel(viewModelFactory)
+        sharedViewModel =
+            ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
+        binding = FragmentUmrohCheckoutBerhasilBinding.inflate(inflater, container, false)
+        context ?: return binding.root
+        initUI()
+        subscribeUI()
+        return binding.root
+    }
+
+    private fun subscribeUI(){
+
+    }
+
+    private fun initUI(){
+        binding.toolbar.title = "TRANSAKSI BERHASIL"
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
+}

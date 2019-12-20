@@ -22,14 +22,14 @@
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.vira.echsan.ui.activities.umroh_haji.UmrohActivity"/>
-        <activity android:name="com.vira.echsan.ui.fragments.umroh.UmrohPaketFragment"/>
+        <activity android:name=".features.umroh.UmrohActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".features.MemberActivity" />
+        <activity android:name=".features.social.SocialActivity" />
     </application>
 
 </manifest>

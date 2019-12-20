@@ -1,16 +1,19 @@
 package com.vira.echsan.adapters.umroh
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.vira.echsan.data.entities.PaketUmroh
 import com.vira.echsan.databinding.ItemUmrohPaketBinding
-import com.vira.echsan.ui.fragments.umroh.UmrohHasilFragmentDirections
+import com.vira.echsan.features.umroh.data.PaketUmroh
+import com.vira.echsan.features.umroh.view.UmrohHasilFragmentDirections
+import com.vira.echsan.utils.CalendarHelper
 
 class ListPaketUmrohAdapter :
     PagedListAdapter<PaketUmroh, ListPaketUmrohAdapter.ViewHolder>(ListPaketUmrohDiffCallback()) {
@@ -30,6 +33,7 @@ class ListPaketUmrohAdapter :
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val paket = getItem(position)
         paket?.let {
@@ -41,12 +45,14 @@ class ListPaketUmrohAdapter :
     inner class ViewHolder(
         private val binding: ItemUmrohPaketBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+        @RequiresApi(Build.VERSION_CODES.O)
         @SuppressLint("SetTextI18n")
-        fun bind(listener:View.OnClickListener, item:PaketUmroh){
+        fun bind(listener: View.OnClickListener, item: PaketUmroh) {
             binding.apply {
                 clickListener = listener
                 tvUmrohPaketCvPaket.text = item.name
-                tvUmrohPaketCvBerangkat.text = item.date_of_departure
+                tvUmrohPaketCvBerangkat.text =
+                    CalendarHelper.convertDateStringToLocalFormat(item.date_of_departure)
                 tvUmrohPaketCvDurasi.text = item.day_amount.toString()
                 tvUmrohPaketCvHotel.text = item.madinah_hotel + " | " + item.makkah_hotel
                 tvUmrohPaketCvPenerbangan.text = item.departure_plane.dep_plane_name

@@ -3,11 +3,11 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/nav_main"
         xmlns:tools="http://schemas.android.com/tools"
-        app:startDestination="@id/fragment_umroh_cari">
+    app:startDestination="@id/fragment_umroh_hasil">
 
     <fragment
             android:id="@+id/fragment_umroh_cari"
-            android:name="com.vira.echsan.ui.fragments.umroh.UmrohCariFragment"
+        android:name="com.vira.echsan.features.umroh.view.UmrohCariFragment"
             tools:layout="@layout/fragment_umroh_cari"
             android:label="Umroh">
         <action
@@ -21,7 +21,7 @@
 
     <fragment
             android:id="@+id/fragment_umroh_hasil"
-            android:name="com.vira.echsan.ui.fragments.umroh.UmrohHasilFragment"
+        android:name="com.vira.echsan.features.umroh.view.UmrohHasilFragment"
             tools:layout="@layout/fragment_umroh_hasil"
             android:label="List Paket Umroh">
 
@@ -44,7 +44,7 @@
 
     <fragment
         android:id="@+id/fragment_umroh_paket"
-        android:name="com.vira.echsan.ui.fragments.umroh.UmrohPaketFragment"
+        android:name="com.vira.echsan.features.umroh.view.UmrohPaketFragment"
         tools:layout="@layout/fragment_umroh_paket"
         android:label="Paket Umroh">
         <argument
@@ -68,11 +68,18 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_umroh_paket_pemesanan"
-        android:name="com.vira.echsan.view.fragments.umroh.UmrohPaketPemesananFragment"
+        android:name="com.vira.echsan.features.umroh.view.UmrohPaketPemesananFragment"
         android:label="fragment_umroh_paket_pembayaran">
         <action
             android:id="@+id/action_fragment_umroh_paket_pemesanan_to_fragment_umroh_paket_pembayaran"
             app:destination="@id/fragment_umroh_paket_pembayaran"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragment_umroh_paket_pemesanan_to_fragment_umroh_paket_input_jamaah"
+            app:destination="@id/fragment_umroh_paket_input_jamaah"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -86,8 +93,24 @@
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
+        android:id="@+id/fragment_umroh_paket_input_jamaah"
+        android:name="com.vira.echsan.features.umroh.view.UmrohPaketInputJamaahFragment"
+        android:label="fragment_umroh_paket_input_jamaah">
+        <action
+            android:id="@+id/action_fragment_umroh_paket_input_jamaah_to_fragment_umroh_paket_pemesanan"
+            app:destination="@id/fragment_umroh_paket_pemesanan"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="jamaahOrder"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
         android:id="@+id/fragment_umroh_paket_pembayaran"
-        android:name="com.vira.echsan.view.fragments.umroh.UmrohPaketPembayaranFragment"
+        android:name="com.vira.echsan.features.umroh.view.UmrohPaketPembayaranFragment"
         android:label="UmrohPaketPembayaranFragment" >
         <action
             android:id="@+id/action_fragment_umroh_paket_pembayaran_to_fragment_umroh_paket_pemesanan"
@@ -106,7 +129,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_umroh_paket_pembayaran_2"
-        android:name="com.vira.echsan.view.fragments.umroh.UmrohPaketPembayaran2Fragment"
+        android:name="com.vira.echsan.features.umroh.view.UmrohPaketPembayaran2Fragment"
         android:label="UmrohPaketPembayaran2Fragment" >
         <action
             android:id="@+id/action_fragment_umroh_paket_pembayaran_2_to_fragment_umroh_paket_pembayaran"
@@ -126,7 +149,7 @@
 
     <fragment
         android:id="@+id/fragment_umroh_paket_pembayaran_3"
-        android:name="com.vira.echsan.view.fragments.umroh.UmrohPaketPembayaran3Fragment"
+        android:name="com.vira.echsan.features.umroh.view.UmrohPaketPembayaran3Fragment"
         android:label="UmrohPaketPembayaran3Fragment" >
         <action
             android:id="@+id/action_fragment_umroh_paket_pembayaran_3_to_fragment_umroh_paket_pembayaran_2"
@@ -147,7 +170,7 @@
 
     <fragment
         android:id="@+id/fragment_umroh_paket_berhasil"
-        android:name="com.vira.echsan.view.fragments.umroh.UmrohPaketBerhasilFragment"
+        android:name="com.vira.echsan.features.umroh.view.UmrohPaketBerhasilFragment"
         android:label="UmrohPaketBerhasilFragment" >
     </fragment>
 </navigation>

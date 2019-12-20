@@ -15,7 +15,7 @@ class TipePembayaranChildAdapter(
         addSection(ArrayList<String>())
     }
 
-    fun addItemList(itemList: List<String>) {
+    fun addItemList(itemList: List<ChildItem>) {
         clearSection(0)
         addItemListOnSection(0, itemList)
         notifyDataSetChanged()
@@ -29,14 +29,16 @@ class TipePembayaranChildAdapter(
         view:View
     ): BaseViewHolder(view){
         interface Delegate{
-            fun onRowItemClick(position:Int, title:String)
+            fun onRowItemClick(position: Int, title: String, amount: Double)
         }
 
         private lateinit var title:String
+        private var amount: Double? = 0.0
 
         override fun bindData(data: Any) {
-            if(data is String){
-                this.title = data
+            if (data is ChildItem) {
+                title = data.title
+                amount = data.amount
                 drawItemUI()
             }
         }
@@ -48,7 +50,7 @@ class TipePembayaranChildAdapter(
         }
 
         override fun onClick(p0: View?) {
-            delegate.onRowItemClick(adapterPosition, this.title)
+            delegate.onRowItemClick(adapterPosition, this.title, this.amount!!)
         }
 
         override fun onLongClick(p0: View?): Boolean = false

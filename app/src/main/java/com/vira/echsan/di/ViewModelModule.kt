@@ -2,8 +2,10 @@ package com.vira.echsan.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.vira.echsan.viewmodel.*
-
+import com.vira.echsan.features.bookings.viewmodel.BookingsChildViewModel
+import com.vira.echsan.features.home.viewmodel.HomeViewModel
+import com.vira.echsan.features.umroh.viewmodel.*
+import com.vira.echsan.features.viewmodel.LoginViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -15,6 +17,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
     abstract fun bindHomeViewModel(viewModel: HomeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(BookingsChildViewModel::class)
+    abstract fun bindBookingsChildViewModel(viewModel: BookingsChildViewModel): ViewModel
 
     @Binds
     @IntoMap

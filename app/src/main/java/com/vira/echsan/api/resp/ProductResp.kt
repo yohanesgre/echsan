@@ -1,0 +1,30 @@
+package com.vira.echsan.api.resp
+
+data class ProductResp(
+    val id: Int,
+    val category_id: Int,
+    val name: String,
+    val description: String,
+    val price: String,
+    val point: Int,
+    val image: String,
+    val date_of_departure: String,
+    val created_at: String,
+    val updated_at: String,
+    val travel_vendor_id: Int,
+    val departure_city_id: Int,
+    val product_category_id: Int,
+    val quota: Int,
+    val discount: Int,
+    val slug: String,
+    val date_of_return: String,
+    val departure_plane_id: Int,
+    val return_plane_id: Int,
+    val departure_information: String,
+    val return_information: String,
+    val day_amount: Int,
+    val makkah_hotel: String,
+    val madinah_hotel: String,
+    val makkah_star: Int,
+    val madinah_star: Int
+)

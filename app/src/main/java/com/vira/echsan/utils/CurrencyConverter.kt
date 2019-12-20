@@ -14,10 +14,10 @@ fun ConvertToCurrency(ammountDbl:Double?=null, ammountStr:String?=null): String{
     //format.setMaximumFractionDigits(0)
     //format.setCurrency(Currency.getInstance("IDR"))
     var result = format.format(value)
-    result = StringBuffer(result).insert(3, ". ").toString()
+    result = StringBuffer(result).insert(2, ". ").toString()
     return result
 }
 
 fun ConvertCurrencyToDouble(input: String): Double {
-    return input.replace("[Rp.\\s]".toRegex(), "").toDouble()
+    return input.replace("[Rp. ]".toRegex(), "").toDouble()
 }

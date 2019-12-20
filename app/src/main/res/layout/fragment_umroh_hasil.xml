@@ -134,7 +134,8 @@
             android:paddingHorizontal="15dp"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_gravity="bottom|center_horizontal">
+            android:layout_gravity="bottom|center_horizontal"
+            android:visibility="gone">
             <TextView
                 android:id="@+id/fab_umroh_paket_filter"
                 android:layout_width="wrap_content"

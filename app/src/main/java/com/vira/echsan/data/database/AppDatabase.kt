@@ -25,7 +25,14 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.vira.echsan.data.Converters
-import com.vira.echsan.data.entities.*
+import com.vira.echsan.data.dao.BookingDao
+import com.vira.echsan.data.dao.PaketUmrohDao
+import com.vira.echsan.data.dao.ProfileDao
+import com.vira.echsan.data.dao.PromoDao
+import com.vira.echsan.data.entities.Booking
+import com.vira.echsan.data.entities.Profile
+import com.vira.echsan.data.entities.Promo
+import com.vira.echsan.features.umroh.data.PaketUmroh
 import com.vira.echsan.utils.DATABASE_NAME
 import com.vira.echsan.workers.SeedDatabaseWorker
 
@@ -55,12 +62,6 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun promoDao(): PromoDao
     abstract fun bookingDao(): BookingDao
     abstract fun profileDao(): ProfileDao
-    /* abstract fun categoryDao(): CategoryDao
-     abstract fun departureCityDao(): DepartureCityDao
-     abstract fun departurePlaneDao(): DeparturePlaneDao
-     abstract fun productCategoryDao(): ProductCategoryDao
-     abstract fun returnPlaneDao(): ReturnPlaneDao
-     abstract fun travelVendorDao(): TravelVendorDao*/
 
     companion object {
 

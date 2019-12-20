@@ -4,8 +4,11 @@ import android.app.Application
 import com.vira.echsan.api.LoginService
 import com.vira.echsan.api.UmrohService
 import com.vira.echsan.data.database.AppDatabase
-import com.vira.echsan.data.entities.PaketUmrohRemoteDataSource
 import com.vira.echsan.data.entities.ProfileRemoteDataSource
+import com.vira.echsan.features.bookings.data.datasource.BookingsRemoteDataSource
+import com.vira.echsan.features.umroh.data.datasource.InputJamaahRemoteDataSource
+import com.vira.echsan.features.umroh.data.datasource.PaketUmrohRemoteDataSource
+import com.vira.echsan.features.umroh.data.datasource.PaymentRemoteDataSource
 import com.vira.echsan.utils.ENDPOINT
 import dagger.Module
 import dagger.Provides
@@ -43,12 +46,22 @@ class AppModule {
     fun providePaketUmrohRemoteDataSource(umrohService: UmrohService) =
         PaketUmrohRemoteDataSource(umrohService)
 
-    /*
+
     @Singleton
     @Provides
-    fun provideLegoThemeRemoteDataSource(legoService: LegoService)
-            = LegoThemeRemoteDataSource(legoService)
-    */
+    fun provideInputJamaahRemoteDataSource(umrohService: UmrohService) =
+        InputJamaahRemoteDataSource(umrohService)
+
+    @Singleton
+    @Provides
+    fun providePaymentRemoteDataSource(umrohService: UmrohService) =
+        PaymentRemoteDataSource(umrohService)
+
+    @Singleton
+    @Provides
+    fun provideBookingsRemoteDataSource(umrohService: UmrohService) =
+        BookingsRemoteDataSource(umrohService)
+
     @NonAuthAPI
     @Provides
     fun provideLoginOkHttpClient(
@@ -84,31 +97,6 @@ class AppModule {
     @Provides
     fun provideProfileDao(db: AppDatabase) = db.profileDao()
 
-    /*
-        @Singleton
-        @Provides
-        fun provideCategoryDao(db: AppDatabase) = db.categoryDao()
-
-        @Singleton
-        @Provides
-        fun provideDepartureCityDao(db: AppDatabase) = db.departureCityDao()
-
-        @Singleton
-        @Provides
-        fun provideDeparturePlaneDao(db: AppDatabase) = db.departurePlaneDao()
-
-        @Singleton
-        @Provides
-        fun provideProductCategoryDao(db: AppDatabase) = db.productCategoryDao()
-
-        @Singleton
-        @Provides
-        fun provideReturnPlaneDao(db: AppDatabase) = db.returnPlaneDao()
-
-        @Singleton
-        @Provides
-        fun provideTravelVendorDao(db: AppDatabase) = db.travelVendorDao()
-    */
     @CoroutineScropeIO
     @Provides
     fun provideCoroutineScopeIO() = CoroutineScope(Dispatchers.IO)

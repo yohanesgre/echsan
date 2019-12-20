@@ -1,13 +1,12 @@
 package com.vira.echsan.adapters.pembayaran
 
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.RecyclerView
 import com.skydoves.baserecyclerviewadapter.BaseAdapter
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 import com.skydoves.baserecyclerviewadapter.SectionRow
 import com.vira.echsan.R
+import com.vira.echsan.features.umroh.viewmodel.UmrohSharedViewModel
 import kotlinx.android.synthetic.main.item_tipe_pembayaran_child.view.*
 import kotlinx.android.synthetic.main.item_tipe_pembayaran_parent.view.*
 import kotlinx.android.synthetic.main.item_tipe_pembayaran_section.view.*
@@ -16,6 +15,12 @@ class TipePembayaranParentAdapter : BaseAdapter(){
 
     init {
         addSection(ArrayList<SectionItem>())
+    }
+
+    var sharedViewModel: UmrohSharedViewModel? = null
+
+    fun addSharedViewModel(viewModel: UmrohSharedViewModel) {
+        sharedViewModel = viewModel
     }
 
     fun addSectionItem(sectionItem: SectionItem) {
@@ -27,7 +32,8 @@ class TipePembayaranParentAdapter : BaseAdapter(){
 
     override fun viewHolder(layout: Int, view: View) = ViewHolder(view)
 
-    class ViewHolder(view:View):BaseViewHolder(view), TipePembayaranChildAdapter.ViewHolder.Delegate{
+    inner class ViewHolder(view: View) : BaseViewHolder(view),
+        TipePembayaranChildAdapter.ViewHolder.Delegate {
 
         private lateinit var sectionItem: SectionItem
         private val childAdapter = TipePembayaranChildAdapter(this)
@@ -65,9 +71,10 @@ class TipePembayaranParentAdapter : BaseAdapter(){
 
         override fun onLongClick(p0: View?) = false
 
-        override fun onRowItemClick(position: Int, title: String) {
-            Toast.makeText(context(), "position : $position, title: $title", Toast.LENGTH_SHORT)
-                .show()
+        override fun onRowItemClick(position: Int, title: String, amount: Double) {
+            sharedViewModel!!.totalPembayaran = amount
+            /*Toast.makeText(context(), "position : $position, title: $title", Toast.LENGTH_SHORT)
+                .show()*/
             itemView.run {
                 with(expandableLayout) {
                     parentLayout.title.text = title

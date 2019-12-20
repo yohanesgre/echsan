@@ -1,5 +1,6 @@
 package com.vira.echsan.data.entities
 
+import com.vira.echsan.data.dao.BookingDao
 import javax.inject.Singleton
 
 @Singleton
