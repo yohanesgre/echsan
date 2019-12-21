@@ -22,6 +22,7 @@ class BookingAdapter : PagedListAdapter<TransactionResp, BookingAdapter.Bookings
         )
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: BookingsViewHolder, position: Int) {
         val booking = getItem(position)
         booking?.let {

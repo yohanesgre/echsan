@@ -20,6 +20,7 @@ import com.vira.echsan.features.home.adapter.KategoriUmrohHomeAdapter
 import com.vira.echsan.features.home.adapter.RekomendasiHomeAdapter
 import com.vira.echsan.features.home.adapter.TopCarouselAdapter
 import com.vira.echsan.features.home.viewmodel.HomeViewModel
+import com.vira.echsan.features.member.MemberActivity
 import com.vira.echsan.features.social.SocialActivity
 import com.vira.echsan.features.umroh.UmrohActivity
 import com.vira.echsan.utils.DpToPx
@@ -128,7 +129,8 @@ class HomeFragment : Fragment(), Injectable{
         }
 
         binding.layoutMember.setOnClickListener {
-            showAlertDevelopment()
+            val intent = Intent(requireActivity(), MemberActivity::class.java)
+            startActivity(intent)
         }
 
         linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL

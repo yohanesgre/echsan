@@ -29,7 +29,7 @@
         <activity android:name=".features.umroh.UmrohActivity" />
         <activity android:name=".features.MainActivity" />
         <activity android:name=".features.login.LoginActivity" />
-        <activity android:name=".features.MemberActivity" />
+        <activity android:name=".features.member.MemberActivity" />
         <activity android:name=".features.social.SocialActivity" />
         <activity android:name=".features.profile.ProfileActivity" />
         <activity android:name=".features.regis.RegisterActivity" />

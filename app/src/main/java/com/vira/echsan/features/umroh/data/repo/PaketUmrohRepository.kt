@@ -19,7 +19,7 @@ class PaketUmrohRepository @Inject constructor(
     private val paketUmrohRemoteDataSource: PaketUmrohRemoteDataSource
 ) {
 
-    fun observePagedSets(connectivityAvailable: Boolean, coroutineScope: CoroutineScope) =
+    fun observePagedSets(coroutineScope: CoroutineScope) =
         observeRemotePagedSets(coroutineScope)
 
     private fun observeRemotePagedSets(ioCoroutineScope: CoroutineScope): LiveData<PagedList<PaketUmroh>> {

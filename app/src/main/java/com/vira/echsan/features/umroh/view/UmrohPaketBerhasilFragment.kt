@@ -19,6 +19,7 @@ import com.vira.echsan.di.injectViewModel
 import com.vira.echsan.features.umroh.viewmodel.PaketBerhasilViewModel
 import com.vira.echsan.features.umroh.viewmodel.UmrohSharedViewModel
 import com.vira.echsan.utils.CalendarHelper
+import com.vira.echsan.utils.ConvertToCurrency
 import javax.inject.Inject
 
 class UmrohPaketBerhasilFragment : Fragment(), Injectable {
@@ -55,7 +56,7 @@ class UmrohPaketBerhasilFragment : Fragment(), Injectable {
                         CalendarHelper.convertDateStringToLocalFormat(paket.date_of_departure)
                     binding.outputDurasi.text = "${paket.day_amount} hari"
                     binding.outputJumlahJamaah.text = "${trx.peopleAmount} jamaah"
-                    binding.outputTotalHarga.text = paymentResp.paid.toString()
+                    binding.outputTotalHarga.text = ConvertToCurrency(paymentResp.paid, null)
                 }
             }
         }

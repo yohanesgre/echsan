@@ -67,6 +67,7 @@ class UmrohPaketPembayaran2Fragment : Fragment(), Injectable {
             sharedViewModel.jumlahJamaah.observe(viewLifecycleOwner) { jumlah ->
                 binding.tvPaketHarga.text = paket.price
                 binding.tvPaketJamaah.text = "$jumlah Jamaah"
+                binding.tvPaketDpJamaah.text = "$jumlah Jamaah"
                 binding.tvPaketHargaJamaah.text =
                     ConvertToCurrency(ConvertCurrencyToDouble(paket.price) * jumlah, null)
                 binding.tvPaketHargaTotal.text =

@@ -23,10 +23,10 @@ class PaketUmrohPageDataSourceFactory @Inject constructor(
     }
 
     companion object {
-        private const val PAGE_SIZE = 10
+        private const val PAGE_SIZE = 100
 
         fun pagedListConfig() = PagedList.Config.Builder()
-            //.setInitialLoadSizeHint(PAGE_SIZE)
+            .setInitialLoadSizeHint(PAGE_SIZE)
             .setPageSize(PAGE_SIZE)
             .setEnablePlaceholders(false)
             .build()

@@ -16,7 +16,7 @@ class PaketUmrohsViewModel @Inject constructor(
 
     val paketUmrohs by lazy {
         repository.observePagedSets(
-            connectivityAvailable, ioCoroutineScope
+            ioCoroutineScope
         )
     }
 

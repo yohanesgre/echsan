@@ -1,9 +1,9 @@
 package com.vira.echsan.di
 
 import com.vira.echsan.features.MainActivity
-import com.vira.echsan.features.MemberActivity
 import com.vira.echsan.features.SplashActivity
 import com.vira.echsan.features.login.LoginActivity
+import com.vira.echsan.features.member.MemberActivity
 import com.vira.echsan.features.profile.ProfileActivity
 import com.vira.echsan.features.regis.RegisterActivity
 import com.vira.echsan.features.social.SocialActivity

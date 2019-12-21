@@ -46,11 +46,12 @@ class PaketUmrohPageDataSource @Inject constructor(
 
     private fun fetchData(page: Int, pageSize: Int, callback: (List<PaketUmroh>) -> Unit) {
         scope.launch(getJobErrorHandler()) {
-            val response = dataSource.fetchPaketUmrohs(page, pageSize)
+            val response = dataSource.fetchPaketUmrohs(page, 15)
             if (response.status == Result.Status.SUCCESS) {
                 val results = response.data!!.data
                 val gson = Gson()
-                println("Result Json: ${gson.toJson(results)}")
+                //println("Result Json: ${gson.toJson(results)}")
+                println("Result Size: ${results.size}")
                 println("Going to callback")
                 callback(results)
             } else if (response.status == Result.Status.ERROR) {

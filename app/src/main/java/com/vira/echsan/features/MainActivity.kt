@@ -86,7 +86,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
 
             }
             R.id.fragment_profile -> {
-
                 null
             }
             else -> {
@@ -111,7 +110,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
                 } else {
                     val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
-                    finish()
                 }
             }
             else -> {

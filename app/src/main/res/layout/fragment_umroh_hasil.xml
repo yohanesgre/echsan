@@ -113,15 +113,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_umroh_paket"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="25dp"
-                android:clipToPadding="false"
-                android:padding="3dp"
-                tools:listitem="@layout/item_umroh_paket" />
+                android:layout_height="match_parent"
+                android:clipToPadding="false">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_umroh_paket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:clipToPadding="false"
+                    android:padding="3dp"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_umroh_paket" />
+            </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
         <LinearLayout

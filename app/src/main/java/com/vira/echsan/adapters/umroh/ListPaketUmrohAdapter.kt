@@ -37,6 +37,7 @@ class ListPaketUmrohAdapter :
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val paket = getItem(position)
+        println("Adapter Positon: $position")
         paket?.let {
             holder.apply {
                 bind(createOnClickListener(paket.id), paket)

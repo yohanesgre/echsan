@@ -37,10 +37,11 @@ class MemberAdapter : ListAdapter<List<String>, MemberAdapter.ViewHolder>(Member
                 binding.cost = item[0]
                 binding.tipe = item[1]
                 binding.voucher = item[2]
-                binding.doublePoint = item[3]
-                binding.agentReward = item[4]
-                binding.agentGathering = item[5]
-                binding.agentRefferal = item[6]
+                binding.point = item[3]
+                binding.doublePoint = item[4]
+                binding.agentReward = item[5]
+                binding.agentGathering = item[6]
+                binding.agentRefferal = item[7]
                 executePendingBindings()
             }
         }
