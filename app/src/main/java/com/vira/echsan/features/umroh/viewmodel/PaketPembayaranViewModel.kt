@@ -12,7 +12,7 @@ import javax.inject.Inject
 class PaketPembayaranViewModel @Inject constructor(
     private val repository: InputJamaahRepository
 ) : ViewModel() {
-    val tipePembayaranMap: List<ChildItem> by lazy {
+    val tipePembayaranMap: ArrayList<ChildItem> by lazy {
         val list = ArrayList<ChildItem>()
         list.add(ChildItem("Uang Muka - Rp. 5.000.000 per Jamaah", 5000000.0))
         list.add(ChildItem("Uang Muka - Rp. 10.000.000 per Jamaah", 10000000.0))
@@ -23,11 +23,11 @@ class PaketPembayaranViewModel @Inject constructor(
         "Pilih Tipe Pembayaran",
         R.color.colorPrimary, tipePembayaranMap
     )
-    val imgMetodePembayaran = listOf<ImageMetodePembayaranItem>(
+    val imgMetodePembayaran = listOf(
         ImageMetodePembayaranItem(R.drawable.ic_dropdown),
         ImageMetodePembayaranItem(R.drawable.ic_dropdown_clicked)
     )
-    val metodePembayaran = listOf<MetodePembayaranItem>(
+    val metodePembayaran = listOf(
         MetodePembayaranItem("Transfer Bank", imgMetodePembayaran)
     )
 

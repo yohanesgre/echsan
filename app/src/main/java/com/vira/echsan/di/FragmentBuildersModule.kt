@@ -16,7 +16,6 @@ abstract class FragmentBuildersModule {
     @ContributesAndroidInjector
     abstract fun contributeBookingsFragment(): BookingsFragment
 
-
     @ContributesAndroidInjector
     abstract fun contributeBookingsChildFragment(): BookingsChildFragment
 }

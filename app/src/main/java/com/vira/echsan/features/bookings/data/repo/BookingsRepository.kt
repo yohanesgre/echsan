@@ -18,14 +18,20 @@ class BookingsRepository @Inject constructor(
     private val dataSource: BookingsRemoteDataSource
 ) {
 
-    fun observePagedSets(userId: Int? = null, coroutineScope: CoroutineScope) =
-        observeRemotePagedSets(userId, coroutineScope)
+    fun observePagedSets(
+        isDone: Boolean? = null,
+        userId: Int? = null,
+        coroutineScope: CoroutineScope
+    ) =
+        observeRemotePagedSets(isDone, userId, coroutineScope)
 
     private fun observeRemotePagedSets(
+        isDone: Boolean? = null,
         userId: Int? = null,
         ioCoroutineScope: CoroutineScope
     ): LiveData<PagedList<TransactionResp>> {
         val dataSourceFactory = BookingsPageDataSourceFactory(
+            isDone,
             userId,
             dataSource, ioCoroutineScope
         )

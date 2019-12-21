@@ -4,8 +4,9 @@ import android.app.Application
 import com.vira.echsan.api.LoginService
 import com.vira.echsan.api.UmrohService
 import com.vira.echsan.data.database.AppDatabase
-import com.vira.echsan.data.entities.ProfileRemoteDataSource
 import com.vira.echsan.features.bookings.data.datasource.BookingsRemoteDataSource
+import com.vira.echsan.features.profile.data.ProfileRemoteDataSource
+import com.vira.echsan.features.regis.data.RegisterRemoteDataSource
 import com.vira.echsan.features.umroh.data.datasource.InputJamaahRemoteDataSource
 import com.vira.echsan.features.umroh.data.datasource.PaketUmrohRemoteDataSource
 import com.vira.echsan.features.umroh.data.datasource.PaymentRemoteDataSource
@@ -39,7 +40,17 @@ class AppModule {
     @Singleton
     @Provides
     fun provideProfileRemoteDataSource(loginService: LoginService) =
-        ProfileRemoteDataSource(loginService)
+        ProfileRemoteDataSource(
+            loginService
+        )
+
+    @Singleton
+    @Provides
+    fun provideRegisterRemoteDataSource(loginService: LoginService) =
+        RegisterRemoteDataSource(
+            loginService
+        )
+
 
     @Singleton
     @Provides

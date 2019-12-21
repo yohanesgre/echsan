@@ -9,13 +9,10 @@
             android:orientation="vertical"
             android:padding="5dp"
             android:layout_margin="2dp">
-
-
         <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
-                android:onClick="@{OnClick}">
+            app:cardCornerRadius="5dp">
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -50,8 +47,7 @@
         <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
-                android:onClick="@{OnClick}">
+            app:cardCornerRadius="5dp">
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -86,8 +82,7 @@
         <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
-                android:onClick="@{OnClick}">
+            app:cardCornerRadius="5dp">
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -122,8 +117,7 @@
         <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
-                android:onClick="@{OnClick}">
+            app:cardCornerRadius="5dp">
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -158,8 +152,7 @@
         <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
-                android:onClick="@{OnClick}">
+            app:cardCornerRadius="5dp">
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

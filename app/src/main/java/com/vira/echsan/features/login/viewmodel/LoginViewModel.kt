@@ -1,9 +1,9 @@
-package com.vira.echsan.features.viewmodel
+package com.vira.echsan.features.login.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations.switchMap
 import androidx.lifecycle.ViewModel
-import com.vira.echsan.data.entities.ProfileRepository
+import com.vira.echsan.features.profile.data.ProfileRepository
 import javax.inject.Inject
 
 

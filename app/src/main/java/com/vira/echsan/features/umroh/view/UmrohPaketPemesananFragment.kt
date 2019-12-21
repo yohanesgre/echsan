@@ -29,6 +29,7 @@ class UmrohPaketPemesananFragment : Fragment(), Injectable {
     private lateinit var adapter:PemesananDataJamaahAdapter
 
     private var paketId = 0
+    private var amountJamaah = 0
     private var isReady = false
 
     override fun onCreateView(
@@ -43,13 +44,33 @@ class UmrohPaketPemesananFragment : Fragment(), Injectable {
             this.setOnClickTambah{
                 if (sharedViewModel.jumlahJamaah.value!! < 5) {
                     sharedViewModel.addJumlahJamaah()
-                    sharedViewModel.setInputAmountToInputJamaah(sharedViewModel.jumlahJamaah.value!!)
                 }
             }
 
             this.setOnClickKurang {
-                if (sharedViewModel.jumlahJamaah.value!! > 0) {
-                    sharedViewModel.minusJumlahJamaah()
+                val inputJamaah = sharedViewModel.mInputJamaah
+                if (amountJamaah > 0) {
+                    if (inputJamaah.jamaahOrder!!.size != 0
+                        && inputJamaah.jamaahOrder!!.getOrNull(amountJamaah - 1) != null
+                    ) {
+                        inputJamaah.jamaahOrder!!.removeAt(amountJamaah - 1)
+                        inputJamaah.fullName!!.removeAt(amountJamaah - 1)
+                        inputJamaah.gender!!.removeAt(amountJamaah - 1)
+                        inputJamaah.birthPlace!!.removeAt(amountJamaah - 1)
+                        inputJamaah.birthDate!!.removeAt(amountJamaah - 1)
+                        inputJamaah.address!!.removeAt(amountJamaah - 1)
+                        inputJamaah.RT!!.removeAt(amountJamaah - 1)
+                        inputJamaah.RW!!.removeAt(amountJamaah - 1)
+                        inputJamaah.kelurahan!!.removeAt(amountJamaah - 1)
+                        inputJamaah.district!!.removeAt(amountJamaah - 1)
+                        inputJamaah.city!!.removeAt(amountJamaah - 1)
+                        inputJamaah.province!!.removeAt(amountJamaah - 1)
+                        inputJamaah.posCode!!.removeAt(amountJamaah - 1)
+                        inputJamaah.phone!!.removeAt(amountJamaah - 1)
+                        sharedViewModel.minusJumlahJamaah()
+                    } else {
+                        sharedViewModel.minusJumlahJamaah()
+                    }
                 }
             }
         }
@@ -61,13 +82,17 @@ class UmrohPaketPemesananFragment : Fragment(), Injectable {
 
     private fun subscribeUI(){
         sharedViewModel.jumlahJamaah.observe(viewLifecycleOwner) { jumlah ->
+            amountJamaah = jumlah
+            sharedViewModel.setInputAmountToInputJamaah(jumlah)
             binding.jumlahJamaah = jumlah.toString()
-            var listJamaah = mutableListOf<String>()
+            val listJamaah = mutableListOf<String>()
             (1..jumlah).forEach { i ->
-                if (sharedViewModel.mInputJamaah.fullName!!.size != 0) {
-                    listJamaah.add(sharedViewModel.mInputJamaah.fullName!![i - 1])
-                } else {
+                if (sharedViewModel.mInputJamaah.fullName!!.size == 0) {
                     listJamaah.add("Data Jamaah $i")
+                } else if (i > sharedViewModel.mInputJamaah.fullName!!.size) {
+                    listJamaah.add("Data Jamaah $i")
+                } else {
+                    listJamaah.add(sharedViewModel.mInputJamaah.fullName!![i - 1])
                 }
             }
             adapter.itemList = listJamaah

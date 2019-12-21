@@ -41,12 +41,16 @@ class HomeFragment : Fragment(), Injectable{
     private lateinit var autoScrollTopCarousel: Runnable
     private lateinit var handler: Handler
 
+    private var userId: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View?{
         viewModel = injectViewModel(viewModelFactory)
+        userId = arguments?.getInt("UserID") ?: 0
+        println("User ID Home: $userId")
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         initUI()
         subscribeUI()
@@ -92,7 +96,9 @@ class HomeFragment : Fragment(), Injectable{
         }
 
         binding.layoutUmroh.setOnClickListener {
-            val intent = Intent(activity, UmrohActivity::class.java)
+            val intent = Intent(activity, UmrohActivity::class.java).apply {
+                putExtra("UserID", userId)
+            }
             startActivity(intent)
         }
 

@@ -52,8 +52,16 @@ interface UmrohService {
     ): Response<PaymentResp>
 
     @FormUrlEncoded
-    @POST("transaction-user")
-    suspend fun postTransactionUser(
+    @POST("transaction-user-undone")
+    suspend fun postTransactionUserUndone(
+        @Field("user_id") userId: Int,
+        @Query("page") page: Int? = null,
+        @Query("page_size") pageSize: Int? = null
+    ): Response<ResultsResponse<TransactionResp>>
+
+    @FormUrlEncoded
+    @POST("transaction-user-done")
+    suspend fun postTransactionUserDone(
         @Field("user_id") userId: Int,
         @Query("page") page: Int? = null,
         @Query("page_size") pageSize: Int? = null

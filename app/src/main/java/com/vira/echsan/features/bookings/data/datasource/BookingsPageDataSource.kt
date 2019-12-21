@@ -2,6 +2,7 @@ package com.vira.echsan.features.bookings.data.datasource
 
 import androidx.paging.PageKeyedDataSource
 import com.google.gson.Gson
+import com.vira.echsan.api.ResultsResponse
 import com.vira.echsan.api.resp.TransactionResp
 import com.vira.echsan.data.Result
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -13,6 +14,7 @@ import javax.inject.Inject
  * Data source for lego sets pagination via paging library
  */
 class BookingsPageDataSource @Inject constructor(
+    private val isDone: Boolean? = null,
     private val userId: Int? = null,
     private val dataSource: BookingsRemoteDataSource,
     private val scope: CoroutineScope
@@ -43,7 +45,12 @@ class BookingsPageDataSource @Inject constructor(
 
     private fun fetchData(page: Int, pageSize: Int, callback: (List<TransactionResp>) -> Unit) {
         scope.launch(getJobErrorHandler()) {
-            val response = dataSource.fetchBookings(userId!!, page, pageSize)
+            val response: Result<ResultsResponse<TransactionResp>> =
+                if (isDone!!)
+                    dataSource.fetchBookingsDone(userId!!, page, pageSize)
+                else
+                    dataSource.fetchBookingsUndone(userId!!, page, pageSize)
+
             if (response.status == Result.Status.SUCCESS) {
                 val results = response.data!!.data
                 val gson = Gson()

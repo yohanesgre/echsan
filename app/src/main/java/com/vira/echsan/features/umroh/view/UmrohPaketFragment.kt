@@ -1,10 +1,12 @@
 package com.vira.echsan.features.umroh.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
@@ -42,6 +44,8 @@ class UmrohPaketFragment : Fragment(), Injectable {
     private lateinit var rencanaPerjalananAdapter: PaketRencanaPerjalananAdapter
     /*----------------------------------*/
 
+    private var userId: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,6 +55,8 @@ class UmrohPaketFragment : Fragment(), Injectable {
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         viewModel.id = args.paketId
+        userId = sharedViewModel.userId!!
+        println("UserID Paket Detil: $userId")
         binding = FragmentUmrohPaketBinding.inflate(inflater, container, false)
         //context ?: return binding.root
         initUI()
@@ -77,6 +83,7 @@ class UmrohPaketFragment : Fragment(), Injectable {
         })
     }
 
+    @SuppressLint("SetTextI18n")
     private fun bindView(paketUmroh: PaketUmroh) {
         paketUmroh.apply {
             binding.tvUmrohDetilPaket.text = this.name
@@ -86,6 +93,7 @@ class UmrohPaketFragment : Fragment(), Injectable {
             binding.tvUmrohPaketDetilLokasi.text = this.departure_city.city_name
             binding.tvUmrohPaketDetilKuota.text = this.quota.toString()
             binding.tvUmrohPaketDetilPoint.text = this.point.toString()
+            binding.tvHarga.text = "Mulai dari \n ${this.price}"
             val listHotel =
                 listOf(listOf("Makkah", this.makkah_hotel), listOf("Madinah", this.madinah_hotel))
             val listPenerbangan = listOf(
@@ -114,9 +122,13 @@ class UmrohPaketFragment : Fragment(), Injectable {
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.buttonBayar.setOnClickListener {
-            val nav =
-                UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohPemesanan()
-            binding.root.findNavController().navigate(nav)
+            if (userId != 0) {
+                val nav =
+                    UmrohPaketFragmentDirections.actionFragmentUmrohPaketToFragmentUmrohPemesanan()
+                binding.root.findNavController().navigate(nav)
+            } else {
+                showAlertLogin()
+            }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this@UmrohPaketFragment){
             val nav =
@@ -152,24 +164,16 @@ class UmrohPaketFragment : Fragment(), Injectable {
 
     }
 
-    /* private fun addFragment(){
-         val fragmentManager = childFragmentManager
-         val transaction = fragmentManager.beginTransaction()
-         transaction.add(R.id.container_fragment_detil,
-             UmrohPaketDetilFragment.newInstance()
-         )
-         transaction.add(R.id.container_fragment_fasilitas,
-             UmrohPaketFasilitasFragment.newInstance()
-         )
-         transaction.add(R.id.container_fragment_penerbangan,
-             UmrohPaketPenerbanganFragment.newInstance()
-         )
-         transaction.add(R.id.container_fragment_hotel,
-             UmrohPaketHotelFragment.newInstance()
-         )
-         transaction.add(R.id.container_fragment_rencana_perjalanan,
-             UmrohPaketRencanaPerjalananFragment.newInstance()
-         )
-         transaction.commit()
-     }*/
+    private fun showAlertLogin() {
+        val alertDialog = AlertDialog.Builder(requireContext())
+        alertDialog.setTitle("Silakan Login terlebih dahulu")
+            .setMessage("Untuk login silakan menekan menu Profile...")
+            .setCancelable(true)
+            .setPositiveButton("OK") { dialog, id ->
+                dialog.dismiss()
+            }
+            .create()
+            .show()
+
+    }
 }

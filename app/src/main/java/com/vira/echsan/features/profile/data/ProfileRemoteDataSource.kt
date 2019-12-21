@@ -1,4 +1,4 @@
-package com.vira.echsan.data.entities
+package com.vira.echsan.features.profile.data
 
 import com.vira.echsan.api.BaseDataSource
 import com.vira.echsan.api.LoginService
@@ -8,4 +8,12 @@ class ProfileRemoteDataSource @Inject constructor(private val service: LoginServ
     BaseDataSource() {
     suspend fun login(email: String, password: String) =
         getResult { service.login(email, password) }
+
+    suspend fun ubasPassword(
+        userId: Int,
+        oldPassword: String,
+        newPassword: String,
+        newPasswordConfrim: String
+    ) =
+        getResult { service.ubahPassword(userId, oldPassword, newPassword, newPasswordConfrim) }
 }

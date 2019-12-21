@@ -30,6 +30,7 @@ class BookingsChildFragment : Fragment(), Injectable, View.OnClickListener {
         viewModel = injectViewModel(viewModelFactory)
         viewModel.position.postValue(position)
         viewModel.userId = userId
+        viewModel.isDone = position == 0
         val binding = FragmentBookingsChildBinding
             .inflate(inflater, container, false)
         val adapter = BookingAdapter()

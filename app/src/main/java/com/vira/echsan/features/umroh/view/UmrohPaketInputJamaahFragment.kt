@@ -14,11 +14,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import com.google.android.material.snackbar.Snackbar
 import com.vira.echsan.databinding.FragmentUmrohInputJamaahBinding
 import com.vira.echsan.di.Injectable
 import com.vira.echsan.features.umroh.viewmodel.UmrohSharedViewModel
 import com.vira.echsan.utils.CalendarHelper
+import com.vira.echsan.utils.afterTextChanged
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -38,7 +38,6 @@ class UmrohPaketInputJamaahFragment : Fragment(), Injectable {
         sharedViewModel =
             ViewModelProviders.of(requireActivity()).get(UmrohSharedViewModel::class.java)
         binding = FragmentUmrohInputJamaahBinding.inflate(inflater, container, false)
-        Snackbar.make(binding.root, "Position ${args.jamaahOrder}", Snackbar.LENGTH_SHORT).show()
         context ?: return binding.root
         initUI()
         return binding.root
@@ -46,33 +45,37 @@ class UmrohPaketInputJamaahFragment : Fragment(), Injectable {
 
     private fun submitDataJamaah() {
         binding.setOnClickLanjut {
-            val index = sharedViewModel.mInputJamaah.jamaahOrder?.indexOf(args.jamaahOrder)
+            /*val index = sharedViewModel.mInputJamaah.jamaahOrder?.indexOf(args.jamaahOrder)
             if (args.jamaahOrder != index) {
-                sharedViewModel.insertJamaah(
-                    args.jamaahOrder,
-                    binding.inputNamaLengkap.text.toString(),
-                    "L",
-                    "Test",
-                    "${binding.inputTglLahirTahun.text.toString()}-${binding.inputTglLahirBln.text.toString()}-${binding.inputTglLahirHari.text.toString()}",
-                    "TestAlamat",
-                    1,
-                    2,
-                    "Keluarahn Test",
-                    "District test",
-                    "City test",
-                    "Province test",
-                    123456,
-                    binding.inputNomerTelepon.text.toString()
-                )
-                val nav =
-                    UmrohPaketInputJamaahFragmentDirections.actionFragmentUmrohPaketInputJamaahToFragmentUmrohPaketPemesanan()
-                binding.root.findNavController().navigate(nav)
-            }
+
+            }*/
+            sharedViewModel.insertJamaah(
+                args.jamaahOrder,
+                binding.inputNamaLengkap.text.toString(),
+                if (binding.rbLakiLaki.isSelected)
+                    "Laki-Laki"
+                else
+                    "Perempuan",
+                binding.inputTempatLahir.text.toString(),
+                "${binding.inputTglLahirTahun.text.toString()}-${binding.inputTglLahirBln.text.toString()}-${binding.inputTglLahirHari.text.toString()}",
+                binding.inputAlamat.text.toString(),
+                0,
+                0,
+                " ",
+                " ",
+                binding.inputKota.text.toString(),
+                binding.inputProvinsi.text.toString(),
+                binding.inputKodePos.text.toString().toInt(),
+                binding.inputNomerTelepon.text.toString()
+            )
+            val nav =
+                UmrohPaketInputJamaahFragmentDirections.actionFragmentUmrohPaketInputJamaahToFragmentUmrohPaketPemesanan()
+            binding.root.findNavController().navigate(nav)
         }
     }
 
     private fun initUI() {
-        binding.toolbar.title = "PEMBAYARAN"
+        binding.toolbar.title = "Memasukkan Data Jamaah"
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -81,6 +84,7 @@ class UmrohPaketInputJamaahFragment : Fragment(), Injectable {
                 UmrohPaketInputJamaahFragmentDirections.actionFragmentUmrohPaketInputJamaahToFragmentUmrohPaketPemesanan()
             binding.root.findNavController().navigate(nav)
         }
+        editTextValidator()
         binding.inputTglLahirHari.isFocusable = true
         binding.inputTglLahirHari.isFocusableInTouchMode = true
         binding.inputTglLahirHari.inputType = InputType.TYPE_NULL
@@ -101,6 +105,15 @@ class UmrohPaketInputJamaahFragment : Fragment(), Injectable {
                 binding.inputTglLahirBln.setText(date?.get(1))
                 binding.inputTglLahirHari.setText(date?.get(2))
                 binding.inputNomerTelepon.setText(sharedViewModel.mInputJamaah.phone?.get(index))
+                binding.inputAlamat.setText(sharedViewModel.mInputJamaah.address?.get(index))
+                binding.inputKota.setText(sharedViewModel.mInputJamaah.city?.get(index))
+                binding.inputProvinsi.setText(sharedViewModel.mInputJamaah.province?.get(index))
+                binding.inputKodePos.setText(sharedViewModel.mInputJamaah.posCode?.get(index).toString())
+                binding.inputTempatLahir.setText(sharedViewModel.mInputJamaah.birthPlace?.get(index))
+                if (sharedViewModel.mInputJamaah.gender?.get(index) == "Laki-Laki")
+                    binding.rgGender.check(binding.rbLakiLaki.id)
+                else
+                    binding.rgGender.check(binding.rbPerempuan.id)
             }
         }
         if (binding.cbKamarFirst.isSelected) {
@@ -155,6 +168,40 @@ class UmrohPaketInputJamaahFragment : Fragment(), Injectable {
             Log.d("Clicked", "Interview Date Clicked")
             dialog.datePicker.maxDate = CalendarHelper.getCurrentDateInMills()
             dialog.show()
+        }
+    }
+
+    fun editTextValidator() {
+        binding.inputNamaLengkap.afterTextChanged {
+            binding.inputNamaLengkap.error =
+                if (binding.inputNamaLengkap.length() != 0) null else "Masukkan Nama Lengkap"
+        }
+        binding.inputKota.afterTextChanged {
+            binding.inputKota.error = if (binding.inputKota.length() != 0) null else "Masukkan Kota"
+        }
+        binding.inputProvinsi.afterTextChanged {
+            binding.inputProvinsi.error =
+                if (binding.inputKota.length() != 0) null else "Masukkan Provinsi"
+        }
+        binding.inputTglLahirHari.afterTextChanged {
+            binding.inputTglLahirHari.error =
+                if (binding.inputTglLahirHari.length() != 0) null else "Masukkan Tanggal Lahir"
+        }
+        binding.inputTempatLahir.afterTextChanged {
+            binding.inputTempatLahir.error =
+                if (binding.inputTempatLahir.length() != 0) null else "Masukkan Tempat Lahir"
+        }
+        binding.inputNomerTelepon.afterTextChanged {
+            binding.inputNomerTelepon.error =
+                if (binding.inputNomerTelepon.length() != 0) null else "Masukkan Nomer Telepon"
+        }
+        binding.inputAlamat.afterTextChanged {
+            binding.inputAlamat.error =
+                if (binding.inputAlamat.length() != 0) null else "Masukkan Alamat"
+        }
+        binding.inputKodePos.afterTextChanged {
+            binding.inputKodePos.error =
+                if (binding.inputKodePos.length() != 0) null else "Masukkan Kode Pos"
         }
     }
 }

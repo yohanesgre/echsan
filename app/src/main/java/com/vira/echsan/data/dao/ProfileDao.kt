@@ -18,6 +18,9 @@ interface ProfileDao {
     @Query("SELECT COUNT (*) FROM profile")
     fun getCount(): Int
 
+    @Query("DELETE FROM profile")
+    suspend fun deleteAll()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(profile: Profile)
 }

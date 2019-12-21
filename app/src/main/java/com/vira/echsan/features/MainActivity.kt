@@ -1,4 +1,4 @@
-package com.vira.echsan
+package com.vira.echsan.features
 
 import android.content.Context
 import android.content.Intent
@@ -8,8 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.vira.echsan.R
 import com.vira.echsan.databinding.ActivityMainBinding
+import com.vira.echsan.features.bookings.view.BookingsFragment
 import com.vira.echsan.features.home.HomeFragment
+import com.vira.echsan.features.login.LoginActivity
+import com.vira.echsan.features.profile.ProfileActivity
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
@@ -36,10 +40,15 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         userId = intent.getIntExtra("UserID", 0)
-        println("UserID MainActivity: $userId")
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(
+            this,
+            R.layout.activity_main
+        )
         binding.navbarBottom.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-        val navigationId = intent.getIntExtra(PARAM_NAVIGATION_ID, R.id.fragment_home)
+        val navigationId = intent.getIntExtra(
+            PARAM_NAVIGATION_ID,
+            R.id.fragment_home
+        )
         binding.navbarBottom.selectedItemId = navigationId
     }
 
@@ -53,22 +62,31 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
         val fragment = supportFragmentManager.findFragmentByTag(tag) ?: when (itemId) {
             R.id.fragment_home -> {
                 lastFragmentTag = itemId
-                HomeFragment()
-            }
-            R.id.fragment_bookings -> {
-                /*lastFragmentTag = itemId
-                BookingsFragment().apply {
+                HomeFragment().apply {
                     arguments = Bundle().apply {
                         putInt("UserID", this@MainActivity.userId!!)
                     }
-                }*/
-                null
+                }
+            }
+            R.id.fragment_bookings -> {
+                if (userId!! != 0) {
+                    lastFragmentTag = itemId
+                    BookingsFragment().apply {
+                        arguments = Bundle().apply {
+                            putInt("UserID", this@MainActivity.userId!!)
+                        }
+                    }
+                } else {
+                    null
+                }
+
             }
             R.id.fragment_points -> {
                 null
 
             }
-            R.id.fragment_profile-> {
+            R.id.fragment_profile -> {
+
                 null
             }
             else -> {
@@ -76,13 +94,29 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
             }
         }
 
-        if (fragment != null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.containter, fragment as Fragment, tag)
-                .commit()
-        } else {
-            showAlertDevelopment()
+        when {
+            fragment != null -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.containter, fragment as Fragment, tag)
+                    .commit()
+            }
+            itemId == R.id.fragment_bookings -> {
+                showAlertLogin()
+            }
+            itemId == R.id.fragment_profile -> {
+                if (userId != 0) {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+            else -> {
+                showAlertDevelopment()
+            }
         }
     }
 
@@ -90,6 +124,19 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector{
         val alertDialog = AlertDialog.Builder(this)
         alertDialog.setTitle("Sedang dalam Pengembangan")
             .setMessage("Silakan gunakan fitur lain yang ada...")
+            .setCancelable(true)
+            .setPositiveButton("OK") { dialog, id ->
+                dialog.dismiss()
+            }
+            .create()
+            .show()
+
+    }
+
+    private fun showAlertLogin() {
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setTitle("Silakan Login terlebih dahulu")
+            .setMessage("Untuk login silakan menekan menu Profile...")
             .setCancelable(true)
             .setPositiveButton("OK") { dialog, id ->
                 dialog.dismiss()

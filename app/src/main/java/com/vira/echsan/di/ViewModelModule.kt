@@ -4,8 +4,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.vira.echsan.features.bookings.viewmodel.BookingsChildViewModel
 import com.vira.echsan.features.home.viewmodel.HomeViewModel
+import com.vira.echsan.features.login.viewmodel.LoginViewModel
+import com.vira.echsan.features.profile.viewmodel.ProfileDetilViewModel
+import com.vira.echsan.features.profile.viewmodel.ProfileEditViewModel
+import com.vira.echsan.features.profile.viewmodel.ProfileUbahPasswordViewModel
+import com.vira.echsan.features.regis.viewmodel.RegisterViewModel
 import com.vira.echsan.features.umroh.viewmodel.*
-import com.vira.echsan.features.viewmodel.LoginViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -62,6 +66,26 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(LoginViewModel::class)
     abstract fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RegisterViewModel::class)
+    abstract fun bindRegisterViewModel(viewModel: RegisterViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProfileDetilViewModel::class)
+    abstract fun bindProfileDetilViewModel(viewModel: ProfileDetilViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProfileEditViewModel::class)
+    abstract fun bindProfileEditViewModel(viewModel: ProfileEditViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProfileUbahPasswordViewModel::class)
+    abstract fun bindProfileUbahPasswordViewModel(viewModel: ProfileUbahPasswordViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

@@ -9,8 +9,11 @@ import javax.inject.Inject
  */
 class BookingsRemoteDataSource @Inject constructor(private val service: UmrohService) :
     BaseDataSource() {
-    suspend fun fetchBookings(userId: Int, page: Int, pageSize: Int? = null) =
-        getResult { service.postTransactionUser(userId, page, pageSize) }
+    suspend fun fetchBookingsDone(userId: Int, page: Int, pageSize: Int? = null) =
+        getResult { service.postTransactionUserDone(userId, page, pageSize) }
+
+    suspend fun fetchBookingsUndone(userId: Int, page: Int, pageSize: Int? = null) =
+        getResult { service.postTransactionUserUndone(userId, page, pageSize) }
 
     suspend fun fetchBooking(code: String) = getResult { service.postTransactionSearch(code) }
 }

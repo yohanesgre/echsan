@@ -485,7 +485,7 @@
                 android:layout_height="70dp"
                 android:orientation="horizontal">
                 <TextView
-                    android:textSize="15sp"
+                    android:scrollHorizontally="false"
                     android:layout_marginLeft="15dp"
                     android:layout_gravity="center_vertical"
                     android:id="@+id/tv_harga"
@@ -494,7 +494,9 @@
                     android:layout_weight="1"
                     android:ellipsize="none"
                     android:maxLines="100"
-                    android:scrollHorizontally="false"/>
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    tools:text="Mulai dari\nRp. 25.000.000" />
                 <Button
                     android:layout_marginLeft="100dp"
                     android:text="Bayar"

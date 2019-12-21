@@ -1,9 +1,11 @@
 package com.vira.echsan.di
 
-import com.vira.echsan.LoginActivity
-import com.vira.echsan.MainActivity
-import com.vira.echsan.SplashActivity
+import com.vira.echsan.features.MainActivity
 import com.vira.echsan.features.MemberActivity
+import com.vira.echsan.features.SplashActivity
+import com.vira.echsan.features.login.LoginActivity
+import com.vira.echsan.features.profile.ProfileActivity
+import com.vira.echsan.features.regis.RegisterActivity
 import com.vira.echsan.features.social.SocialActivity
 import com.vira.echsan.features.umroh.UmrohActivity
 import dagger.Module
@@ -19,6 +21,9 @@ abstract class ActivityBuilderModule {
     abstract fun contributeLoginActivity(): LoginActivity
 
     @ContributesAndroidInjector
+    abstract fun contributeRegisterActivity(): RegisterActivity
+
+    @ContributesAndroidInjector
     abstract fun contributeSplashActivity(): SplashActivity
 
     @ContributesAndroidInjector(modules = [UmrohFragmentBuildersModule::class])
@@ -29,4 +34,7 @@ abstract class ActivityBuilderModule {
 
     @ContributesAndroidInjector(modules = [SocialFragmentBuildersModule::class])
     abstract fun contributeSocialActivity(): SocialActivity
+
+    @ContributesAndroidInjector(modules = [ProfileFragmentBuildersModule::class])
+    abstract fun contributeProfileActivity(): ProfileActivity
 }

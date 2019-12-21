@@ -8,6 +8,7 @@ import kotlinx.coroutines.CoroutineScope
 import javax.inject.Inject
 
 class BookingsPageDataSourceFactory @Inject constructor(
+    private val isDone: Boolean? = null,
     private val userId: Int? = null,
     private val dataSource: BookingsRemoteDataSource,
     private val scope: CoroutineScope
@@ -16,7 +17,7 @@ class BookingsPageDataSourceFactory @Inject constructor(
     private val liveData = MutableLiveData<BookingsPageDataSource>()
 
     override fun create(): DataSource<Int, TransactionResp> {
-        val source = BookingsPageDataSource(userId, dataSource, scope)
+        val source = BookingsPageDataSource(isDone, userId, dataSource, scope)
         liveData.postValue(source)
         return source
     }

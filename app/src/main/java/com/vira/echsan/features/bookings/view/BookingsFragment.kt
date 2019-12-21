@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.vira.echsan.databinding.FragmentBookingsBinding
@@ -19,7 +20,6 @@ class BookingsFragment : Fragment(), Injectable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         userId = arguments?.getInt("UserID") ?: 0
-        println("UserID: ${userId}")
     }
 
     override fun onCreateView(
@@ -31,7 +31,8 @@ class BookingsFragment : Fragment(), Injectable {
         context?: return binding.root
         val tabLayout = binding.tabs
         val viewPager = binding.viewPager
-
+        binding.toolbar.title = "Bookings"
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         viewPager.adapter =
             BookingsPagerFragmentAdapter(this, userId)
 

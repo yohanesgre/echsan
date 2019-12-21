@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_profile"
+    app:startDestination="@id/profileDetilFragment">
+
+    <fragment
+        android:id="@+id/profileDetilFragment"
+        android:name="com.vira.echsan.features.profile.view.ProfileDetilFragment"
+        android:label="ProfileDetilFragment">
+        <action
+            android:id="@+id/action_profileDetilFragment_to_profileEditFragment"
+            app:destination="@id/profileEditFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profileDetilFragment_to_profileUbahPasswordFragment"
+            app:destination="@id/profileUbahPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.vira.echsan.features.profile.view.ProfileEditFragment"
+        android:label="ProfileEditFragment">
+        <action
+            android:id="@+id/action_profileEditFragment_to_profileDetilFragment"
+            app:destination="@id/profileDetilFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileUbahPasswordFragment"
+        android:name="com.vira.echsan.features.profile.view.ProfileUbahPasswordFragment"
+        android:label="ProfileUbahPasswordFragment">
+        <action
+            android:id="@+id/action_profileUbahPasswordFragment_to_profileDetilFragment"
+            app:destination="@id/profileDetilFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="oldPassword"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>

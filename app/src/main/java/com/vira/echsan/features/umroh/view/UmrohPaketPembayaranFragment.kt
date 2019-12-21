@@ -1,6 +1,8 @@
 package com.vira.echsan.features.umroh.view
 
 import android.annotation.SuppressLint
+import android.annotation.TargetApi
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
+import com.vira.echsan.adapters.pembayaran.ChildItem
 import com.vira.echsan.adapters.pembayaran.MetodePembayaranAdapter
 import com.vira.echsan.adapters.pembayaran.TipePembayaranParentAdapter
 import com.vira.echsan.databinding.FragmentUmrohCheckoutPembayaranBinding
@@ -19,6 +22,8 @@ import com.vira.echsan.di.Injectable
 import com.vira.echsan.di.injectViewModel
 import com.vira.echsan.features.umroh.viewmodel.PaketPembayaranViewModel
 import com.vira.echsan.features.umroh.viewmodel.UmrohSharedViewModel
+import com.vira.echsan.utils.CalendarHelper
+import com.vira.echsan.utils.ConvertCurrencyToDouble
 import javax.inject.Inject
 
 class UmrohPaketPembayaranFragment : Fragment(), Injectable {
@@ -51,20 +56,30 @@ class UmrohPaketPembayaranFragment : Fragment(), Injectable {
         return binding.root
     }
 
+    @TargetApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
     private fun subscribeUI(){
         sharedViewModel.SelectedPaket.observe(viewLifecycleOwner) {
-            binding.tvJadwalKeberangkatan.text = it.date_of_departure
+            binding.tvJadwalKeberangkatan.text =
+                CalendarHelper.convertDateStringToLocalFormat(it.date_of_departure)
             binding.tvDurasi.text = it.day_amount.toString()
             binding.tvHotel.text = "${it.makkah_hotel} | ${it.madinah_hotel}"
             binding.tvPenerbangan.text =
                 "${it.departure_plane.dep_plane_name} | ${it.return_plane.ret_plane_name}"
             binding.tvHarga.text = it.price
+            viewModel.tipePembayaranMap.add(
+                ChildItem(
+                    "Penuh - ${it.price} per Jamaah",
+                    ConvertCurrencyToDouble(it.price)
+                )
+            )
+            adapterTipePembayaran.addSectionItem(viewModel.tipePembayaranSection)
+            adapterTipePembayaran.addSharedViewModel(sharedViewModel)
         }
     }
 
     private fun initUI(){
-        binding.toolbar.title = "PEMBAYARAN"
+        binding.toolbar.title = "Pembayaran"
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -76,8 +91,6 @@ class UmrohPaketPembayaranFragment : Fragment(), Injectable {
 
         }
         binding.rvTipePembayaran.adapter = adapterTipePembayaran
-        adapterTipePembayaran.addSectionItem(viewModel.tipePembayaranSection)
-        adapterTipePembayaran.addSharedViewModel(sharedViewModel)
 
         adapterMetodePembayaran = MetodePembayaranAdapter(viewModel.metodePembayaran)
         binding.rvMetodePembayaran.adapter = adapterMetodePembayaran

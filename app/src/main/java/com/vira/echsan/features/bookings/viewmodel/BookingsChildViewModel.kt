@@ -13,11 +13,12 @@ class BookingsChildViewModel @Inject constructor(
     @CoroutineScropeIO private val ioCoroutineScope: CoroutineScope
 ) : ViewModel(){
     var position = MutableLiveData<Int>()
+    var isDone: Boolean? = null
     var userId: Int? = null
 
     val bookings by lazy {
         repository.observePagedSets(
-            userId, ioCoroutineScope
+            isDone, userId, ioCoroutineScope
         )
     }
 

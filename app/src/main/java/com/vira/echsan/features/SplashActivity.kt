@@ -1,4 +1,4 @@
-package com.vira.echsan
+package com.vira.echsan.features
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.vira.echsan.R
 import com.vira.echsan.databinding.ActivityAuthSplashBinding
 import com.vira.echsan.di.Injectable
 import com.vira.echsan.di.injectViewModel
-import com.vira.echsan.features.viewmodel.LoginViewModel
+import com.vira.echsan.features.login.viewmodel.LoginViewModel
 import javax.inject.Inject
 
 class SplashActivity : AppCompatActivity(), Injectable {
@@ -23,7 +24,10 @@ class SplashActivity : AppCompatActivity(), Injectable {
         super.onCreate(savedInstanceState)
         viewModel = injectViewModel(viewModelFactory)
         val binding: ActivityAuthSplashBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_auth_splash)
+            DataBindingUtil.setContentView(
+                this,
+                R.layout.activity_auth_splash
+            )
         viewModel.getProfile.observe(this, Observer {
             Handler().postDelayed({
                 if (it != null) {
@@ -33,7 +37,7 @@ class SplashActivity : AppCompatActivity(), Injectable {
                     }
                     startActivity(intent)
                 } else {
-                    val intent = Intent(this, LoginActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 }
                 finish()

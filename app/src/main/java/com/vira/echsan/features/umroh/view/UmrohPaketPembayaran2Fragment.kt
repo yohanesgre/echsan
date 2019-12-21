@@ -115,7 +115,7 @@ class UmrohPaketPembayaran2Fragment : Fragment(), Injectable {
     }
 
     private fun initUI() {
-        binding.toolbar.title = "PEMBAYARAN"
+        binding.toolbar.title = "Pembayaran"
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)

@@ -1,12 +1,15 @@
 package com.vira.echsan.features.bookings
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.vira.echsan.api.resp.TransactionResp
 import com.vira.echsan.databinding.ItemBookingsBinding
+import com.vira.echsan.utils.CalendarHelper
 
 class BookingAdapter : PagedListAdapter<TransactionResp, BookingAdapter.BookingsViewHolder>(
     BookingDiffCallback()
@@ -28,11 +31,14 @@ class BookingAdapter : PagedListAdapter<TransactionResp, BookingAdapter.Bookings
     inner class BookingsViewHolder (
         private val binding : ItemBookingsBinding
     ) : RecyclerView.ViewHolder(binding.root){
+        @RequiresApi(Build.VERSION_CODES.O)
         fun bind(item: TransactionResp) {
             binding.apply {
-                bookingContentBodyDuration.text = item.product.day_amount.toString()
-                bookingContentHeaderTitle.text = item.product.name
-                bookingContentHeaderDate.text = item.updatedAt
+                outputProduct.text = item.product.name
+                outputTujuan.text = "${item.peopleAmount} jamaah"
+                outputHotel.text = "${item.product.makkah_hotel} | ${item.product.madinah_hotel}"
+                outputTanggalTransaksi.text =
+                    CalendarHelper.convertDateStringToLocalFormat(item.product.date_of_departure)
                 executePendingBindings()
             }
         }

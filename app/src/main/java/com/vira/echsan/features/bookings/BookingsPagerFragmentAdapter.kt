@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.vira.echsan.features.bookings.view.BookingsChildFragment
 
-const val ACTIVE_FRAGMENT_INDEX = 1
-const val ARCHIVED_FRAGMENT_INDEX = 0
+const val ACTIVE_FRAGMENT_INDEX = 0
+const val ARCHIVED_FRAGMENT_INDEX = 1
 
 class BookingsPagerFragmentAdapter(fragment: Fragment, private val userId: Int) :
     FragmentStateAdapter(fragment) {

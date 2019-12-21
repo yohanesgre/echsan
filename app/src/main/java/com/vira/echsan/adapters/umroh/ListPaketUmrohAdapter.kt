@@ -17,6 +17,7 @@ import com.vira.echsan.utils.CalendarHelper
 
 class ListPaketUmrohAdapter :
     PagedListAdapter<PaketUmroh, ListPaketUmrohAdapter.ViewHolder>(ListPaketUmrohDiffCallback()) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemUmrohPaketBinding.inflate(
